@@ -35,7 +35,7 @@ class SignUp extends Component{
 
             <form onSubmit={this.handleSubmit}>
                 <input
-                    style={{width:"50%",height:"20%"}}
+
                     type="email"
                     name="email"
                     placeholder="Email"
@@ -44,7 +44,7 @@ class SignUp extends Component{
                 />
                 <br/><br/>
                 <input
-                    style={{width:"50%",height:"20%"}}
+
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -52,11 +52,11 @@ class SignUp extends Component{
                     onChange={this.handleChange}
                 />
                 <br/><br/>
-                <div  className="landing-button">
+                <div style={{display:"inline"}} className="landing-button">
                     Sign In
                 </div>
-                <br/><br/>
-                <div className="landing-button">
+
+                <div style={{display:"inline"}} className="landing-button">
                     Sign Up
                 </div>
 

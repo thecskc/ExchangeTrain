@@ -195,10 +195,6 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-      style: {
-        width: "50%",
-        height: "20%"
-      },
       type: "email",
       name: "email",
       placeholder: "Email",
@@ -222,10 +218,6 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-      style: {
-        width: "50%",
-        height: "20%"
-      },
       type: "password",
       name: "password",
       placeholder: "Password",
@@ -249,25 +241,19 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        display: "inline"
+      },
       className: "landing-button",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 55
       },
       __self: this
-    }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
+    }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      style: {
+        display: "inline"
       },
-      __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "landing-button",
       __source: {
         fileName: _jsxFileName,
@@ -958,14 +944,11 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
-/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _styling_rowcol_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styling/rowcol.css */ "./styling/rowcol.css");
-/* harmony import */ var _styling_rowcol_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styling_rowcol_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_signup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/signup */ "./components/signup.js");
-/* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
+/* harmony import */ var _components_signup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/signup */ "./components/signup.js");
+/* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
+/* harmony import */ var _styling_login_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styling/login.css */ "./styling/login.css");
+/* harmony import */ var _styling_login_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styling_login_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\login.js";
-
 
 
 
@@ -973,36 +956,39 @@ var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\lo
 
 class Login extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "container",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 12
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "col-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_signup__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: "container-login",
       style: {
         alignSelf: "center"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 14
       },
       __self: this
-    })));
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "logincontainer",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_signup__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      style: {
+        alignSelf: "center"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }))));
   }
 
 }
@@ -1022,10 +1008,10 @@ class Login extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ "./styling/rowcol.css":
-/*!****************************!*\
-  !*** ./styling/rowcol.css ***!
-  \****************************/
+/***/ "./styling/login.css":
+/*!***************************!*\
+  !*** ./styling/login.css ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

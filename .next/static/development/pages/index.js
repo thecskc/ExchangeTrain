@@ -10047,57 +10047,57 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: "container",
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 16
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 18
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "hero",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 20
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "section-40-column",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 22
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "heading",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 23
         },
         __self: this
       }, "Exchange"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "subheading",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
       }, "Personalized training for technical interviews by software engineers"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 29
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -10107,24 +10107,24 @@ function (_Component) {
         className: "landing-button",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 30
         },
         __self: this
       }, "Browse Coaches")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "section-60-images",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 35
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
         src: "../static/undraw_code_review_l1q9%20(1).svg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 36
         },
         __self: this
-      }))));
+      })))));
     }
   }]);
 

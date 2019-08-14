@@ -7,7 +7,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5',GradientType=1 );
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: 100vw;
 }
 
 /* Style the links inside the navigation bar */
