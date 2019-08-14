@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Open+Sans");
+@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
 
 html,
 body {
@@ -13,33 +19,46 @@ body {
     color: orange;
 }
 
-h1 {
-    font-weight: inherit;
-    line-height: 1.5;
+
+#form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 20px;
+    padding: 5vh 2vw;
+    min-width: 40vw;
+    margin-top: 20px;
+    background: white;
+    width: 30vw;
+    height: 45vh;
+
 }
 
-h2 {
-    line-height: 1.618;
-    font-weight: 300;
+.heading{
+    font-family: 'Merriweather', serif;
+    align-self: flex-start;
+    font-size: 3.5rem;
+    opacity: 1;
+    line-height:1.5;
 }
 
-h3 {
-    line-height: 1.618;
-    font-weight: 400;
+.subheading {
+    font-family: 'Lato', sans-serif;
+    align-self: flex-start;
+    font-size: 1.75rem;
+    opacity: 0.7;
+    line-height:1.5;
 }
 
-h4 {
-    line-height: 1.618;
-    font-weight: 200;
-}
-
-p {
+.paragraph{
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
     font-size: 0.9em;
 }
 
-* {
-    box-sizing: border-box;
-}
 
 #particles-header {
     position: absolute;
@@ -47,21 +66,8 @@ p {
     height: 100%;
 }
 
-.landing-heading {
-    align-self: flex-start;
-    font-size: 3.5rem;
-    opacity: 1;
 
-}
-
-.landing-subheading {
-    align-self: flex-start;
-    font-size: 1.75rem;
-    opacity: 0.7;
-
-}
-
-.landing-container {
+.container {
     display: flex;
     width: 100%;
     height: 100%;
@@ -70,11 +76,10 @@ p {
     flex-direction: column;
     align-items: center;
     margin: 0px;
-    font-family: "Open Sans", sans-serif;
 }
 
 /* this is for the hero*/
-.landing-hero {
+.hero {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -102,7 +107,20 @@ p {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#499bea', endColorstr='#207ce5', GradientType=1); /* IE6-9 fallback on horizontal gradient */
 }
 
-.landing-hero-left {
+.section-40-column{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section-60-images{
+    width: 60%;
+    height: 100%;
+}
+.section-50-column {
     width: 50%;
     height: 100%;
     display: flex;
@@ -111,8 +129,8 @@ p {
     flex-direction: column;
 }
 
-.landing-hero-right {
-    width: 70%;
+.section-50-images {
+    width: 50%;
     height: 100%;
 }
 
@@ -140,7 +158,7 @@ p {
 /*hero ends here*/
 
 /*this is the card section for steps*/
-.landing-card-section {
+.card-section {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -150,7 +168,7 @@ p {
     margin: 16px;
 }
 
-.landing-card {
+.card {
     /* Add shadows to create the "card" effect */
     display: flex;
     flex-direction: column;
@@ -170,14 +188,14 @@ p {
 
 }
 
-.landing-card:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*end of card section*/
 
 
-.landing-blue-section {
+.text-section {
     background: rgb(35, 125, 235);
     background: -webkit-linear-gradient(
             160deg,
@@ -197,15 +215,8 @@ p {
     align-items: center;
 }
 
-.landing-blue-left {
-    width: 50%;
-}
 
-.landing-blue-right {
-    width: 50%;
-}
-
-.landing-testimonials {
+.testimonials {
     display: flex;
     flex-direction: column;
     background: rgba(223, 223, 223, 0.65);
@@ -216,7 +227,7 @@ p {
     align-items: center;
 }
 
-.landing-testimonials-cards-section {
+.testimonials-cards-section {
     margin-top: 16px;
     padding-top: 32px;
     margin: 0 auto;
@@ -225,7 +236,7 @@ p {
 
 }
 
-.landing-testimonial-card {
+.testimonial-card {
     justify-content: center;
     background: white;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
@@ -240,31 +251,10 @@ p {
     font-family: "Open Sans", sans-serif;
 }
 
-.landing-testimonial-card:hover {
+.testimonial-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.slider{
-    width: 100%;
-}
-
-.para{
-    margin-bottom: 20px;
-    height: 26vh;
-    overflow-y: auto;
-    align:justify
-}
-
-.para::-webkit-scrollbar {
-    width: 5px;
-    background-color: #F5F5F5;
-}
-
-.para::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #F5F5F5;
-}
 
 footer {
     background-color: #3d3d3d;
@@ -282,34 +272,39 @@ footer {
         display: none;
     }
 
-    .landing-hero {
+    .hero {
         height: 85vh;
         padding: 0px 32px;
     }
 
-    .landing-hero-left {
-        width: 100%
-    }
-
-    .landing-blue-left {
+    .section-50-column {
         width: 100%;
-
+        align-self: center;
     }
 
-    .landing-blue-right {
+    .section-40-column {
+        width: 100%;
+        align-self: center;
+    }
+
+
+    .section-60-images{
+        display: none;
+    }
+    .section-50-images {
         display: none;
     }
 
-    .landing-card {
+    .card {
         width: 100%;
         height: auto;
     }
 
-    .landing-heading {
+    .heading {
         font-size: 2rem;
     }
 
-    .landing-subheading {
+    .subheading {
         font-size: 1.3rem;
     }
 
@@ -317,20 +312,13 @@ footer {
         font-size: 1rem;
     }
 
-    .landing-hero {
+    .hero {
         align-items: center;
         justify-content: center;
     }
 
-    .landing-hero-left {
-        align-self: center;
-    }
 
-    .landing-hero-right {
-        display: none;
-    }
-
-    .landing-testimonial-card {
+    .testimonial-card {
         width: 100%;
         /* height: 70vh */
     }

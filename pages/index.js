@@ -12,15 +12,15 @@ class Index extends Component {
 
         return (
 
-            <div className="landing-container">
-                <div className="landing-hero">
+            <div className="container">
+                <div className="hero">
 
-                    <div className="landing-hero-left">
-                        <h1 className="landing-heading">Exchange</h1>
-                        <h3 className="landing-subheading">
+                    <div className="section-40-column">
+                        <div className="heading">Exchange</div>
+                        <div className="subheading">
                             Personalized training for technical interviews by software
                             engineers
-                        </h3>
+                        </div>
                         <br/>
                         <br/>
                         <div style={{alignSelf:"flex-start"}} className="landing-button">
@@ -28,7 +28,12 @@ class Index extends Component {
                         </div>
                     </div>
 
+                    <div className="section-60-images">
+                        <img src="../static/undraw_code_review_l1q9%20(1).svg"/>
+                    </div>
+
                 </div>
+
 
             </div>
 
