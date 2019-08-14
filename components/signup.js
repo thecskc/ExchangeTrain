@@ -33,9 +33,32 @@ class SignUp extends Component{
 
         return(
 
-            <form id="form" onSubmit={this.handleSubmit}>
-
-                <h1>This is a form</h1>
+            <form onSubmit={this.handleSubmit}>
+                <input
+                    style={{width:"50%",height:"20%"}}
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={this.email}
+                    onChange={this.handleChange}
+                />
+                <br/><br/>
+                <input
+                    style={{width:"50%",height:"20%"}}
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={this.password}
+                    onChange={this.handleChange}
+                />
+                <br/><br/>
+                <div  className="landing-button">
+                    Sign In
+                </div>
+                <br/><br/>
+                <div className="landing-button">
+                    Sign Up
+                </div>
 
             </form>
 

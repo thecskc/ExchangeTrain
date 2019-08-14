@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "../styling/style.css"
+import Navbar from "../components/navbar"
 
 
 class Index extends Component {
@@ -13,6 +14,8 @@ class Index extends Component {
         return (
 
             <div className="container">
+                <Navbar/>
+
                 <div className="hero">
 
                     <div className="section-40-column">
@@ -23,7 +26,7 @@ class Index extends Component {
                         </div>
                         <br/>
                         <br/>
-                        <div style={{alignSelf:"flex-start"}} className="landing-button">
+                        <div style={{alignSelf: "flex-start"}} className="landing-button">
                             Browse Coaches
                         </div>
                     </div>

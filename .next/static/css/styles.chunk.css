@@ -18,22 +18,6 @@ body {
 }
 
 
-#form{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    border-radius: 20px;
-    padding: 5vh 2vw;
-    min-width: 40vw;
-    margin-top: 20px;
-    background: white;
-    width: 30vw;
-    height: 45vh;
-
-}
 
 .heading{
     font-family: 'Merriweather', serif;
@@ -74,6 +58,14 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0px;
+}
+
+.row{
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* this is for the hero*/
@@ -326,6 +318,76 @@ footer {
         height: 18vh;
 
     }
+}
+
+.row{
+    width:100vw;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-50w100h{
+
+    width:50%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.col-center{
+    width:100%;
+    height:100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  background: #499bea; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #499bea 0%, #207ce5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #499bea 0%,#207ce5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #499bea 0%,#207ce5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5',GradientType=1 );
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav img {
+  right: 0px;
+  position: absolute;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #f4511e;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
 }
 
 
