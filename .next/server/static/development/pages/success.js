@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -113,6 +113,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var firebase_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/storage */ "firebase/storage");
 /* harmony import */ var firebase_storage__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_storage__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! underscore */ "underscore");
+/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(underscore__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -126,7 +129,12 @@ const firebaseConfig = {
   messagingSenderId: "349987543370",
   appId: "1:349987543370:web:2fb377e2c8778ec1"
 };
-firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(firebaseConfig);
+
+if (!firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.apps.length) {
+  firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(firebaseConfig);
+}
+
+;
 console.log("initializing app");
 console.log(firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
 const firestore = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.firestore();
@@ -153,26 +161,57 @@ var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\su
 
 
 class Success extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  render() {
-    const user = _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().currentUser;
-    console.log(user);
+  constructor(props) {
+    super(props);
+    this.state = {
+      "user": null,
+      "loaded": false
+    };
+  }
 
-    if (user) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 14
-        },
-        __self: this
-      }, "Welcome"));
+  componentDidMount() {
+    _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({
+          "user": user,
+          "loaded": true
+        }); // User is signed in.
+      } else {
+        this.setState({
+          "loaded": true,
+          "user": null
+        });
+      }
+    });
+  }
+
+  render() {
+    if (this.state.loaded === true) {
+      if (this.state.user) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34
+          },
+          __self: this
+        }, "Welcome");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37
+          },
+          __self: this
+        }, "Leave");
+      }
     } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 42
         },
         __self: this
-      }, "Leave you are not welcome"));
+      }, "Loading");
     }
   }
 
@@ -182,7 +221,7 @@ class Success extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!********************************!*\
   !*** multi ./pages/success.js ***!
   \********************************/
@@ -246,6 +285,17 @@ module.exports = require("firebase/storage");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "underscore":
+/*!*****************************!*\
+  !*** external "underscore" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("underscore");
 
 /***/ })
 

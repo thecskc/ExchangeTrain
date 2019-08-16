@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import "firebase/firestore";
 import 'firebase/auth';
 import 'firebase/storage';
+import * as _ from "underscore";
 
 
 const firebaseConfig = {
@@ -15,7 +16,11 @@ const firebaseConfig = {
 };
 
 
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig)
+}
+;
+
 
 console.log("initializing app");
 console.log(firebase);
