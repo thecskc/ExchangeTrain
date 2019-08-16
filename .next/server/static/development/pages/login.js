@@ -93,6 +93,49 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/firebase.js":
+/*!********************************!*\
+  !*** ./components/firebase.js ***!
+  \********************************/
+/*! exports provided: firestore, auth, storage, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "firestore", function() { return firestore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "auth", function() { return auth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storage", function() { return storage; });
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/firestore */ "firebase/firestore");
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_firestore__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/auth */ "firebase/auth");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var firebase_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/storage */ "firebase/storage");
+/* harmony import */ var firebase_storage__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_storage__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBqLlbDoL_fDIVin_kmgNHAwbn-CZazuQU",
+  authDomain: "exchange-231906.firebaseapp.com",
+  databaseURL: "https://exchange-231906.firebaseio.com",
+  projectId: "exchange-231906",
+  storageBucket: "exchange-231906.appspot.com",
+  messagingSenderId: "349987543370",
+  appId: "1:349987543370:web:2fb377e2c8778ec1"
+};
+firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(firebaseConfig);
+console.log("initializing app");
+console.log(firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
+const firestore = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.firestore();
+const auth = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.auth();
+const storage = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.storage();
+/* harmony default export */ __webpack_exports__["default"] = (firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
+
+/***/ }),
+
 /***/ "./components/navbar.js":
 /*!******************************!*\
   !*** ./components/navbar.js ***!
@@ -162,9 +205,14 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
-/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\signup.js";
+
+
 
 
 
@@ -174,16 +222,57 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.state = {
       name: "",
       email: "",
-      password: ""
+      password: "",
+      authenticated: false
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.handleSignIn = this.handleSignIn.bind(this);
   }
 
-  handleChange(event) {}
-
-  handleSubmit(event) {
+  handleChange(event) {
     event.preventDefault();
+    const nameVal = event.target.name;
+    const valueVal = event.target.value;
+    this.setState({
+      [nameVal]: valueVal
+    });
+  }
+
+  async handleSignUp(event) {
+    event.preventDefault();
+    console.log(this.state.email, this.state.password);
+
+    try {
+      const email = this.state.email;
+      const password = this.state.password;
+      _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().createUserWithEmailAndPassword(email, password).then(function () {
+        next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/success");
+      }).catch(function (e) {
+        console.log(e);
+        console.log("signup failed");
+      });
+    } catch (e) {
+      console.log("oops");
+    }
+  }
+
+  async handleSignIn(event) {
+    event.preventDefault();
+    console.log(this.state.email, this.state.password);
+
+    try {
+      const email = this.state.email;
+      const password = this.state.password;
+      _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().signInWithEmailAndPassword(email, password).then(function () {
+        next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/success");
+      }).catch(function (e) {
+        console.log(e);
+        console.log("login failed");
+      });
+    } catch (e) {
+      console.log("oops");
+    }
   }
 
   render() {
@@ -191,7 +280,7 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 89
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -202,19 +291,19 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 90
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 98
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 98
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -225,19 +314,19 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 99
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 107
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 107
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -245,9 +334,10 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         display: "inline"
       },
       className: "landing-button",
+      onClick: this.handleSignIn,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 108
       },
       __self: this
     }, "Sign In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -255,9 +345,10 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         display: "inline"
       },
       className: "landing-button",
+      onClick: this.handleSignUp,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 112
       },
       __self: this
     }, "Sign Up"));
@@ -1086,6 +1177,50 @@ module.exports = require("core-js/library/fn/object/get-own-property-descriptor"
 
 /***/ }),
 
+/***/ "firebase/app":
+/*!*******************************!*\
+  !*** external "firebase/app" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/app");
+
+/***/ }),
+
+/***/ "firebase/auth":
+/*!********************************!*\
+  !*** external "firebase/auth" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/auth");
+
+/***/ }),
+
+/***/ "firebase/firestore":
+/*!*************************************!*\
+  !*** external "firebase/firestore" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/firestore");
+
+/***/ }),
+
+/***/ "firebase/storage":
+/*!***********************************!*\
+  !*** external "firebase/storage" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/storage");
+
+/***/ }),
+
 /***/ "next-server/dist/lib/router-context":
 /*!******************************************************!*\
   !*** external "next-server/dist/lib/router-context" ***!
@@ -1127,6 +1262,17 @@ module.exports = require("next-server/dist/lib/router/router");
 /***/ (function(module, exports) {
 
 module.exports = require("next-server/dist/lib/utils");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
