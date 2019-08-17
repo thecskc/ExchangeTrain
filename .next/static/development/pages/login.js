@@ -219,7 +219,7 @@ function (_Component) {
                   email = this.state.email;
                   password = this.state.password;
                   _components_firebase__WEBPACK_IMPORTED_MODULE_10__["default"].auth().createUserWithEmailAndPassword(email, password).then(function () {
-                    next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push("/success");
+                    next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push("/start");
                   })["catch"](function (e) {
                     console.log(e);
                     console.log("signup failed");
@@ -260,7 +260,7 @@ function (_Component) {
                   email = this.state.email;
                   password = this.state.password;
                   _components_firebase__WEBPACK_IMPORTED_MODULE_10__["default"].auth().signInWithEmailAndPassword(email, password).then(function () {
-                    next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push("/success");
+                    next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push("/start");
                   })["catch"](function (e) {
                     console.log(e);
                     console.log("login failed");

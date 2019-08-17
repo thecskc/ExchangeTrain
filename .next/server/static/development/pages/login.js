@@ -255,7 +255,7 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       const email = this.state.email;
       const password = this.state.password;
       _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().createUserWithEmailAndPassword(email, password).then(function () {
-        next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/success");
+        next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/start");
       }).catch(function (e) {
         console.log(e);
         console.log("signup failed");
@@ -273,7 +273,7 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       const email = this.state.email;
       const password = this.state.password;
       _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().signInWithEmailAndPassword(email, password).then(function () {
-        next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/success");
+        next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/start");
       }).catch(function (e) {
         console.log(e);
         console.log("login failed");
