@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -144,10 +144,10 @@ const storage = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.storage();
 
 /***/ }),
 
-/***/ "./pages/start.js":
-/*!************************!*\
-  !*** ./pages/start.js ***!
-  \************************/
+/***/ "./pages/profile.js":
+/*!**************************!*\
+  !*** ./pages/profile.js ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -158,27 +158,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\start.js";
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/TextField */ "@material-ui/core/TextField");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\profile.js";
 
 
 
 
-class Start extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+
+
+class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
     this.state = {
       "user": null,
-      "loaded": false
+      "loaded": false,
+      "displayName": "",
+      "bio": ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.loadedProfile = this.loadedProfile.bind(this);
+    this.editProfile = this.editProfile.bind(this);
+  }
+
+  handleChange(event) {
+    event.preventDefault();
+    const nameVal = event.target.name;
+    const valueVal = event.target.value;
+    this.setState({
+      [nameVal]: valueVal
+    });
+  }
+
+  loadedProfile(user, displayName, bio) {
+    this.setState({
+      "user": user,
+      "loaded": true,
+      "displayName": displayName,
+      "bio": bio
+    });
+  }
+
+  editProfile(event) {
+    event.preventDefault();
+    const dbRef = _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore().collection("Profiles").doc(this.state.user.uid).set({
+      "displayName": this.state.displayName,
+      "bio": this.state.bio
+    }).then(() => {
+      console.log("written");
+      this.loadedProfile(this.state.user, this.state.displayName, this.state.bio);
+    }).catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  getUserProfile(user) {
+    const db = _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore();
+    const docRef = db.collection("Profiles").doc(user.uid);
+    docRef.get().then(doc => {
+      if (doc.exists) {
+        console.log("querying doc");
+        console.log(doc.data());
+        this.loadedProfile(user, doc.data().displayName, doc.data().bio);
+      } else {
+        console.log("no document");
+        this.loadedProfile(user, "", "");
+      }
+    }).catch(function (error) {
+      console.log(error);
+    });
   }
 
   componentDidMount() {
     _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().onAuthStateChanged(user => {
       if (user) {
-        this.setState({
-          "user": user,
-          "loaded": true
-        }); // User is signed in.
+        console.log("user");
+        console.log(user);
+        this.getUserProfile(user);
       } else {
         this.setState({
           "loaded": true,
@@ -189,30 +247,68 @@ class Start extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    if (this.state.loaded === true) {
+    if (this.state.loaded) {
       if (this.state.user) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 92
           },
           __self: this
-        }, "Welcome");
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "displayName",
+          placeholder: this.state.displayName,
+          value: this.state.displayName,
+          onChange: this.handleChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 102
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 102
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "bio",
+          placeholder: this.state.bio,
+          value: this.state.bio,
+          onChange: this.handleChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 103
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.editProfile,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112
+          },
+          __self: this
+        }, "Edit"));
       } else {
-        next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/index");
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 122
           },
           __self: this
         }, "Not logged in");
       }
     } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 127
         },
         __self: this
       }, "Loading");
@@ -221,19 +317,41 @@ class Start extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Start);
+/* harmony default export */ __webpack_exports__["default"] = (Profile);
 
 /***/ }),
 
-/***/ 5:
-/*!******************************!*\
-  !*** multi ./pages/start.js ***!
-  \******************************/
+/***/ 3:
+/*!********************************!*\
+  !*** multi ./pages/profile.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\santh\WebstormProjects\ExchangeTrain\pages\start.js */"./pages/start.js");
+module.exports = __webpack_require__(/*! C:\Users\santh\WebstormProjects\ExchangeTrain\pages\profile.js */"./pages/profile.js");
 
+
+/***/ }),
+
+/***/ "@material-ui/core/Button":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/Button" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Button");
+
+/***/ }),
+
+/***/ "@material-ui/core/TextField":
+/*!**********************************************!*\
+  !*** external "@material-ui/core/TextField" ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/TextField");
 
 /***/ }),
 
@@ -315,4 +433,4 @@ module.exports = require("underscore");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=start.js.map
+//# sourceMappingURL=profile.js.map

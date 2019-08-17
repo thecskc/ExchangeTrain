@@ -39389,7 +39389,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 10:
+/***/ 2:
 /*!************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fstart&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cstart.js ***!
   \************************************************************************************************************************************************/
@@ -39412,5 +39412,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[10,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=start.js.map

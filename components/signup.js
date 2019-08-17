@@ -92,7 +92,7 @@ class SignUp extends Component {
                     type="email"
                     name="email"
                     placeholder="Email"
-                    value={this.email}
+                    value={this.state.email}
                     onChange={this.handleChange}
                 />
                 <br/><br/>
@@ -101,7 +101,7 @@ class SignUp extends Component {
                     type="password"
                     name="password"
                     placeholder="Password"
-                    value={this.password}
+                    value={this.state.password}
                     onChange={this.handleChange}
                 />
                 <br/><br/>
