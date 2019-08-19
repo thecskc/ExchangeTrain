@@ -9,10 +9,29 @@ class Profile extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {"user": null, "loaded": false, "displayName": "", "bio": ""};
+        this.state = {
+            "user": null,
+            "loaded": false,
+            "displayName": "",
+            "bio": "",
+            "coachcode": "",
+            "schoolcompany": "",
+            "location": ""
+        };
         this.handleChange = this.handleChange.bind(this);
         this.loadedProfile = this.loadedProfile.bind(this);
         this.editProfile = this.editProfile.bind(this);
+        this.handleAccessCode = this.handleAccessCode.bind(this);
+
+    }
+
+
+    handleAccessCode(event) {
+
+        event.preventDefault();
+        const valueVal = event.target.value;
+        this.setState({"coachcode": valueVal})
+
     }
 
     handleChange(event) {
@@ -22,19 +41,34 @@ class Profile extends Component {
         this.setState({[nameVal]: valueVal})
     }
 
-    loadedProfile(user,displayName, bio) {
-        this.setState({"user":user,"loaded": true, "displayName": displayName, "bio": bio});
+    loadedProfile(user, displayName, bio, location, schoolcompany) {
+        this.setState(
+            {
+                "user": user,
+                "loaded": true,
+                "displayName": displayName,
+                "bio": bio,
+                "schoolcompany": schoolcompany,
+                "location": location
+            }
+        );
 
     }
 
     editProfile(event) {
         event.preventDefault();
+
+
+
+
         const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set({
             "displayName": this.state.displayName,
-            "bio": this.state.bio
-        }).then( () => {
+            "bio": this.state.bio,
+            "location": this.state.location,
+            "schoolcompany": this.state.schoolcompany
+        }).then(() => {
             console.log("written");
-            this.loadedProfile(this.state.user,this.state.displayName,this.state.bio);
+            this.loadedProfile(this.state.user, this.state.displayName, this.state.bio, this.state.location, this.state.schoolcompany);
         }).catch(function (error) {
             console.log(error);
 
@@ -49,12 +83,12 @@ class Profile extends Component {
             if (doc.exists) {
                 console.log("querying doc");
                 console.log(doc.data());
-                this.loadedProfile(user,doc.data().displayName, doc.data().bio);
+                this.loadedProfile(user, doc.data().displayName, doc.data().bio, doc.data().location, doc.data().schoolcompany);
 
             }
             else {
                 console.log("no document");
-                this.loadedProfile(user,"", "")
+                this.loadedProfile(user, "", "", "", "")
 
             }
         }).catch(function (error) {
@@ -95,23 +129,72 @@ class Profile extends Component {
                         <input
 
                             name="displayName"
-                            placeholder={this.state.displayName}
+                            placeholder="Enter Name"
                             value={this.state.displayName}
                             onChange={this.handleChange}
                         />
                         <br/><br/>
+
+                        <input
+                            name="schoolcompany"
+                            placeholder="School/Company"
+                            value={this.state.schoolcompany}
+                            onChange={this.handleChange}
+                        />
+
+                        <br/><br/>
+
+                        <input
+                            name="location"
+                            placeholder="Location"
+                            value={this.state.location}
+                            onChange={this.handleChange}
+                        />
+
+
+                        <br/><br/>
+
+
                         <input
 
                             name="bio"
-                            placeholder={this.state.bio}
+                            placeholder="Bio"
                             value={this.state.bio}
                             onChange={this.handleChange}
+                        />
+
+
+                        <br/><br/>
+
+                        <input
+                            name="coachcode"
+                            placeholder="Coach Access Code"
+                            value=""
+                            onChange={this.handleAccessCode}
                         />
 
 
                         <button onClick={this.editProfile}>
                             Edit
                         </button>
+
+                        {(() => {
+
+                            if (this.state.isCoach) {
+                                return (
+
+
+                                    <input
+                                        name="calendlylink"
+                                        placeholder="Enter your calendly link"
+                                        value=""
+                                        onChange={this.handleChange}
+                                    />
+                                )
+                            }
+
+
+                        })()}
 
                     </form>
 

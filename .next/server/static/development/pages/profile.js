@@ -176,7 +176,10 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       "user": null,
       "loaded": false,
       "displayName": "",
-      "bio": ""
+      "bio": "",
+      "coachcode": "",
+      "schoolcompany": "",
+      "location": ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.loadedProfile = this.loadedProfile.bind(this);
@@ -192,12 +195,14 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
   }
 
-  loadedProfile(user, displayName, bio) {
+  loadedProfile(user, displayName, bio, location, schoolcompany) {
     this.setState({
       "user": user,
       "loaded": true,
       "displayName": displayName,
-      "bio": bio
+      "bio": bio,
+      "schoolcompany": schoolcompany,
+      "location": location
     });
   }
 
@@ -205,10 +210,12 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     event.preventDefault();
     const dbRef = _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore().collection("Profiles").doc(this.state.user.uid).set({
       "displayName": this.state.displayName,
-      "bio": this.state.bio
+      "bio": this.state.bio,
+      "location": this.state.location,
+      "schoolcompany": this.state.schoolcompany
     }).then(() => {
       console.log("written");
-      this.loadedProfile(this.state.user, this.state.displayName, this.state.bio);
+      this.loadedProfile(this.state.user, this.state.displayName, this.state.bio, this.state.location, this.state.schoolcompany);
     }).catch(function (error) {
       console.log(error);
     });
@@ -221,10 +228,10 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       if (doc.exists) {
         console.log("querying doc");
         console.log(doc.data());
-        this.loadedProfile(user, doc.data().displayName, doc.data().bio);
+        this.loadedProfile(user, doc.data().displayName, doc.data().bio, doc.data().location, doc.data().schoolcompany);
       } else {
         console.log("no document");
-        this.loadedProfile(user, "", "");
+        this.loadedProfile(user, "", "", "", "");
       }
     }).catch(function (error) {
       console.log(error);
@@ -252,46 +259,112 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92
+            lineNumber: 112
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "displayName",
-          placeholder: this.state.displayName,
+          placeholder: "Enter Name",
           value: this.state.displayName,
           onChange: this.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 115
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 102
+            lineNumber: 122
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 102
+            lineNumber: 122
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "schoolcompany",
+          placeholder: "School/Company",
+          value: this.state.schoolcompany,
+          onChange: this.handleChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 124
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 131
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 131
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "location",
+          placeholder: "Location",
+          value: this.state.location,
+          onChange: this.handleChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 133
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 141
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 141
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           name: "bio",
-          placeholder: this.state.bio,
+          placeholder: "Bio",
           value: this.state.bio,
           onChange: this.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103
+            lineNumber: 144
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 153
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 153
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: "coachcode",
+          placeholder: "Coach Access Code",
+          value: "",
+          onChange: this.handleChange,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 155
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: this.editProfile,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112
+            lineNumber: 163
           },
           __self: this
         }, "Edit"));
@@ -299,7 +372,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 122
+            lineNumber: 174
           },
           __self: this
         }, "Not logged in");
@@ -308,7 +381,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 179
         },
         __self: this
       }, "Loading");
