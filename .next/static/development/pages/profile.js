@@ -59011,15 +59011,36 @@ function (_Component) {
       "bio": "",
       "coachcode": "",
       "schoolcompany": "",
-      "location": ""
+      "location": "",
+      "isCoach": false,
+      "calendlylink": ""
     };
     _this.handleChange = _this.handleChange.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     _this.loadedProfile = _this.loadedProfile.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     _this.editProfile = _this.editProfile.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
+    _this.handleAccessCode = _this.handleAccessCode.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Profile, [{
+    key: "handleAccessCode",
+    value: function handleAccessCode() {
+      console.log("env code");
+      console.log("exchange800414b892");
+
+      if (this.state.coachcode === "exchange800414b892".toString()) {
+        this.setState({
+          "coachcode": this.state.coachcode,
+          "isCoach": true
+        });
+      } else {
+        this.setState({
+          "coachcode": this.state.coachcode,
+          "isCoach": false
+        });
+      }
+    }
+  }, {
     key: "handleChange",
     value: function handleChange(event) {
       event.preventDefault();
@@ -59029,15 +59050,36 @@ function (_Component) {
     }
   }, {
     key: "loadedProfile",
-    value: function loadedProfile(user, displayName, bio, location, schoolcompany) {
-      this.setState({
-        "user": user,
-        "loaded": true,
-        "displayName": displayName,
-        "bio": bio,
-        "schoolcompany": schoolcompany,
-        "location": location
-      });
+    value: function loadedProfile(inputMap) {
+      var stateMap = {};
+
+      for (var key in inputMap) {
+        if (inputMap.hasOwnProperty(key)) {
+          stateMap[key] = inputMap[key];
+        }
+      }
+
+      console.log("loading profile setting state");
+      console.log(stateMap);
+      this.setState(stateMap);
+    }
+  }, {
+    key: "settingData",
+    value: function settingData() {
+      var setMap = {
+        "displayName": this.state.displayName,
+        "bio": this.state.bio,
+        "location": this.state.location,
+        "schoolcompany": this.state.schoolcompany
+      };
+
+      if (this.state.isCoach) {
+        setMap["isCoach"] = true;
+        setMap["coachcode"] = this.state.coachcode;
+        setMap["calendlylink"] = this.state.calendlylink;
+      }
+
+      return setMap;
     }
   }, {
     key: "editProfile",
@@ -59045,15 +59087,24 @@ function (_Component) {
       var _this2 = this;
 
       event.preventDefault();
-      var dbRef = _components_firebase__WEBPACK_IMPORTED_MODULE_8__["default"].firestore().collection("Profiles").doc(this.state.user.uid).set({
-        "displayName": this.state.displayName,
-        "bio": this.state.bio,
-        "location": this.state.location,
-        "schoolcompany": this.state.schoolcompany
-      }).then(function () {
+      this.handleAccessCode();
+      var dbRef = _components_firebase__WEBPACK_IMPORTED_MODULE_8__["default"].firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(function () {
         console.log("written");
+        var userProfile = {
+          "user": _this2.state.user,
+          "displayName": _this2.state.displayName,
+          "bio": _this2.state.bio,
+          "location": _this2.state.location,
+          "schoolcompany": _this2.state.schoolcompany
+        };
 
-        _this2.loadedProfile(_this2.state.user, _this2.state.displayName, _this2.state.bio, _this2.state.location, _this2.state.schoolcompany);
+        if (_this2.state.isCoach) {
+          userProfile["isCoach"] = true;
+          userProfile["coachcode"] = _this2.state.coachcode;
+          userProfile["calendlylink"] = _this2.state.calendlylink;
+        }
+
+        _this2.loadedProfile(userProfile);
       })["catch"](function (error) {
         console.log(error);
       });
@@ -59069,12 +59120,34 @@ function (_Component) {
         if (doc.exists) {
           console.log("querying doc");
           console.log(doc.data());
+          var userProfile = {
+            "user": user,
+            "displayName": doc.data().displayName,
+            "bio": doc.data().bio,
+            "location": doc.data().location,
+            "schoolcompany": doc.data().schoolcompany,
+            "loaded": true
+          };
 
-          _this3.loadedProfile(user, doc.data().displayName, doc.data().bio, doc.data().location, doc.data().schoolcompany);
+          if (doc.data().isCoach) {
+            userProfile["isCoach"] = true;
+            userProfile["coachcode"] = doc.data().coachcode;
+            userProfile["calendlylink"] = doc.data().calendlylink;
+          }
+
+          _this3.loadedProfile(userProfile);
         } else {
           console.log("no document");
+          var _userProfile = {
+            "user": user,
+            "displayName": "",
+            "bio": "",
+            "location": "",
+            "schoolcompany": "",
+            "loaded": true
+          };
 
-          _this3.loadedProfile(user, "", "", "", "");
+          _this3.loadedProfile(_userProfile);
         }
       })["catch"](function (error) {
         console.log(error);
@@ -59102,12 +59175,14 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this5 = this;
+
       if (this.state.loaded) {
         if (this.state.user) {
           return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 112
+              lineNumber: 193
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -59117,19 +59192,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 115
+              lineNumber: 196
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 122
+              lineNumber: 203
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 122
+              lineNumber: 203
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -59139,19 +59214,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 124
+              lineNumber: 205
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 131
+              lineNumber: 212
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 131
+              lineNumber: 212
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -59161,19 +59236,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 133
+              lineNumber: 214
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 141
+              lineNumber: 222
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 141
+              lineNumber: 222
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -59183,44 +59258,58 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 144
+              lineNumber: 225
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 153
+              lineNumber: 234
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 153
+              lineNumber: 234
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
             name: "coachcode",
             placeholder: "Coach Access Code",
-            value: "",
+            value: this.state.coachcode,
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 155
+              lineNumber: 236
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
             onClick: this.editProfile,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 163
+              lineNumber: 244
             },
             __self: this
-          }, "Edit"));
+          }, "Edit"), function () {
+            if (_this5.state.isCoach) {
+              return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+                name: "calendlylink",
+                placeholder: "Enter your calendly link",
+                value: _this5.state.calendlylink,
+                onChange: _this5.handleChange,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 253
+                },
+                __self: this
+              });
+            }
+          }());
         } else {
           return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 174
+              lineNumber: 271
             },
             __self: this
           }, "Not logged in");
@@ -59229,7 +59318,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 179
+            lineNumber: 276
           },
           __self: this
         }, "Loading");

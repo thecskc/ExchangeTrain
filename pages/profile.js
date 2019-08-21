@@ -16,7 +16,9 @@ class Profile extends Component {
             "bio": "",
             "coachcode": "",
             "schoolcompany": "",
-            "location": ""
+            "location": "",
+            "isCoach":false,
+            "calendlylink":""
         };
         this.handleChange = this.handleChange.bind(this);
         this.loadedProfile = this.loadedProfile.bind(this);
@@ -26,11 +28,19 @@ class Profile extends Component {
     }
 
 
-    handleAccessCode(event) {
+    handleAccessCode() {
 
-        event.preventDefault();
-        const valueVal = event.target.value;
-        this.setState({"coachcode": valueVal})
+
+        console.log("env code");
+        console.log(process.env.COACH_CODE);
+
+        if(this.state.coachcode===process.env.COACH_CODE.toString()) {
+            this.setState({"coachcode": this.state.coachcode, "isCoach": true})
+        }
+        else{
+            this.setState({"coachcode": this.state.coachcode, "isCoach": false})
+        }
+
 
     }
 
@@ -41,34 +51,68 @@ class Profile extends Component {
         this.setState({[nameVal]: valueVal})
     }
 
-    loadedProfile(user, displayName, bio, location, schoolcompany) {
-        this.setState(
-            {
-                "user": user,
-                "loaded": true,
-                "displayName": displayName,
-                "bio": bio,
-                "schoolcompany": schoolcompany,
-                "location": location
+    loadedProfile(inputMap) {
+
+
+        const stateMap = {};
+
+        for(const key in inputMap){
+
+            if(inputMap.hasOwnProperty(key)) {
+                stateMap[key] = inputMap[key];
             }
+        }
+
+        console.log("loading profile setting state");
+
+        console.log(stateMap);
+        this.setState(
+            stateMap
         );
 
+    }
+
+    settingData(){
+
+
+        const setMap = {
+            "displayName": this.state.displayName,
+            "bio": this.state.bio,
+            "location": this.state.location,
+            "schoolcompany": this.state.schoolcompany
+        };
+
+        if(this.state.isCoach){
+            setMap["isCoach"]=true;
+            setMap["coachcode"]=this.state.coachcode;
+            setMap["calendlylink"]=this.state.calendlylink;
+        }
+
+        return setMap;
     }
 
     editProfile(event) {
         event.preventDefault();
 
 
+        this.handleAccessCode();
 
-
-        const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set({
-            "displayName": this.state.displayName,
-            "bio": this.state.bio,
-            "location": this.state.location,
-            "schoolcompany": this.state.schoolcompany
-        }).then(() => {
+        const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(() => {
             console.log("written");
-            this.loadedProfile(this.state.user, this.state.displayName, this.state.bio, this.state.location, this.state.schoolcompany);
+            const userProfile={
+                "user":this.state.user,
+                "displayName":this.state.displayName,
+                "bio":this.state.bio,
+                "location":this.state.location,
+                "schoolcompany":this.state.schoolcompany
+
+            };
+            if(this.state.isCoach){
+                userProfile["isCoach"]=true;
+                userProfile["coachcode"]=this.state.coachcode;
+                userProfile["calendlylink"]=this.state.calendlylink;
+            }
+            this.loadedProfile(userProfile);
         }).catch(function (error) {
             console.log(error);
 
@@ -83,12 +127,35 @@ class Profile extends Component {
             if (doc.exists) {
                 console.log("querying doc");
                 console.log(doc.data());
-                this.loadedProfile(user, doc.data().displayName, doc.data().bio, doc.data().location, doc.data().schoolcompany);
+
+                const userProfile={
+                    "user":user,
+                    "displayName":doc.data().displayName,
+                    "bio":doc.data().bio,
+                    "location":doc.data().location,
+                    "schoolcompany":doc.data().schoolcompany,
+                    "loaded":true
+                };
+
+                if(doc.data().isCoach){
+                    userProfile["isCoach"]=true;
+                    userProfile["coachcode"]=doc.data().coachcode;
+                    userProfile["calendlylink"]=doc.data().calendlylink;
+                }
+                this.loadedProfile(userProfile);
 
             }
             else {
                 console.log("no document");
-                this.loadedProfile(user, "", "", "", "")
+                const userProfile={
+                    "user":user,
+                    "displayName":"",
+                    "bio":"",
+                    "location":"",
+                    "schoolcompany":"",
+                    "loaded":true
+                };
+                this.loadedProfile(userProfile)
 
             }
         }).catch(function (error) {
@@ -169,8 +236,8 @@ class Profile extends Component {
                         <input
                             name="coachcode"
                             placeholder="Coach Access Code"
-                            value=""
-                            onChange={this.handleAccessCode}
+                            value={this.state.coachcode}
+                            onChange={this.handleChange}
                         />
 
 
@@ -183,11 +250,10 @@ class Profile extends Component {
                             if (this.state.isCoach) {
                                 return (
 
-
                                     <input
                                         name="calendlylink"
                                         placeholder="Enter your calendly link"
-                                        value=""
+                                        value={this.state.calendlylink}
                                         onChange={this.handleChange}
                                     />
                                 )
