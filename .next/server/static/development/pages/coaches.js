@@ -113,7 +113,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
 /* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Dialog */ "@material-ui/core/Dialog");
+/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/DialogActions */ "@material-ui/core/DialogActions");
+/* harmony import */ var _material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/DialogContent */ "@material-ui/core/DialogContent");
+/* harmony import */ var _material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/DialogContentText */ "@material-ui/core/DialogContentText");
+/* harmony import */ var _material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/DialogTitle */ "@material-ui/core/DialogTitle");
+/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10__);
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\Coach.js";
+
+
+
+
+
 
 
 
@@ -124,38 +139,105 @@ var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\component
 class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
+    this.sendInterest = this.sendInterest.bind(this);
+    this.state = {
+      "showDialog": false
+    };
+    this.handleDialogClose = this.handleDialogClose.bind(this);
+  }
+
+  handleDialogClose(event) {
+    event.preventDefault();
+    this.setState({
+      "showDialog": false
+    });
+  }
+
+  sendInterest(event) {
+    event.preventDefault();
+
+    if (this.props.coachid !== this.props.userid) {
+      const dbRef = _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore().collection("CallRequests").add({
+        "user": this.props.userid,
+        "coach": this.props.coachid
+      }).then(() => {
+        this.setState({
+          "showDialog": true
+        });
+      });
+    }
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    console.log(this.props.name + "'s id is " + this.props.id);
+    let dialogShow;
+
+    if (this.state.showDialog) {
+      dialogShow = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        open: this.state.showDialog,
+        onClose: this.handleDialogClose,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: this
+      }, "Your Request Has Been Sent "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, "This coach will respond after reviewing your profile"))));
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, dialogShow, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "card",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 65
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "heading-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 67
       },
       __self: this
     }, this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "subheading-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 71
       },
       __self: this
     }, this.props.company), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "paragraph",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 75
       },
       __self: this
-    }, this.props.bio));
+    }, this.props.bio), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: this.sendInterest,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79
+      },
+      __self: this
+    }, "Get on a call")));
   }
 
 }
@@ -244,7 +326,9 @@ class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     super(props);
     this.getCoaches = this.getCoaches.bind(this);
     this.state = {
-      "loadedCoaches": false
+      "loadedCoaches": false,
+      "loaded": false,
+      "user": null
     };
     this.coaches = [];
     console.log("constructor called");
@@ -255,13 +339,15 @@ class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       let count = 1;
       snapshot.forEach(doc => {
         this.coaches.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Coach__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          key: count++,
+          key: doc.id,
+          coachid: doc.id,
           name: doc.data().displayName,
           bio: doc.data().bio,
           company: doc.data().schoolcompany,
+          userid: this.state.user.uid,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 38
           },
           __self: this
         }));
@@ -277,42 +363,77 @@ class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
   componentDidMount() {
     this.getCoaches();
+    _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().onAuthStateChanged(user => {
+      if (user) {
+        console.log("user");
+        console.log(user);
+        this.setState({
+          "loaded": true,
+          "user": user
+        });
+      } else {
+        this.setState({
+          "loaded": true,
+          "user": null
+        });
+      }
+    });
   }
 
   render() {
-    if (this.state.loadedCoaches) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "coaches-container",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        style: {
-          "alignSelf": "center"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 69
-        },
-        __self: this
-      }, "Coaches"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-section",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 71
-        },
-        __self: this
-      }, this.coaches));
+    if (this.state.loaded) {
+      if (this.state.user) {
+        if (this.state.loadedCoaches) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "coaches-container",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 88
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+            style: {
+              "alignSelf": "center"
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 90
+            },
+            __self: this
+          }, "Coaches"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "card-section",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 92
+            },
+            __self: this
+          }, this.coaches));
+        } else {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 102
+            },
+            __self: this
+          }, "Loading coaches");
+        }
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106
+          },
+          __self: this
+        }, "Not Logged In");
+      }
     } else {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 110
         },
         __self: this
-      }, "Loading coaches");
+      }, "Loading");
     }
   }
 
@@ -364,6 +485,61 @@ module.exports = __webpack_require__(/*! C:\Users\santh\WebstormProjects\Exchang
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Button");
+
+/***/ }),
+
+/***/ "@material-ui/core/Dialog":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/Dialog" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Dialog");
+
+/***/ }),
+
+/***/ "@material-ui/core/DialogActions":
+/*!**************************************************!*\
+  !*** external "@material-ui/core/DialogActions" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/DialogActions");
+
+/***/ }),
+
+/***/ "@material-ui/core/DialogContent":
+/*!**************************************************!*\
+  !*** external "@material-ui/core/DialogContent" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/DialogContent");
+
+/***/ }),
+
+/***/ "@material-ui/core/DialogContentText":
+/*!******************************************************!*\
+  !*** external "@material-ui/core/DialogContentText" ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/DialogContentText");
+
+/***/ }),
+
+/***/ "@material-ui/core/DialogTitle":
+/*!************************************************!*\
+  !*** external "@material-ui/core/DialogTitle" ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/DialogTitle");
 
 /***/ }),
 

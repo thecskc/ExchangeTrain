@@ -14,6 +14,8 @@ class Coaches extends Component {
 
         this.state = {
             "loadedCoaches": false,
+            "loaded": false,
+            "user": null
 
         };
         this.coaches = [];
@@ -34,13 +36,15 @@ class Coaches extends Component {
                     (doc) => {
                         this.coaches.push(
                             <Coach
-                                key={count++}
+                                key={doc.id}
+                                coachid={doc.id}
                                 name={doc.data().displayName}
                                 bio={doc.data().bio}
                                 company={doc.data().schoolcompany}
+                                userid={this.state.user.uid}
                             />
                         );
-                      
+
                     });
 
                 console.log("Coaches list");
@@ -57,28 +61,53 @@ class Coaches extends Component {
 
     componentDidMount() {
         this.getCoaches();
+
+
+        firebase.auth().onAuthStateChanged((user) => {
+
+            if (user) {
+                console.log("user");
+                console.log(user);
+                this.setState({"loaded": true, "user": user});
+            }
+            else {
+                this.setState({"loaded": true, "user": null});
+            }
+        });
+
+
     }
 
     render() {
 
+        if (this.state.loaded) {
+            if (this.state.user) {
 
-        if (this.state.loadedCoaches) {
-            return (
-                <div className="coaches-container">
+                if (this.state.loadedCoaches) {
+                    return (
+                        <div className="coaches-container">
 
-                    <h1 style={{"alignSelf": "center"}}>Coaches</h1>
+                            <h1 style={{"alignSelf": "center"}}>Coaches</h1>
 
-                    <div className="card-section">
-                        {this.coaches}
-                    </div>
+                            <div className="card-section">
+                                {this.coaches}
+                            </div>
 
 
-                </div>
-            );
+                        </div>
+                    );
 
+                }
+                else {
+                    return (<h1>Loading coaches</h1>);
+                }
+            }
+            else{
+                return (<h1>Not Logged In</h1>)
+            }
         }
-        else {
-            return (<h1>Loading coaches</h1>);
+        else{
+            return (<h1>Loading</h1>)
         }
     }
 

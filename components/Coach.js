@@ -4,33 +4,85 @@ import Router from 'next/router';
 import TextField from "@material-ui/core/TextField"
 import Button from '@material-ui/core/Button';
 import "../styling/style.css"
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 class Coach extends Component {
 
     constructor(props) {
         super(props);
+        this.sendInterest = this.sendInterest.bind(this);
+        this.state = {"showDialog": false};
+        this.handleDialogClose = this.handleDialogClose.bind(this);
+    }
+
+    handleDialogClose(event) {
+        event.preventDefault();
+        this.setState({"showDialog": false});
+    }
+
+
+    sendInterest(event) {
+        event.preventDefault();
+
+        if (this.props.coachid !== this.props.userid) {
+            const dbRef = firebase.firestore().collection("CallRequests").add({
+                "user": this.props.userid,
+                "coach": this.props.coachid
+            }).then(() => {
+
+                this.setState({"showDialog": true});
+            })
+        }
+
     }
 
     render() {
 
+        console.log(this.props.name + "'s id is " + this.props.id);
+        let dialogShow;
+        if (this.state.showDialog) {
+            dialogShow = <>
+                <Dialog open={this.state.showDialog} onClose={this.handleDialogClose}>
+                    <DialogTitle>Your Request Has Been Sent </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            This coach will respond after reviewing your profile
+                        </DialogContentText>
+                    </DialogContent>
+                </Dialog>
+
+            </>
+        }
+
         return (
-            <div className="card">
+            <>
+                {dialogShow}
+                <div className="card">
 
-                <div className="heading-2">
-                    {this.props.name}
+                    <div className="heading-2">
+                        {this.props.name}
+                    </div>
+
+                    <div className="subheading-2">
+                        {this.props.company}
+                    </div>
+
+                    <div className="paragraph">
+                        {this.props.bio}
+                    </div>
+
+                    <button onClick={this.sendInterest}>
+                        Get on a call
+                    </button>
+
+
                 </div>
-
-                <div className="subheading-2">
-                    {this.props.company}
-                </div>
-
-                <div className="paragraph">
-                    {this.props.bio}
-                </div>
-
-
-            </div>
+            </>
 
 
         )
