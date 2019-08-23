@@ -3,6 +3,7 @@ import firebase from "../components/firebase";
 import Router from 'next/router';
 import TextField from "@material-ui/core/TextField"
 import Button from '@material-ui/core/Button';
+import "../styling/style.css"
 
 
 class Profile extends Component {
@@ -17,8 +18,8 @@ class Profile extends Component {
             "coachcode": "",
             "schoolcompany": "",
             "location": "",
-            "isCoach":false,
-            "calendlylink":""
+            "isCoach": false,
+            "calendlylink": ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.loadedProfile = this.loadedProfile.bind(this);
@@ -34,10 +35,10 @@ class Profile extends Component {
         console.log("env code");
         console.log(process.env.COACH_CODE);
 
-        if(this.state.coachcode===process.env.COACH_CODE.toString()) {
+        if (this.state.coachcode === process.env.COACH_CODE.toString()) {
             this.setState({"coachcode": this.state.coachcode, "isCoach": true})
         }
-        else{
+        else {
             this.setState({"coachcode": this.state.coachcode, "isCoach": false})
         }
 
@@ -56,9 +57,9 @@ class Profile extends Component {
 
         const stateMap = {};
 
-        for(const key in inputMap){
+        for (const key in inputMap) {
 
-            if(inputMap.hasOwnProperty(key)) {
+            if (inputMap.hasOwnProperty(key)) {
                 stateMap[key] = inputMap[key];
             }
         }
@@ -72,7 +73,7 @@ class Profile extends Component {
 
     }
 
-    settingData(){
+    settingData() {
 
 
         const setMap = {
@@ -82,10 +83,10 @@ class Profile extends Component {
             "schoolcompany": this.state.schoolcompany
         };
 
-        if(this.state.isCoach){
-            setMap["isCoach"]=true;
-            setMap["coachcode"]=this.state.coachcode;
-            setMap["calendlylink"]=this.state.calendlylink;
+        if (this.state.isCoach) {
+            setMap["isCoach"] = true;
+            setMap["coachcode"] = this.state.coachcode;
+            setMap["calendlylink"] = this.state.calendlylink;
         }
 
         return setMap;
@@ -99,18 +100,18 @@ class Profile extends Component {
 
         const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(() => {
             console.log("written");
-            const userProfile={
-                "user":this.state.user,
-                "displayName":this.state.displayName,
-                "bio":this.state.bio,
-                "location":this.state.location,
-                "schoolcompany":this.state.schoolcompany
+            const userProfile = {
+                "user": this.state.user,
+                "displayName": this.state.displayName,
+                "bio": this.state.bio,
+                "location": this.state.location,
+                "schoolcompany": this.state.schoolcompany
 
             };
-            if(this.state.isCoach){
-                userProfile["isCoach"]=true;
-                userProfile["coachcode"]=this.state.coachcode;
-                userProfile["calendlylink"]=this.state.calendlylink;
+            if (this.state.isCoach) {
+                userProfile["isCoach"] = true;
+                userProfile["coachcode"] = this.state.coachcode;
+                userProfile["calendlylink"] = this.state.calendlylink;
             }
             this.loadedProfile(userProfile);
         }).catch(function (error) {
@@ -128,32 +129,32 @@ class Profile extends Component {
                 console.log("querying doc");
                 console.log(doc.data());
 
-                const userProfile={
-                    "user":user,
-                    "displayName":doc.data().displayName,
-                    "bio":doc.data().bio,
-                    "location":doc.data().location,
-                    "schoolcompany":doc.data().schoolcompany,
-                    "loaded":true
+                const userProfile = {
+                    "user": user,
+                    "displayName": doc.data().displayName,
+                    "bio": doc.data().bio,
+                    "location": doc.data().location,
+                    "schoolcompany": doc.data().schoolcompany,
+                    "loaded": true
                 };
 
-                if(doc.data().isCoach){
-                    userProfile["isCoach"]=true;
-                    userProfile["coachcode"]=doc.data().coachcode;
-                    userProfile["calendlylink"]=doc.data().calendlylink;
+                if (doc.data().isCoach) {
+                    userProfile["isCoach"] = true;
+                    userProfile["coachcode"] = doc.data().coachcode;
+                    userProfile["calendlylink"] = doc.data().calendlylink;
                 }
                 this.loadedProfile(userProfile);
 
             }
             else {
                 console.log("no document");
-                const userProfile={
-                    "user":user,
-                    "displayName":"",
-                    "bio":"",
-                    "location":"",
-                    "schoolcompany":"",
-                    "loaded":true
+                const userProfile = {
+                    "user": user,
+                    "displayName": "",
+                    "bio": "",
+                    "location": "",
+                    "schoolcompany": "",
+                    "loaded": true
                 };
                 this.loadedProfile(userProfile)
 
@@ -190,79 +191,91 @@ class Profile extends Component {
 
             if (this.state.user) {
                 return (
-                    <form>
 
+                    <div className="container">
 
-                        <input
+                        <div className="card-section">
+                            <div className="card">
+                                <form>
 
-                            name="displayName"
-                            placeholder="Enter Name"
-                            value={this.state.displayName}
-                            onChange={this.handleChange}
-                        />
-                        <br/><br/>
-
-                        <input
-                            name="schoolcompany"
-                            placeholder="School/Company"
-                            value={this.state.schoolcompany}
-                            onChange={this.handleChange}
-                        />
-
-                        <br/><br/>
-
-                        <input
-                            name="location"
-                            placeholder="Location"
-                            value={this.state.location}
-                            onChange={this.handleChange}
-                        />
-
-
-                        <br/><br/>
-
-
-                        <input
-
-                            name="bio"
-                            placeholder="Bio"
-                            value={this.state.bio}
-                            onChange={this.handleChange}
-                        />
-
-
-                        <br/><br/>
-
-                        <input
-                            name="coachcode"
-                            placeholder="Coach Access Code"
-                            value={this.state.coachcode}
-                            onChange={this.handleChange}
-                        />
-
-
-                        <button onClick={this.editProfile}>
-                            Edit
-                        </button>
-
-                        {(() => {
-
-                            if (this.state.isCoach) {
-                                return (
 
                                     <input
-                                        name="calendlylink"
-                                        placeholder="Enter your calendly link"
-                                        value={this.state.calendlylink}
+
+                                        name="displayName"
+                                        placeholder="Enter Name"
+                                        value={this.state.displayName}
                                         onChange={this.handleChange}
                                     />
-                                )
-                            }
+                                    <br/><br/>
+
+                                    <input
+                                        name="schoolcompany"
+                                        placeholder="School/Company"
+                                        value={this.state.schoolcompany}
+                                        onChange={this.handleChange}
+                                    />
+
+                                    <br/><br/>
+
+                                    <input
+                                        name="location"
+                                        placeholder="Location"
+                                        value={this.state.location}
+                                        onChange={this.handleChange}
+                                    />
 
 
-                        })()}
+                                    <br/><br/>
 
-                    </form>
+
+                                    <input
+
+                                        name="bio"
+                                        placeholder="Bio"
+                                        value={this.state.bio}
+                                        onChange={this.handleChange}
+                                    />
+
+
+                                    <br/><br/>
+
+                                    <input
+                                        name="coachcode"
+                                        placeholder="Coach Access Code"
+                                        value={this.state.coachcode}
+                                        onChange={this.handleChange}
+                                    />
+
+                                    <br/><br/>
+
+                                    {(() => {
+
+                                        if (this.state.isCoach) {
+                                            return (
+
+                                                <input
+                                                    name="calendlylink"
+                                                    placeholder="Enter your calendly link"
+                                                    value={this.state.calendlylink}
+                                                    onChange={this.handleChange}
+                                                />
+                                            )
+                                        }
+
+
+                                    })()}
+
+
+                                    <br/><br/>
+
+                                    <button onClick={this.editProfile}>
+                                        Edit
+                                    </button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
 
                 );
