@@ -192,9 +192,11 @@ class Profile extends Component {
             if (this.state.user) {
                 return (
 
-                    <div className="container">
+                    <div className="container" style={{"justify-content":"center"}}>
 
-                        <div className="card-section">
+                        <h1 style={{"align-self":"center"}}>Fill Out Your Profile</h1>
+
+                        <div className="card-section" style={{"align-self":"center"}}>
                             <div className="card">
                                 <form>
 
