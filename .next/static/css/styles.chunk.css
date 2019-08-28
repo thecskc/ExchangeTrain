@@ -1,13 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato|Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap);
-.coaches-container{
-    display:flex;
-    flex-direction:column;
-    width:100vw;
-    height:100vh;
-}
-
-
 * {
     box-sizing: border-box;
 }
@@ -337,5 +329,78 @@ footer {
     }
 }
 
+.coaches-container{
+    display:flex;
+    flex-direction:column;
+    width:100vw;
+    height:100vh;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background: #499bea; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #499bea 0%, #207ce5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #499bea 0%,#207ce5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #499bea 0%,#207ce5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5',GradientType=1 );
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav img {
+  right: 0px;
+  position: absolute;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #f4511e;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+.container-login{
+    height:100vh;
+    width:100vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid green;
+
+}
+
+.logincontainer{
+    display:flex;
+    height:75%;
+    width:75%;
+    border: 5px solid red;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
 
 /*# sourceMappingURL=styles.chunk.css.map*/

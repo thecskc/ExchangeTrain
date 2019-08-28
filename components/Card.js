@@ -11,14 +11,14 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
-class Coach extends Component {
+class Card extends Component {
 
     constructor(props) {
         super(props);
-        this.sendInterest = this.sendInterest.bind(this);
-        this.state = {"showDialog": false};
-        this.handleDialogClose = this.handleDialogClose.bind(this);
-
+        this.state = {
+            "showDialog": false
+        };
+        this.performedAction = this.performedAction.bind(this);
     }
 
     handleDialogClose(event) {
@@ -27,33 +27,39 @@ class Coach extends Component {
     }
 
 
-    sendInterest(event) {
-        event.preventDefault();
+    userInitialCallRequestsFunc(){
 
-        if (this.props.coachid !== this.props.userid) {
-            const dbRef = firebase.firestore().collection("Connections").doc(this.props.userid+"_"+this.props.coachid).set({
-                "user": this.props.userid,
-                "coach": this.props.coachid,
-                "status":"USER_CALL_REQUEST"
+    }
 
-            }).then(() => {
-                this.setState({"showDialog": true});
-            })
-        }
+    userISAApprovalFunc(){
+
+    }
+
+    coachCallRequestsFunc(){
+        const dbRef = firebase.firestore().collection("CallRequests").where("coach","==",this.props.user.uid);
+
+    }
+
+    coachISAApprovalsFunc(){
+
+    }
+
+    performedAction(event) {
+
+        this.props.performedAction(event);
 
     }
 
     render() {
 
-        console.log(this.props.name + "'s id is " + this.props.id);
         let dialogShow;
         if (this.state.showDialog) {
             dialogShow = <>
                 <Dialog open={this.state.showDialog} onClose={this.handleDialogClose}>
-                    <DialogTitle>Your Request Has Been Sent </DialogTitle>
+                    <DialogTitle>{this.props.dialogTitle} </DialogTitle>
                     <DialogContent>
                         <DialogContentText>
-                            This coach will respond after reviewing your profile
+                            {this.props.dialogContent}
                         </DialogContentText>
                     </DialogContent>
                 </Dialog>
@@ -67,19 +73,19 @@ class Coach extends Component {
                 <div className="card">
 
                     <div className="heading-2">
-                        {this.props.name}
+                        {this.props.heading}
                     </div>
 
                     <div className="subheading-2">
-                        {this.props.company}
+                        {this.props.subheading}
                     </div>
 
                     <div className="paragraph">
-                        {this.props.bio}
+                        {this.props.paragraph}
                     </div>
 
-                    <button onClick={this.sendInterest}>
-                        Get on a call
+                    <button onClick={this.performedAction}>
+                        {this.props.CTA}
                     </button>
 
 
@@ -93,5 +99,4 @@ class Coach extends Component {
 
 }
 
-
-export default Coach;
+export default Card;

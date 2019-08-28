@@ -3,6 +3,7 @@ import firebase from "../components/firebase";
 import "../styling/coaches.css"
 import "../styling/style.css"
 import Coach from "../components/Coach"
+import Navbar from "../components/navbar";
 
 
 class Coaches extends Component {
@@ -85,28 +86,34 @@ class Coaches extends Component {
 
                 if (this.state.loadedCoaches) {
                     return (
-                        <div className="coaches-container">
 
-                            <h1 style={{"alignSelf": "center"}}>Coaches</h1>
+                        <>
+                            <Navbar/>
+                            <div className="coaches-container">
 
-                            <div className="card-section">
-                                {this.coaches}
+                                <h1 style={{"alignSelf": "center"}}>Coaches</h1>
+
+                                <div className="card-section">
+                                    {this.coaches}
+                                </div>
+
+
                             </div>
-
-
-                        </div>
+                        </>
                     );
 
                 }
                 else {
+
+
                     return (<h1>Loading coaches</h1>);
                 }
             }
-            else{
+            else {
                 return (<h1>Not Logged In</h1>)
             }
         }
-        else{
+        else {
             return (<h1>Loading</h1>)
         }
     }

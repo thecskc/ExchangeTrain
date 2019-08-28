@@ -4,6 +4,7 @@ import Router from 'next/router';
 import TextField from "@material-ui/core/TextField"
 import Button from '@material-ui/core/Button';
 import "../styling/style.css"
+import Navbar from "../components/navbar";
 
 
 class Profile extends Component {
@@ -192,92 +193,97 @@ class Profile extends Component {
             if (this.state.user) {
                 return (
 
-                    <div className="container" style={{"justify-content":"center"}}>
+                    <>
+                        <Navbar/>
 
-                        <h1 style={{"align-self":"center"}}>Fill Out Your Profile</h1>
+                        <div className="container" style={{"justify-content": "center"}}>
 
-                        <div className="card-section" style={{"align-self":"center"}}>
-                            <div className="card">
-                                <form>
+                            <h1 style={{"align-self": "center"}}>Fill Out Your Profile</h1>
 
-
-                                    <input
-
-                                        name="displayName"
-                                        placeholder="Enter Name"
-                                        value={this.state.displayName}
-                                        onChange={this.handleChange}
-                                    />
-                                    <br/><br/>
-
-                                    <input
-                                        name="schoolcompany"
-                                        placeholder="School/Company"
-                                        value={this.state.schoolcompany}
-                                        onChange={this.handleChange}
-                                    />
-
-                                    <br/><br/>
-
-                                    <input
-                                        name="location"
-                                        placeholder="Location"
-                                        value={this.state.location}
-                                        onChange={this.handleChange}
-                                    />
+                            <div className="card-section" style={{"align-self": "center"}}>
+                                <div className="card">
+                                    <form>
 
 
-                                    <br/><br/>
+                                        <input
+
+                                            name="displayName"
+                                            placeholder="Enter Name"
+                                            value={this.state.displayName}
+                                            onChange={this.handleChange}
+                                        />
+                                        <br/><br/>
+
+                                        <input
+                                            name="schoolcompany"
+                                            placeholder="School/Company"
+                                            value={this.state.schoolcompany}
+                                            onChange={this.handleChange}
+                                        />
+
+                                        <br/><br/>
+
+                                        <input
+                                            name="location"
+                                            placeholder="Location"
+                                            value={this.state.location}
+                                            onChange={this.handleChange}
+                                        />
 
 
-                                    <input
-
-                                        name="bio"
-                                        placeholder="Bio"
-                                        value={this.state.bio}
-                                        onChange={this.handleChange}
-                                    />
+                                        <br/><br/>
 
 
-                                    <br/><br/>
+                                        <input
 
-                                    <input
-                                        name="coachcode"
-                                        placeholder="Coach Access Code"
-                                        value={this.state.coachcode}
-                                        onChange={this.handleChange}
-                                    />
-
-                                    <br/><br/>
-
-                                    {(() => {
-
-                                        if (this.state.isCoach) {
-                                            return (
-
-                                                <input
-                                                    name="calendlylink"
-                                                    placeholder="Enter your calendly link"
-                                                    value={this.state.calendlylink}
-                                                    onChange={this.handleChange}
-                                                />
-                                            )
-                                        }
+                                            name="bio"
+                                            placeholder="Bio"
+                                            value={this.state.bio}
+                                            onChange={this.handleChange}
+                                        />
 
 
-                                    })()}
+                                        <br/><br/>
+
+                                        <input
+                                            name="coachcode"
+                                            placeholder="Coach Access Code"
+                                            value={this.state.coachcode}
+                                            onChange={this.handleChange}
+                                        />
+
+                                        <br/><br/>
+
+                                        {(() => {
+
+                                            if (this.state.isCoach) {
+                                                return (
+
+                                                    <input
+                                                        name="calendlylink"
+                                                        placeholder="Enter your calendly link"
+                                                        value={this.state.calendlylink}
+                                                        onChange={this.handleChange}
+                                                    />
+                                                )
+                                            }
 
 
-                                    <br/><br/>
+                                        })()}
 
-                                    <button onClick={this.editProfile}>
-                                        Edit
-                                    </button>
 
-                                </form>
+                                        <br/><br/>
+
+                                        <button onClick={this.editProfile}>
+                                            Edit
+                                        </button>
+
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                    </>
 
 
                 );

@@ -42,7 +42,7 @@ class SignUp extends Component {
             fb.auth().createUserWithEmailAndPassword(email, password).then(
                 function () {
 
-                    Router.push("/start");
+                    Router.push("/profile");
 
                 }).catch(function (e) {
                 console.log(e);

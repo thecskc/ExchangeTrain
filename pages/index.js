@@ -1,19 +1,38 @@
 import React, {Component} from "react";
 import "../styling/style.css"
 import Navbar from "../components/navbar"
+import firebase from "../components/firebase";
 
 
 class Index extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            "loaded":false,
+            "user":null
+        }
+    }
+
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged((user) => {
+
+            if (user) {
+                console.log("user");
+                console.log(user);
+                this.setState({"loaded": true, "user": user});
+            }
+            else {
+                this.setState({"loaded": true, "user": null});
+            }
+        });
     }
 
     render() {
 
         return (
             <>
-                <Navbar/>
+                <Navbar user={this.state.user}/>
 
                 <div className="container">
 
