@@ -60,8 +60,15 @@ class Connections extends Component {
 
                     return (
                         <>
-                            <Navbar/>
+                            <Navbar user={this.state.user}/>
+                            <h1>Connections</h1>
+
+
+                            <div className="container">
+
                             {<CoachConnectionRequests user={this.state.user}/>}
+
+                            </div>
                         </>
                     )
 
@@ -69,9 +76,12 @@ class Connections extends Component {
                 else {
                     return (
                         <>
-                            <Navbar/>
-                            <h1>Connection Requests</h1>
+                            <Navbar user={this.state.user}/>
+                            <h1>Connections</h1>
+
+                            <div className="container">
                             <UserConnectionRequests user={this.state.user}/>
+                            </div>
                             <br/>
 
 

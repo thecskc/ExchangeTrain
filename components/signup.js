@@ -65,7 +65,7 @@ class SignUp extends Component {
             const password = this.state.password;
             fb.auth().signInWithEmailAndPassword(email, password).then(function () {
 
-                Router.push("/start");
+                Router.push("/profile");
 
             }).catch(function (e) {
                 console.log(e);

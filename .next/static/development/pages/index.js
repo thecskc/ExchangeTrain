@@ -71,6 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
 
 
 
@@ -78,6 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\navbar.js";
+
 
 
 
@@ -94,90 +96,94 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Navbar);
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Navbar).call(this, props));
-    _this.state = {};
+    _this.state = {
+      "signedOut": false
+    };
     _this.handleSignOut = _this.handleSignOut.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Navbar, [{
     key: "handleSignOut",
-    value: function handleSignOut(event) {}
+    value: function handleSignOut(event) {
+      event.preventDefault();
+      _components_firebase__WEBPACK_IMPORTED_MODULE_10__["default"].auth().signOut().then(this.setState({
+        "signedOut": true
+      }));
+    }
   }, {
     key: "render",
     value: function render() {
+      if (this.state.signedOut) {
+        next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push("/index");
+      }
+
       if (this.props.user) {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
           className: "topnav",
           id: "myTopnav",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 35
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 37
           },
           __self: this
         }, "Home"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-          href: "/login",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 27
-          },
-          __self: this
-        }, "Login"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
-          onClick: this.handleSignOut,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 28
-          },
-          __self: this
-        }, "Sign Out"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/connections",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 29
+            lineNumber: 38
           },
           __self: this
         }, "Connections"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/profile",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 39
           },
           __self: this
         }, "Profile"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/coaches",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 31
+            lineNumber: 40
           },
           __self: this
-        }, "Coaches"));
+        }, "Coaches"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
+          onClick: this.handleSignOut,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41
+          },
+          __self: this
+        }, "Sign Out"));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
           className: "topnav",
           id: "myTopnav",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 49
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 51
           },
           __self: this
         }, "Home"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/login",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 52
           },
           __self: this
         }, "Login"));
@@ -41148,7 +41154,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 8:
 /*!*******************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cindex.js ***!
   \*******************************************************************************************************************************************/
@@ -41171,5 +41177,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js","styles"]]]);
+},[[8,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

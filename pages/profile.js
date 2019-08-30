@@ -7,6 +7,8 @@ import "../styling/style.css"
 import Navbar from "../components/navbar";
 
 
+
+
 class Profile extends Component {
 
     constructor(props) {
@@ -194,18 +196,18 @@ class Profile extends Component {
                 return (
 
                     <>
-                        <Navbar/>
+                        <Navbar user={this.state.user}/>
 
                         <div className="container" style={{"justify-content": "center"}}>
 
                             <h1 style={{"align-self": "center"}}>Fill Out Your Profile</h1>
 
                             <div className="card-section" style={{"align-self": "center"}}>
-                                <div className="card">
+                                <div className="card" style={{"width":"50vw","height":"70vh"}}>
                                     <form>
 
 
-                                        <input
+                                        <TextField
 
                                             name="displayName"
                                             placeholder="Enter Name"
@@ -214,7 +216,7 @@ class Profile extends Component {
                                         />
                                         <br/><br/>
 
-                                        <input
+                                        <TextField
                                             name="schoolcompany"
                                             placeholder="School/Company"
                                             value={this.state.schoolcompany}
@@ -223,7 +225,7 @@ class Profile extends Component {
 
                                         <br/><br/>
 
-                                        <input
+                                        <TextField
                                             name="location"
                                             placeholder="Location"
                                             value={this.state.location}
@@ -234,18 +236,21 @@ class Profile extends Component {
                                         <br/><br/>
 
 
-                                        <input
+                                        <TextField
 
                                             name="bio"
                                             placeholder="Bio"
                                             value={this.state.bio}
                                             onChange={this.handleChange}
+                                            multiline={true}
+                                            rows="4"
+                                            rowsMax="7"
                                         />
 
 
                                         <br/><br/>
 
-                                        <input
+                                        <TextField
                                             name="coachcode"
                                             placeholder="Coach Access Code"
                                             value={this.state.coachcode}
@@ -259,7 +264,7 @@ class Profile extends Component {
                                             if (this.state.isCoach) {
                                                 return (
 
-                                                    <input
+                                                    <TextField
                                                         name="calendlylink"
                                                         placeholder="Enter your calendly link"
                                                         value={this.state.calendlylink}
@@ -274,9 +279,10 @@ class Profile extends Component {
 
                                         <br/><br/>
 
-                                        <button onClick={this.editProfile}>
-                                            Edit
-                                        </button>
+
+                                        <Button color="primary" variant="contained" onClick={this.editProfile}>
+                                            Save
+                                        </Button>
 
                                     </form>
                                 </div>

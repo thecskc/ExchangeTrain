@@ -88,7 +88,7 @@ class Coaches extends Component {
                     return (
 
                         <>
-                            <Navbar/>
+                            <Navbar user={this.state.user}/>
                             <div className="coaches-container">
 
                                 <h1 style={{"alignSelf": "center"}}>Coaches</h1>

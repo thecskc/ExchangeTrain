@@ -31,10 +31,10 @@ class Coach extends Component {
         event.preventDefault();
 
         if (this.props.coachid !== this.props.userid) {
-            const dbRef = firebase.firestore().collection("Connections").doc(this.props.userid+"_"+this.props.coachid).set({
+            const dbRef = firebase.firestore().collection("Connections").doc(this.props.userid + "_" + this.props.coachid).set({
                 "user": this.props.userid,
                 "coach": this.props.coachid,
-                "status":"USER_CALL_REQUEST"
+                "status": "USER_CALL_REQUEST"
 
             }).then(() => {
                 this.setState({"showDialog": true});
@@ -78,9 +78,11 @@ class Coach extends Component {
                         {this.props.bio}
                     </div>
 
-                    <button onClick={this.sendInterest}>
-                        Get on a call
-                    </button>
+                    <br/><br/>
+
+                    <Button color="primary" variant="raised" onClick={this.sendInterest}>
+                        Connect
+                    </Button>
 
 
                 </div>
