@@ -92,7 +92,7 @@ class CoachConnectionRequests extends Component {
     makeCard(heading, subheading, status, paragraph, userDoc) {
 
         let button =
-            <button onClick={(event) => this.handleClick(event, status, userDoc)}>
+            <button className="coach-button" onClick={(event) => this.handleClick(event, status, userDoc)}>
                 {this.connectionStatus[status]}
             </button>;
 

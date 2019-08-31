@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -224,32 +224,43 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 73
       },
       __self: this
-    }, this.props.company), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "paragraph",
+    }, this.props.company), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 77
       },
       __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "paragraph",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79
+      },
+      __self: this
     }, this.props.bio), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 83
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 83
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      color: "primary",
-      variant: "raised",
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "coach-button",
       onClick: this.sendInterest,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 85
       },
       __self: this
     }, "Connect")));
@@ -356,6 +367,7 @@ class CoachConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compon
 
   makeCard(heading, subheading, status, paragraph, userDoc) {
     let button = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "coach-button",
       onClick: event => this.handleClick(event, status, userDoc),
       __source: {
         fileName: _jsxFileName,
@@ -546,6 +558,7 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
 
   makeCard(heading, subheading, status, paragraph, coachDoc) {
     let button = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "coach-button",
       onClick: event => this.handleClick(event, status, coachDoc),
       __source: {
         fileName: _jsxFileName,
@@ -1563,20 +1576,24 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               lineNumber: 63
             },
             __self: this
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "container",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 64
+              lineNumber: 66
             },
             __self: this
-          }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "container",
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "page-heading",
+            style: {
+              alignSelf: "center"
+            },
             __source: {
               fileName: _jsxFileName,
               lineNumber: 67
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CoachConnectionRequests__WEBPACK_IMPORTED_MODULE_12__["default"], {
+          }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CoachConnectionRequests__WEBPACK_IMPORTED_MODULE_12__["default"], {
             user: this.state.user,
             __source: {
               fileName: _jsxFileName,
@@ -1592,30 +1609,34 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               lineNumber: 79
             },
             __self: this
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "container",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 80
+              lineNumber: 81
             },
             __self: this
-          }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "container",
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "page-heading",
+            style: {
+              alignSelf: "center"
+            },
             __source: {
               fileName: _jsxFileName,
               lineNumber: 82
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UserConnectionRequests__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UserConnectionRequests__WEBPACK_IMPORTED_MODULE_11__["default"], {
             user: this.state.user,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 83
+              lineNumber: 84
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 85
+              lineNumber: 86
             },
             __self: this
           }));
@@ -1624,7 +1645,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 95
+            lineNumber: 96
           },
           __self: this
         }, "Not Logged In");
@@ -1633,7 +1654,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 100
         },
         __self: this
       }, "Loading");
@@ -1679,7 +1700,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!************************************!*\
   !*** multi ./pages/connections.js ***!
   \************************************/

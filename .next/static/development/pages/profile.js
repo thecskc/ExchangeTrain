@@ -60910,13 +60910,14 @@ function (_Component) {
               lineNumber: 201
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
+          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+            className: "page-heading",
             style: {
               "align-self": "center"
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 203
+              lineNumber: 204
             },
             __self: this
           }, "Fill Out Your Profile"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -60926,24 +60927,24 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 205
+              lineNumber: 206
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
             className: "card",
             style: {
-              "width": "50vw",
-              "height": "70vh"
+              "width": "80vw",
+              "height": "80vh"
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 206
+              lineNumber: 207
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 207
+              lineNumber: 208
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -60953,19 +60954,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 210
+              lineNumber: 211
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 217
+              lineNumber: 218
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 217
+              lineNumber: 218
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -60975,19 +60976,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 219
+              lineNumber: 220
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 226
+              lineNumber: 227
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 226
+              lineNumber: 227
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -60997,19 +60998,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 228
+              lineNumber: 229
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 236
+              lineNumber: 237
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 236
+              lineNumber: 237
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -61020,21 +61021,24 @@ function (_Component) {
             multiline: true,
             rows: "4",
             rowsMax: "7",
+            style: {
+              width: "100%"
+            },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 239
+              lineNumber: 240
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 251
+              lineNumber: 253
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 251
+              lineNumber: 253
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -61044,19 +61048,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 253
+              lineNumber: 255
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 260
+              lineNumber: 262
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 260
+              lineNumber: 262
             },
             __self: this
           }), function () {
@@ -61068,7 +61072,7 @@ function (_Component) {
                 onChange: _this5.handleChange,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 267
+                  lineNumber: 269
                 },
                 __self: this
               });
@@ -61076,13 +61080,13 @@ function (_Component) {
           }(), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 280
+              lineNumber: 282
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 280
+              lineNumber: 282
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -61091,7 +61095,7 @@ function (_Component) {
             onClick: this.editProfile,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 283
+              lineNumber: 285
             },
             __self: this
           }, "Save"))))));
@@ -61099,7 +61103,7 @@ function (_Component) {
           return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 298
+              lineNumber: 300
             },
             __self: this
           }, "Not logged in");
@@ -61108,7 +61112,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 303
+            lineNumber: 305
           },
           __self: this
         }, "Loading");
@@ -61123,7 +61127,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 8:
 /*!****************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fprofile&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cprofile.js ***!
   \****************************************************************************************************************************************************/
@@ -61146,5 +61150,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[8,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=profile.js.map

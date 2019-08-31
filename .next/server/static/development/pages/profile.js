@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1139,13 +1139,14 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 201
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "page-heading",
           style: {
             "align-self": "center"
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 203
+            lineNumber: 204
           },
           __self: this
         }, "Fill Out Your Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1155,24 +1156,24 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 205
+            lineNumber: 206
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "card",
           style: {
-            "width": "50vw",
-            "height": "70vh"
+            "width": "80vw",
+            "height": "80vh"
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 206
+            lineNumber: 207
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 207
+            lineNumber: 208
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1182,19 +1183,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           onChange: this.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 210
+            lineNumber: 211
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 217
+            lineNumber: 218
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 217
+            lineNumber: 218
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1204,19 +1205,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           onChange: this.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 219
+            lineNumber: 220
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 226
+            lineNumber: 227
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 226
+            lineNumber: 227
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1226,19 +1227,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           onChange: this.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 228
+            lineNumber: 229
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 236
+            lineNumber: 237
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 236
+            lineNumber: 237
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1249,21 +1250,24 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           multiline: true,
           rows: "4",
           rowsMax: "7",
+          style: {
+            width: "100%"
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 239
+            lineNumber: 240
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 251
+            lineNumber: 253
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 251
+            lineNumber: 253
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1273,19 +1277,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           onChange: this.handleChange,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 253
+            lineNumber: 255
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 260
+            lineNumber: 262
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 260
+            lineNumber: 262
           },
           __self: this
         }), (() => {
@@ -1297,7 +1301,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               onChange: this.handleChange,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 267
+                lineNumber: 269
               },
               __self: this
             });
@@ -1305,13 +1309,13 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         })(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 280
+            lineNumber: 282
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 280
+            lineNumber: 282
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -1320,7 +1324,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           onClick: this.editProfile,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 283
+            lineNumber: 285
           },
           __self: this
         }, "Save"))))));
@@ -1328,7 +1332,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 298
+            lineNumber: 300
           },
           __self: this
         }, "Not logged in");
@@ -1337,7 +1341,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 303
+          lineNumber: 305
         },
         __self: this
       }, "Loading");
@@ -1372,7 +1376,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!********************************!*\
   !*** multi ./pages/profile.js ***!
   \********************************/

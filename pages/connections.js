@@ -61,12 +61,12 @@ class Connections extends Component {
                     return (
                         <>
                             <Navbar user={this.state.user}/>
-                            <h1>Connections</h1>
 
 
                             <div className="container">
+                                <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
 
-                            {<CoachConnectionRequests user={this.state.user}/>}
+                                {<CoachConnectionRequests user={this.state.user}/>}
 
                             </div>
                         </>
@@ -77,10 +77,11 @@ class Connections extends Component {
                     return (
                         <>
                             <Navbar user={this.state.user}/>
-                            <h1>Connections</h1>
 
                             <div className="container">
-                            <UserConnectionRequests user={this.state.user}/>
+                                <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
+
+                                <UserConnectionRequests user={this.state.user}/>
                             </div>
                             <br/>
 

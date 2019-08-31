@@ -94,7 +94,7 @@ class UserConnectionRequests extends Component {
     makeCard(heading, subheading, status, paragraph, coachDoc) {
 
         let button =
-            <button onClick={(event) => this.handleClick(event, status, coachDoc)}>
+            <button className="coach-button" onClick={(event) => this.handleClick(event, status, coachDoc)}>
                 {this.connectionStatus[status]}
             </button>;
 

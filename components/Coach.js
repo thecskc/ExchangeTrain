@@ -74,15 +74,17 @@ class Coach extends Component {
                         {this.props.company}
                     </div>
 
+                    <br/><br/>
+
                     <div className="paragraph">
                         {this.props.bio}
                     </div>
 
                     <br/><br/>
 
-                    <Button color="primary" variant="raised" onClick={this.sendInterest}>
+                    <button className="coach-button" onClick={this.sendInterest}>
                         Connect
-                    </Button>
+                    </button>
 
 
                 </div>

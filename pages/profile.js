@@ -200,10 +200,11 @@ class Profile extends Component {
 
                         <div className="container" style={{"justify-content": "center"}}>
 
-                            <h1 style={{"align-self": "center"}}>Fill Out Your Profile</h1>
+
+                            <div className="page-heading" style={{"align-self": "center"}}>Fill Out Your Profile</div>
 
                             <div className="card-section" style={{"align-self": "center"}}>
-                                <div className="card" style={{"width":"50vw","height":"70vh"}}>
+                                <div className="card" style={{"width":"80vw","height":"80vh"}}>
                                     <form>
 
 
@@ -245,6 +246,7 @@ class Profile extends Component {
                                             multiline={true}
                                             rows="4"
                                             rowsMax="7"
+                                            style={{width:"100%"}}
                                         />
 
 

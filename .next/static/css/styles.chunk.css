@@ -17,11 +17,35 @@ body {
     color: orange;
 }
 
+.coach-button{
+    color: #fff !important;
+    text-transform: uppercase;
+    background: #FF8361; /* Old browsers */
+    padding: 3.5%;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
 
+}
+
+.coach-button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
 .heading{
     font-family: 'Merriweather', serif;
 
     font-size: 3.5rem;
+    opacity: 1;
+    line-height:1.5;
+}
+
+.page-heading{
+    font-family: 'Merriweather', serif;
+
+    font-size: 2rem;
     opacity: 1;
     line-height:1.5;
 }
@@ -37,7 +61,7 @@ body {
 .paragraph{
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    font-size: 0.9em;
+    font-size: 1rem;
 }
 
 .heading-2{
@@ -66,9 +90,11 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     margin: 0px;
+    padding:16px;
+
 }
 
 .row{
@@ -180,7 +206,7 @@ body {
     margin-top: 20px;
     background: white;
     width: 30%;
-    height: 45vh;
+    min-height: 45vh;
     align-self: center;
     align-items: center;
 
@@ -333,6 +359,7 @@ footer {
     flex-direction:column;
     width:100vw;
     height:100vh;
+    padding:16px;
 }
 
 
@@ -346,6 +373,8 @@ footer {
   overflow: hidden;
   position: relative;
   width: 100vw;
+  font-family: 'Merriweather', serif;
+
 }
 
 /* Style the links inside the navigation bar */
