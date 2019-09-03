@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -205,6 +205,9 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, dialogShow, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "card",
+      style: {
+        "justifyContent": "space-between"
+      },
       __source: {
         fileName: _jsxFileName,
         lineNumber: 67
@@ -1700,7 +1703,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!************************************!*\
   !*** multi ./pages/connections.js ***!
   \************************************/

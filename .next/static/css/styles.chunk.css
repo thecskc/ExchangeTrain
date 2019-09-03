@@ -93,7 +93,6 @@ body {
     flex-wrap: nowrap;
     flex-direction: column;
     margin: 0px;
-    padding:16px;
 
 }
 
@@ -207,6 +206,7 @@ body {
     background: white;
     width: 30%;
     min-height: 45vh;
+    height:75vh;
     align-self: center;
     align-items: center;
 

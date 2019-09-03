@@ -132,6 +132,9 @@ function (_Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, dialogShow, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         className: "card",
+        style: {
+          "justifyContent": "space-between"
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 67
@@ -62978,7 +62981,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 10:
+/***/ 8:
 /*!************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fconnections&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cconnections.js ***!
   \************************************************************************************************************************************************************/
@@ -63001,5 +63004,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[10,"static/runtime/webpack.js","styles"]]]);
+},[[8,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=connections.js.map

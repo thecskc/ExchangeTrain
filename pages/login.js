@@ -11,7 +11,13 @@ class Login extends Component {
 
             <>
                 <Navbar/>
+
                 <div className="container-login" style={{alignSelf:"center"}}>
+                    <div className="page-heading">Sign Up or Log In </div>
+                    <br/><br/><br/>
+
+
+
 
 
                     <div className="logincontainer">

@@ -64,7 +64,7 @@ class Coach extends Component {
         return (
             <>
                 {dialogShow}
-                <div className="card">
+                <div className="card" style={{"justifyContent":"space-between"}}>
 
                     <div className="heading-2">
                         {this.props.name}

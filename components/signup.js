@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import fb from "../components/firebase";
 import Router from 'next/router'
+import TextField from "@material-ui/core/TextField"
+
 
 
 import "../styling/style.css";
@@ -87,7 +89,7 @@ class SignUp extends Component {
         return (
 
             <form onSubmit={this.handleSubmit}>
-                <input
+                <TextField
 
                     type="email"
                     name="email"
@@ -96,7 +98,7 @@ class SignUp extends Component {
                     onChange={this.handleChange}
                 />
                 <br/><br/>
-                <input
+                <TextField
 
                     type="password"
                     name="password"
@@ -105,22 +107,27 @@ class SignUp extends Component {
                     onChange={this.handleChange}
                 />
                 <br/><br/>
-                <div style={{display: "inline"}} className="landing-button" onClick={this.handleSignIn}>
-                    Sign In
-                </div>
 
-                <div style={{display: "inline"}} className="landing-button" onClick={this.handleSignUp}>
-                    Sign Up
+                <div className="row" style={{justifyContent:"space-evenly"}}>
+                    <button className="coach-button" onClick={this.handleSignIn} style={{"width":"45%"}}>
+                        Sign In
+                    </button>
+
+                    <br/><br/>
+
+                    <button className="coach-button" onClick={this.handleSignUp} style={{"width":"45%"}}>
+                        Sign Up
+                    </button>
                 </div>
 
             </form>
 
 
-        );
+    );
 
     }
 
 
-}
+    }
 
-export default SignUp;
+    export default SignUp;
