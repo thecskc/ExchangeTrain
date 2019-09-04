@@ -21,14 +21,26 @@ class UserConnectionRequests extends Component {
 
         this.connectionStatus = {
             USER_CALL_REQUEST: "Call Request Sent",
-            COACH_MEETING: "Call Request Approved",
-            ISA_REQUEST: "ISA Request",
-            ISA_APPROVED: "Approved ISA"
+            COACH_MEETING: "Schedule Call",
+            ISA_REQUEST: "Coach Interested in ISA",
+            ISA_APPROVED: "Accepted ISA"
         };
 
         this.getDoc = this.getDoc.bind(this);
         this.makeCard = this.makeCard.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleResumeClick = this.handleResumeClick.bind(this);
+    }
+
+    handleResumeClick(event,resume){
+        event.preventDefault();
+        try {
+            console.log("resume link", resume);
+            Router.push(resume);
+        }
+        catch(e){
+            console.log("can't forward");
+        }
     }
 
     handleClick(event, status, fullDoc) {
@@ -91,18 +103,28 @@ class UserConnectionRequests extends Component {
 
     }
 
+    getButtonValue(status){
+        if(status === "COACH_MEETING"){
+            return "Click To Schedule"
+        }
+        else if(status==="ISA_REQUEST"){
+            return "Accept ISA"
+        }
+    }
+
     makeCard(heading, subheading, status, paragraph, coachDoc) {
 
         let button =
             <button className="coach-button" onClick={(event) => this.handleClick(event, status, coachDoc)}>
-                {this.connectionStatus[status]}
+                {this.getButtonValue(status)}
             </button>;
 
-        if (status === "USER_CALL_REQUEST") {
+        if (status === "USER_CALL_REQUEST" || status==="ISA_APPROVED") {
             button = <br/>
         }
 
-        return (<div className="card" key={coachDoc.id}>
+        return (
+            <div className="card" style={{"justifyContent":"space-around"}} key={coachDoc.id}>
 
                 <div className="heading-2">
                     {heading}
@@ -111,13 +133,17 @@ class UserConnectionRequests extends Component {
                 <div className="subheading-2">
                     {subheading}
                 </div>
-                <div className="subheading-2">
+                <div style={{color:"green"}} className="subheading-2">
                     {this.connectionStatus[status]}
                 </div>
 
                 <div className="paragraph">
                     {paragraph}
                 </div>
+                <br/>
+                <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,coachDoc.resume)}}>
+                    View Resume
+                </Button>
 
                 {button}
 

@@ -144,6 +144,7 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       "showDialog": false
     };
     this.handleDialogClose = this.handleDialogClose.bind(this);
+    this.handleResumeClick = this.handleResumeClick.bind(this);
   }
 
   handleDialogClose(event) {
@@ -151,6 +152,17 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.setState({
       "showDialog": false
     });
+  }
+
+  handleResumeClick(event, resume) {
+    event.preventDefault();
+    console.log("resume", resume);
+
+    try {
+      next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push(resume);
+    } catch (e) {
+      console.log("couldn't process request");
+    }
   }
 
   sendInterest(event) {
@@ -179,25 +191,25 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         onClose: this.handleDialogClose,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 65
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 66
         },
         __self: this
       }, "Your Request Has Been Sent "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 67
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 68
         },
         __self: this
       }, "This coach will respond after reviewing your profile"))));
@@ -210,52 +222,68 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 80
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "heading-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 82
       },
       __self: this
     }, this.props.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "subheading-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 86
       },
       __self: this
-    }, this.props.company), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+    }, this.props.company + ", " + this.props.location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 90
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 90
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "paragraph",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 92
       },
       __self: this
     }, this.props.bio), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 96
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 96
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      color: "primary",
+      onClick: event => {
+        this.handleResumeClick(event, this.props.resume);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 98
+      },
+      __self: this
+    }, "View Resume"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 102
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -263,7 +291,7 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onClick: this.sendInterest,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 104
       },
       __self: this
     }, "Connect")));
@@ -272,6 +300,129 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Coach);
+
+/***/ }),
+
+/***/ "./components/Loader.js":
+/*!******************************!*\
+  !*** ./components/Loader.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _styling_loading_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styling/loading.css */ "./styling/loading.css");
+/* harmony import */ var _styling_loading_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styling_loading_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\Loader.js";
+
+
+
+
+class Loader extends react__WEBPACK_IMPORTED_MODULE_2__["Component"] {
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: "container",
+      style: {
+        "justifyContent": "center"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      className: "lds-spinner",
+      style: {
+        "alignSelf": "center"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    })));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Loader);
 
 /***/ }),
 
@@ -365,6 +516,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     _components_firebase__WEBPACK_IMPORTED_MODULE_4__["default"].auth().signOut().then(this.setState({
       "signedOut": true
     }));
+    next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/index");
   }
 
   render() {
@@ -378,42 +530,42 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         id: "myTopnav",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 36
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 38
         },
         __self: this
       }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/connections",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 39
         },
         __self: this
       }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/profile",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 40
         },
         __self: this
       }, "Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/coaches",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 41
         },
         __self: this
       }, "Coaches"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         onClick: this.handleSignOut,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 42
         },
         __self: this
       }, "Sign Out"));
@@ -423,21 +575,21 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         id: "myTopnav",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 50
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 52
         },
         __self: this
       }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/login",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 53
         },
         __self: this
       }, "Login"));
@@ -1132,7 +1284,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Coach__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Coach */ "./components/Coach.js");
 /* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
+/* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Loader */ "./components/Loader.js");
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\coaches.js";
+
 
 
 
@@ -1163,6 +1317,8 @@ class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           name: doc.data().displayName,
           bio: doc.data().bio,
           company: doc.data().schoolcompany,
+          location: doc.data().location,
+          resume: doc.data().resume,
           userid: this.state.user.uid,
           __source: {
             fileName: _jsxFileName,
@@ -1207,14 +1363,14 @@ class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             user: this.state.user,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 91
+              lineNumber: 93
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "coaches-container",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 92
+              lineNumber: 94
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1224,43 +1380,43 @@ class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 95
+              lineNumber: 97
             },
             __self: this
           }, "Coaches"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "card-section",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 97
+              lineNumber: 99
             },
             __self: this
           }, this.coaches)));
         } else {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Loader__WEBPACK_IMPORTED_MODULE_6__["default"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 110
+              lineNumber: 112
             },
             __self: this
-          }, "Loading coaches");
+          });
         }
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 117
           },
           __self: this
         }, "Not Logged In");
       }
     } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Loader__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 122
         },
         __self: this
-      }, "Loading");
+      });
     }
   }
 
@@ -1284,6 +1440,17 @@ class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 /***/ "./styling/coaches.css":
 /*!*****************************!*\
   !*** ./styling/coaches.css ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./styling/loading.css":
+/*!*****************************!*\
+  !*** ./styling/loading.css ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {

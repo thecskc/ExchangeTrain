@@ -13,6 +13,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import UserConnectionRequests from "../components/UserConnectionRequests"
 import CoachConnectionRequests from "../components/CoachConnectionRequests"
 import Navbar from "../components/navbar";
+import Loader from "../components/Loader"
 
 class Connections extends Component {
 
@@ -65,8 +66,12 @@ class Connections extends Component {
 
                             <div className="container">
                                 <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
+                                <div className="card-section">
 
-                                {<CoachConnectionRequests user={this.state.user}/>}
+
+                                    {<CoachConnectionRequests user={this.state.user}/>}
+                                </div>
+
 
                             </div>
                         </>
@@ -81,7 +86,11 @@ class Connections extends Component {
                             <div className="container">
                                 <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
 
-                                <UserConnectionRequests user={this.state.user}/>
+                                <div className="card-section">
+
+                                    <UserConnectionRequests user={this.state.user}/>
+
+                                </div>
                             </div>
                             <br/>
 
@@ -97,7 +106,7 @@ class Connections extends Component {
             }
         }
         else {
-            return (<h1>Loading</h1>)
+            return (<Loader/>);
         }
 
 

@@ -1,8 +1,10 @@
 import React, {Component} from "react";
 import firebase from "./firebase";
-import "../styling/coaches.css"
 import "../styling/style.css"
 import Coach from "../components/Coach"
+import Button from "@material-ui/core/Button/Button";
+import Router from 'next/router';
+
 
 class CoachConnectionRequests extends Component {
 
@@ -23,8 +25,34 @@ class CoachConnectionRequests extends Component {
         this.getDoc = this.getDoc.bind(this);
         this.makeCard = this.makeCard.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleResumeClick = this.handleResumeClick.bind(this);
+
     }
 
+    getButtonValue(status){
+        if(status === "USER_CALL_REQUEST"){
+            return "Send Calendly Link"
+        }
+        else if(status==="COACH_MEETING"){
+            return "Sent Calendly Link"
+        }
+        else if(status==="ISA_REQUEST"){
+            return "Sent ISA Request"
+        }
+        else if(status==="ISA_APPROVED"){
+            return "ISA Approved. The Exchange team will be in touch with next steps"
+        }
+    }
+
+    handleResumeClick(event,resume){
+        event.preventDefault();
+        try {
+            Router.push(resume);
+        }
+        catch(e){
+            console.log("couldn't process request");
+        }
+    }
 
     handleClick(event, status, userDoc) {
 
@@ -96,11 +124,11 @@ class CoachConnectionRequests extends Component {
                 {this.connectionStatus[status]}
             </button>;
 
-        if (status === "USER_CALL_REQUEST") {
+        if (status === "ISA_REQUEST" || status==="ISA_APPROVED") {
             button = <br/>
         }
 
-        return (<div className="card" key={userDoc.id}>
+        return (<div className="card" style={{"justifyContent":"space-around"}} key={userDoc.id}>
 
                 <div className="heading-2">
                     {heading}
@@ -109,13 +137,17 @@ class CoachConnectionRequests extends Component {
                 <div className="subheading-2">
                     {subheading}
                 </div>
-                <div className="subheading-2">
-                    {this.connectionStatus[status]}
+                <div style={{color:"green"}}className="subheading-2">
+                    {this.getButtonValue(status)}
                 </div>
 
                 <div className="paragraph">
                     {paragraph}
                 </div>
+                <br/>
+                <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,userDoc.resume)}}>
+                    View Resume
+                </Button>
 
                 {button}
 

@@ -11,6 +11,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
+
 class Coach extends Component {
 
     constructor(props) {
@@ -18,6 +19,7 @@ class Coach extends Component {
         this.sendInterest = this.sendInterest.bind(this);
         this.state = {"showDialog": false};
         this.handleDialogClose = this.handleDialogClose.bind(this);
+        this.handleResumeClick = this.handleResumeClick.bind(this);
 
     }
 
@@ -26,6 +28,17 @@ class Coach extends Component {
         this.setState({"showDialog": false});
     }
 
+
+    handleResumeClick(event,resume){
+        event.preventDefault();
+        console.log("resume",resume);
+        try {
+            Router.push(resume);
+        }
+        catch(e){
+            console.log("couldn't process request");
+        }
+    }
 
     sendInterest(event) {
         event.preventDefault();
@@ -71,7 +84,7 @@ class Coach extends Component {
                     </div>
 
                     <div className="subheading-2">
-                        {this.props.company}
+                        {this.props.company +", "+this.props.location}
                     </div>
 
                     <br/><br/>
@@ -81,6 +94,12 @@ class Coach extends Component {
                     </div>
 
                     <br/><br/>
+
+                    <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,this.props.resume)}}>
+                        View Resume
+                    </Button>
+
+                    <br/>
 
                     <button className="coach-button" onClick={this.sendInterest}>
                         Connect

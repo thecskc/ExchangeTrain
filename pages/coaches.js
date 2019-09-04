@@ -4,7 +4,7 @@ import "../styling/coaches.css"
 import "../styling/style.css"
 import Coach from "../components/Coach"
 import Navbar from "../components/navbar";
-
+import Loader from "../components/Loader"
 
 class Coaches extends Component {
 
@@ -42,6 +42,8 @@ class Coaches extends Component {
                                 name={doc.data().displayName}
                                 bio={doc.data().bio}
                                 company={doc.data().schoolcompany}
+                                location={doc.data().location}
+                                resume={doc.data().resume}
                                 userid={this.state.user.uid}
                             />
                         );
@@ -107,7 +109,8 @@ class Coaches extends Component {
                 else {
 
 
-                    return (<h1>Loading coaches</h1>);
+                    return (<Loader/>);
+
                 }
             }
             else {
@@ -115,7 +118,9 @@ class Coaches extends Component {
             }
         }
         else {
-            return (<h1>Loading</h1>)
+            return (
+                <Loader/>
+            )
         }
     }
 

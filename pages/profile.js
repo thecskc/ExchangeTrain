@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField"
 import Button from '@material-ui/core/Button';
 import "../styling/style.css"
 import Navbar from "../components/navbar";
+import Loader from "../components/Loader"
 
 
 
@@ -22,7 +23,8 @@ class Profile extends Component {
             "schoolcompany": "",
             "location": "",
             "isCoach": false,
-            "calendlylink": ""
+            "calendlylink": "",
+            "resume":""
         };
         this.handleChange = this.handleChange.bind(this);
         this.loadedProfile = this.loadedProfile.bind(this);
@@ -83,7 +85,8 @@ class Profile extends Component {
             "displayName": this.state.displayName,
             "bio": this.state.bio,
             "location": this.state.location,
-            "schoolcompany": this.state.schoolcompany
+            "schoolcompany": this.state.schoolcompany,
+            "resume":this.state.resume
         };
 
         if (this.state.isCoach) {
@@ -108,7 +111,8 @@ class Profile extends Component {
                 "displayName": this.state.displayName,
                 "bio": this.state.bio,
                 "location": this.state.location,
-                "schoolcompany": this.state.schoolcompany
+                "schoolcompany": this.state.schoolcompany,
+                "resume":this.state.resume
 
             };
             if (this.state.isCoach) {
@@ -138,7 +142,8 @@ class Profile extends Component {
                     "bio": doc.data().bio,
                     "location": doc.data().location,
                     "schoolcompany": doc.data().schoolcompany,
-                    "loaded": true
+                    "loaded": true,
+                    "resume":doc.data().resume
                 };
 
                 if (doc.data().isCoach) {
@@ -157,7 +162,8 @@ class Profile extends Component {
                     "bio": "",
                     "location": "",
                     "schoolcompany": "",
-                    "loaded": true
+                    "loaded": true,
+                    "resume":""
                 };
                 this.loadedProfile(userProfile)
 
@@ -249,6 +255,18 @@ class Profile extends Component {
                                             style={{width:"100%"}}
                                         />
 
+                                        <br/><br/>
+
+
+                                        <TextField
+
+                                            name="resume"
+                                            placeholder="Resume URL"
+                                            value={this.state.resume}
+                                            onChange={this.handleChange}
+
+                                        />
+
 
                                         <br/><br/>
 
@@ -302,7 +320,7 @@ class Profile extends Component {
             }
         }
         else {
-            return (<h1>Loading</h1>)
+            return (<Loader/>);
         }
 
     }
