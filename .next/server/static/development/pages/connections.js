@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1777,7 +1777,8 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.state = {
       "loaded": false,
       "user": null,
-      "isCoach": false
+      "isCoach": false,
+      "profile": false
     };
   }
 
@@ -1787,19 +1788,29 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         console.log("user");
         console.log(user);
         _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore().collection("Profiles").doc(user.uid).get().then(doc => {
-          console.log(doc.data());
+          if (doc.exists) {
+            console.log(doc.data());
 
-          if (doc.data().isCoach) {
-            this.setState({
-              "loaded": true,
-              "user": user,
-              "isCoach": true
-            });
+            if (doc.data().isCoach) {
+              this.setState({
+                "loaded": true,
+                "user": user,
+                "isCoach": true,
+                "profile": true
+              });
+            } else {
+              this.setState({
+                "loaded": true,
+                "user": user,
+                "isCoach": false,
+                "profile": true
+              });
+            }
           } else {
             this.setState({
               "loaded": true,
               "user": user,
-              "isCoach": false
+              "profile": false
             });
           }
         });
@@ -1815,98 +1826,108 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     if (this.state.loaded) {
       if (this.state.user) {
-        if (this.state.isCoach) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_13__["default"], {
-            user: this.state.user,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 64
-            },
-            __self: this
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "container",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 67
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "page-heading",
-            style: {
-              alignSelf: "center"
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 68
-            },
-            __self: this
-          }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "card-section",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 69
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CoachConnectionRequests__WEBPACK_IMPORTED_MODULE_12__["default"], {
-            user: this.state.user,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 72
-            },
-            __self: this
-          }))));
+        if (this.state.profile) {
+          if (this.state.isCoach) {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              user: this.state.user,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 74
+              },
+              __self: this
+            }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              className: "container",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 77
+              },
+              __self: this
+            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              className: "page-heading",
+              style: {
+                alignSelf: "center"
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 78
+              },
+              __self: this
+            }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              className: "card-section",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 79
+              },
+              __self: this
+            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CoachConnectionRequests__WEBPACK_IMPORTED_MODULE_12__["default"], {
+              user: this.state.user,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 82
+              },
+              __self: this
+            }))));
+          } else {
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              user: this.state.user,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 94
+              },
+              __self: this
+            }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              className: "container",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 96
+              },
+              __self: this
+            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              className: "page-heading",
+              style: {
+                alignSelf: "center"
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 97
+              },
+              __self: this
+            }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+              className: "card-section",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 99
+              },
+              __self: this
+            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UserConnectionRequests__WEBPACK_IMPORTED_MODULE_11__["default"], {
+              user: this.state.user,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 101
+              },
+              __self: this
+            }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 105
+              },
+              __self: this
+            }));
+          }
         } else {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_13__["default"], {
-            user: this.state.user,
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 84
+              lineNumber: 114
             },
             __self: this
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "container",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 86
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "page-heading",
-            style: {
-              alignSelf: "center"
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 87
-            },
-            __self: this
-          }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "card-section",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 89
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UserConnectionRequests__WEBPACK_IMPORTED_MODULE_11__["default"], {
-            user: this.state.user,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 91
-            },
-            __self: this
-          }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 95
-            },
-            __self: this
-          }));
+          }, "Please fill out your profile first");
         }
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 105
+            lineNumber: 120
           },
           __self: this
         }, "Not Logged In");
@@ -1915,7 +1936,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Loader__WEBPACK_IMPORTED_MODULE_14__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 124
         },
         __self: this
       });
@@ -1961,7 +1982,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 7:
+/***/ 3:
 /*!************************************!*\
   !*** multi ./pages/connections.js ***!
   \************************************/

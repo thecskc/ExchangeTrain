@@ -16,7 +16,8 @@ class Coaches extends Component {
         this.state = {
             "loadedCoaches": false,
             "loaded": false,
-            "user": null
+            "user": null,
+            "profile":false
 
         };
         this.coaches = [];
@@ -63,7 +64,6 @@ class Coaches extends Component {
     }
 
     componentDidMount() {
-        this.getCoaches();
 
 
         firebase.auth().onAuthStateChanged((user) => {
@@ -71,7 +71,20 @@ class Coaches extends Component {
             if (user) {
                 console.log("user");
                 console.log(user);
-                this.setState({"loaded": true, "user": user});
+
+                firebase.firestore().collection("Profiles").doc(user.uid).get().then((doc)=>{
+                    if(doc.exists){
+                        this.setState({"loaded": true, "user": user,"profile":true});
+                        this.getCoaches();
+
+                    }
+                    else{
+                        this.setState({"loaded": true, "user": user,"profile":false});
+                    }
+                })
+
+
+
             }
             else {
                 this.setState({"loaded": true, "user": null});
@@ -85,32 +98,37 @@ class Coaches extends Component {
 
         if (this.state.loaded) {
             if (this.state.user) {
+                if(this.state.profile) {
 
-                if (this.state.loadedCoaches) {
-                    return (
+                    if (this.state.loadedCoaches) {
+                        return (
 
-                        <>
-                            <Navbar user={this.state.user}/>
-                            <div className="coaches-container">
+                            <>
+                                <Navbar user={this.state.user}/>
+                                <div className="coaches-container">
 
 
-                                <div className="page-heading" style={{"alignSelf": "center"}}>Coaches</div>
+                                    <div className="page-heading" style={{"alignSelf": "center"}}>Coaches</div>
 
-                                <div className="card-section">
-                                    {this.coaches}
+                                    <div className="card-section">
+                                        {this.coaches}
+                                    </div>
+
+
                                 </div>
+                            </>
+                        );
+
+                    }
+                    else {
 
 
-                            </div>
-                        </>
-                    );
+                        return (<Loader/>);
 
+                    }
                 }
-                else {
-
-
-                    return (<Loader/>);
-
+                else{
+                    return(<h1>Please fill out your profile first</h1>);
                 }
             }
             else {

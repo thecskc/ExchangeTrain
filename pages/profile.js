@@ -8,8 +8,6 @@ import Navbar from "../components/navbar";
 import Loader from "../components/Loader"
 
 
-
-
 class Profile extends Component {
 
     constructor(props) {
@@ -24,7 +22,7 @@ class Profile extends Component {
             "location": "",
             "isCoach": false,
             "calendlylink": "",
-            "resume":""
+            "resume": ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.loadedProfile = this.loadedProfile.bind(this);
@@ -78,6 +76,44 @@ class Profile extends Component {
 
     }
 
+    validateForm() {
+        let error = "";
+
+        if (!this.state.displayName) {
+            error += " Please add your name.";
+        }
+        if (!this.state.bio) {
+            error += " Please add your bio.";
+        }
+        if (!this.state.schoolcompany) {
+            error += " Please list your school or company.";
+        }
+        if (!this.state.location) {
+            error += " Please enter your location."
+        }
+        if (!this.state.resume) {
+            error += " Please add a link to your resume."
+        }
+
+        if (this.state.isCoach) {
+            if (!this.state.calendlylink) {
+                error += " Please add your calendly link"
+            }
+
+
+        }
+
+        if (error) {
+            alert(error);
+            return false;
+        }
+        else {
+            return true;
+        }
+
+
+    }
+
     settingData() {
 
 
@@ -86,7 +122,7 @@ class Profile extends Component {
             "bio": this.state.bio,
             "location": this.state.location,
             "schoolcompany": this.state.schoolcompany,
-            "resume":this.state.resume
+            "resume": this.state.resume
         };
 
         if (this.state.isCoach) {
@@ -101,30 +137,33 @@ class Profile extends Component {
     editProfile(event) {
         event.preventDefault();
 
+        if (this.validateForm()) {
 
-        this.handleAccessCode();
+            this.handleAccessCode();
 
-        const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(() => {
-            console.log("written");
-            const userProfile = {
-                "user": this.state.user,
-                "displayName": this.state.displayName,
-                "bio": this.state.bio,
-                "location": this.state.location,
-                "schoolcompany": this.state.schoolcompany,
-                "resume":this.state.resume
+            const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(() => {
+                console.log("written");
+                const userProfile = {
+                    "user": this.state.user,
+                    "displayName": this.state.displayName,
+                    "bio": this.state.bio,
+                    "location": this.state.location,
+                    "schoolcompany": this.state.schoolcompany,
+                    "resume": this.state.resume
 
-            };
-            if (this.state.isCoach) {
-                userProfile["isCoach"] = true;
-                userProfile["coachcode"] = this.state.coachcode;
-                userProfile["calendlylink"] = this.state.calendlylink;
-            }
-            this.loadedProfile(userProfile);
-        }).catch(function (error) {
-            console.log(error);
+                };
+                if (this.state.isCoach) {
+                    userProfile["isCoach"] = true;
+                    userProfile["coachcode"] = this.state.coachcode;
+                    userProfile["calendlylink"] = this.state.calendlylink;
+                }
+                this.loadedProfile(userProfile);
+            }).catch(function (error) {
+                console.log(error);
 
-        });
+            });
+        }
+
 
     }
 
@@ -143,7 +182,7 @@ class Profile extends Component {
                     "location": doc.data().location,
                     "schoolcompany": doc.data().schoolcompany,
                     "loaded": true,
-                    "resume":doc.data().resume
+                    "resume": doc.data().resume
                 };
 
                 if (doc.data().isCoach) {
@@ -163,7 +202,7 @@ class Profile extends Component {
                     "location": "",
                     "schoolcompany": "",
                     "loaded": true,
-                    "resume":""
+                    "resume": ""
                 };
                 this.loadedProfile(userProfile)
 
@@ -210,7 +249,7 @@ class Profile extends Component {
                             <div className="page-heading" style={{"align-self": "center"}}>Fill Out Your Profile</div>
 
                             <div className="card-section" style={{"align-self": "center"}}>
-                                <div className="card" style={{"width":"80vw","height":"80vh"}}>
+                                <div className="card" style={{"width": "80vw", "height": "80vh"}}>
                                     <form>
 
 
@@ -252,7 +291,7 @@ class Profile extends Component {
                                             multiline={true}
                                             rows="4"
                                             rowsMax="7"
-                                            style={{width:"100%"}}
+                                            style={{width: "100%"}}
                                         />
 
                                         <br/><br/>

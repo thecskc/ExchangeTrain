@@ -22,7 +22,8 @@ class Connections extends Component {
         this.state = {
             "loaded": false,
             "user": null,
-            "isCoach": false
+            "isCoach": false,
+            "profile": false
         }
     }
 
@@ -35,13 +36,20 @@ class Connections extends Component {
 
                 firebase.firestore().collection("Profiles").doc(user.uid).get().then((doc) => {
 
-                    console.log(doc.data());
-                    if (doc.data().isCoach) {
-                        this.setState({"loaded": true, "user": user, "isCoach": true});
+                    if (doc.exists) {
+
+                        console.log(doc.data());
+                        if (doc.data().isCoach) {
+                            this.setState({"loaded": true, "user": user, "isCoach": true, "profile": true});
+                        }
+                        else {
+                            this.setState({"loaded": true, "user": user, "isCoach": false, "profile": true});
+                        }
                     }
-                    else {
-                        this.setState({"loaded": true, "user": user, "isCoach": false});
+                    else{
+                        this.setState({"loaded":true,"user":user,"profile":false});
                     }
+
                 })
 
 
@@ -57,50 +65,57 @@ class Connections extends Component {
         if (this.state.loaded) {
             if (this.state.user) {
 
-                if (this.state.isCoach) {
+                if(this.state.profile) {
 
-                    return (
-                        <>
-                            <Navbar user={this.state.user}/>
+                    if (this.state.isCoach) {
 
-
-                            <div className="container">
-                                <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
-                                <div className="card-section">
+                        return (
+                            <>
+                                <Navbar user={this.state.user}/>
 
 
-                                    {<CoachConnectionRequests user={this.state.user}/>}
+                                <div className="container">
+                                    <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
+                                    <div className="card-section">
+
+
+                                        {<CoachConnectionRequests user={this.state.user}/>}
+                                    </div>
+
+
                                 </div>
+                            </>
+                        )
+
+                    }
+                    else {
+                        return (
+                            <>
+                                <Navbar user={this.state.user}/>
+
+                                <div className="container">
+                                    <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
+
+                                    <div className="card-section">
+
+                                        <UserConnectionRequests user={this.state.user}/>
+
+                                    </div>
+                                </div>
+                                <br/>
 
 
-                            </div>
-                        </>
-                    )
+                            </>
+                        )
 
+                    }
                 }
-                else {
-                    return (
-                        <>
-                            <Navbar user={this.state.user}/>
-
-                            <div className="container">
-                                <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
-
-                                <div className="card-section">
-
-                                    <UserConnectionRequests user={this.state.user}/>
-
-                                </div>
-                            </div>
-                            <br/>
-
-
-                        </>
-                    )
-
+                else{
+                    return(<h1>Please fill out your profile first</h1>);
                 }
 
             }
+
             else {
                 return (<h1>Not Logged In</h1>)
             }
