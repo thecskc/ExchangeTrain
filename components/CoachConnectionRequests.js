@@ -29,22 +29,22 @@ class CoachConnectionRequests extends Component {
 
     }
 
-    getButtonValue(status){
-        if(status === "USER_CALL_REQUEST"){
+    getButtonValue(status) {
+        if (status === "USER_CALL_REQUEST") {
             return "Send Calendly Link"
         }
-        else if(status==="COACH_MEETING"){
+        else if (status === "COACH_MEETING") {
             return "Sent Calendly Link"
         }
-        else if(status==="ISA_REQUEST"){
+        else if (status === "ISA_REQUEST") {
             return "Sent ISA Request"
         }
-        else if(status==="ISA_APPROVED"){
+        else if (status === "ISA_APPROVED") {
             return "ISA Approved. The Exchange team will be in touch with next steps"
         }
     }
 
-    handleResumeClick(event,resume){
+    handleResumeClick(event, resume) {
         event.preventDefault();
         console.log(resume);
         Router.push(resume);
@@ -130,28 +130,34 @@ class CoachConnectionRequests extends Component {
                 {this.connectionStatus[status]}
             </button>;
 
-        if (status === "ISA_REQUEST" || status==="ISA_APPROVED") {
+        if (status === "ISA_REQUEST" || status === "ISA_APPROVED") {
             button = <br/>
         }
 
-        return (<div className="card" style={{"justifyContent":"space-around"}} key={userDoc.id}>
+        return (<div className="card" style={{"justifyContent": "space-around"}} key={userDoc.id}>
 
-                <div className="heading-2">
-                    {heading}
+                <div>
+                    <div className="heading-2">
+                        {heading}
+                    </div>
+
+                    <div className="subheading-2">
+                        {subheading}
+                    </div>
+
+                    <div style={{color: "green"}} className="subheading-2">
+                        {this.getButtonValue(status)}
+                    </div>
                 </div>
 
-                <div className="subheading-2">
-                    {subheading}
-                </div>
-                <div style={{color:"green"}}className="subheading-2">
-                    {this.getButtonValue(status)}
-                </div>
 
                 <div className="paragraph">
                     {paragraph}
                 </div>
                 <br/>
-                <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,userDoc.data().resume)}}>
+                <Button color="primary" onClick={(event) => {
+                    this.handleResumeClick(event, userDoc.data().resume)
+                }}>
                     View Resume
                 </Button>
 
@@ -163,7 +169,7 @@ class CoachConnectionRequests extends Component {
 
     }
 
-    render(){
+    render() {
         if (this.state.loaded) {
             return (
                 <>{this.state.cards}</>

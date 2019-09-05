@@ -1,7 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Lato|Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap);
+.coaches-container{
+    display:flex;
+    flex-direction:column;
+    width:100vw;
+    height:100vh;
+    padding:16px;
+}
+
+
 * {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -35,36 +45,47 @@ body {
 
 }
 .heading{
-    font-family: 'Merriweather', serif;
+    letter-spacing: 0.0625em;
 
+    font-family: 'Merriweather', serif;
+    font-weight:800;
     font-size: 3.5rem;
     opacity: 1;
     line-height:1.5;
 }
 
 .page-heading{
-    font-family: 'Merriweather', serif;
+    letter-spacing: 0.0625em;
 
+    font-family: 'Merriweather', serif;
+    font-weight: 600;
     font-size: 2rem;
     opacity: 1;
     line-height:1.5;
 }
 
 .subheading {
-    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.0625em;
 
+    font-family: 'Lato', sans-serif;
+    font-weight:700;
     font-size: 1.75rem;
     opacity: 0.7;
     line-height:1.5;
 }
 
 .paragraph{
+
+    font-weight:400;
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
     font-size: 1rem;
 }
 
 .heading-2{
+    letter-spacing: 0.0625em;
+
+    font-weight:600;
     font-family: 'Merriweather', serif;
     font-size: 1.6rem;
     opacity: 1;
@@ -72,6 +93,7 @@ body {
 }
 
 .subheading-2{
+    font-weight:500;
     font-family: 'Lato', sans-serif;
     font-size: 1.25rem;
     opacity: 0.7;
@@ -93,6 +115,7 @@ body {
     flex-wrap: nowrap;
     flex-direction: column;
     margin: 0px;
+    padding:16px;
 
 }
 

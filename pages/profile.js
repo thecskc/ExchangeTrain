@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import "../styling/style.css"
 import Navbar from "../components/navbar";
 import Loader from "../components/Loader"
+import * as isurl from "valid-url"
 
 
 class Profile extends Component {
@@ -79,6 +80,7 @@ class Profile extends Component {
     validateForm() {
         let error = "";
 
+
         if (!this.state.displayName) {
             error += " Please add your name.";
         }
@@ -94,12 +96,18 @@ class Profile extends Component {
         if (!this.state.resume) {
             error += " Please add a link to your resume."
         }
+        else{
+
+            if(isurl.is_web_uri(this.state.resume)){
+                console.log("checking valid url")
+                error += "Please enter a valid URL for your resume";
+            }
+        }
 
         if (this.state.isCoach) {
             if (!this.state.calendlylink) {
                 error += " Please add your calendly link"
             }
-
 
         }
 

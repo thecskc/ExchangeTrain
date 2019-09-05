@@ -463,17 +463,23 @@ class CoachConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compon
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "heading-2",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 139
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "heading-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 140
       },
       __self: this
     }, heading), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "subheading-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143
+        lineNumber: 144
       },
       __self: this
     }, subheading), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -483,20 +489,20 @@ class CoachConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compon
       className: "subheading-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146
+        lineNumber: 148
       },
       __self: this
-    }, this.getButtonValue(status)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, this.getButtonValue(status))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "paragraph",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 150
+        lineNumber: 154
       },
       __self: this
     }, paragraph), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 153
+        lineNumber: 157
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -506,7 +512,7 @@ class CoachConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compon
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 154
+        lineNumber: 158
       },
       __self: this
     }, "View Resume"), button);
@@ -519,7 +525,7 @@ class CoachConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compon
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 179
         },
         __self: this
       });
@@ -824,17 +830,23 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "heading-2",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 137
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "heading-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 138
       },
       __self: this
     }, heading), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "subheading-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141
+        lineNumber: 142
       },
       __self: this
     }, subheading), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -844,20 +856,20 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
       className: "subheading-2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144
+        lineNumber: 146
       },
       __self: this
-    }, this.connectionStatus[status]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, this.connectionStatus[status])), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "paragraph",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 148
+        lineNumber: 153
       },
       __self: this
     }, paragraph), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 151
+        lineNumber: 156
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -867,7 +879,7 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152
+        lineNumber: 157
       },
       __self: this
     }, "View Resume"), button);
@@ -880,7 +892,7 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 179
         },
         __self: this
       });

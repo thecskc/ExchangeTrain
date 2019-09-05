@@ -32,7 +32,7 @@ class UserConnectionRequests extends Component {
         this.handleResumeClick = this.handleResumeClick.bind(this);
     }
 
-    handleResumeClick(event,resume){
+    handleResumeClick(event, resume) {
         event.preventDefault();
         console.log(resume);
         Router.push(resume);
@@ -61,7 +61,7 @@ class UserConnectionRequests extends Component {
 
             //Redirect to calendly link
             const calendlyLink = fullDoc.data().calendlylink;
-            console.log("calendly link, "+calendlyLink);
+            console.log("calendly link, " + calendlyLink);
             Router.push(calendlyLink);
 
 
@@ -94,9 +94,9 @@ class UserConnectionRequests extends Component {
             .then((snapShot) => {
                 snapShot.forEach((doc) => {
                     const obj = {
-                        "coach":doc.data().coach,
-                        "user":doc.data().user,
-                        "status":doc.data().status
+                        "coach": doc.data().coach,
+                        "user": doc.data().user,
+                        "status": doc.data().status
                     };
                     coachesList.push(obj);
                 });
@@ -109,11 +109,11 @@ class UserConnectionRequests extends Component {
 
     }
 
-    getButtonValue(status){
-        if(status === "COACH_MEETING"){
+    getButtonValue(status) {
+        if (status === "COACH_MEETING") {
             return "Click To Schedule"
         }
-        else if(status==="ISA_REQUEST"){
+        else if (status === "ISA_REQUEST") {
             return "Accept ISA"
         }
     }
@@ -127,29 +127,36 @@ class UserConnectionRequests extends Component {
                 {this.getButtonValue(status)}
             </button>;
 
-        if (status === "USER_CALL_REQUEST" || status==="ISA_APPROVED") {
+        if (status === "USER_CALL_REQUEST" || status === "ISA_APPROVED") {
             button = <br/>
         }
 
         return (
-            <div className="card" style={{"justifyContent":"space-around"}} key={coachDoc.id}>
+            <div className="card" style={{"justifyContent": "space-around"}} key={coachDoc.id}>
 
-                <div className="heading-2">
-                    {heading}
+                <div>
+                    <div className="heading-2">
+                        {heading}
+                    </div>
+
+                    <div className="subheading-2">
+                        {subheading}
+                    </div>
+
+                    <div style={{color: "green"}} className="subheading-2">
+                        {this.connectionStatus[status]}
+                    </div>
+
                 </div>
 
-                <div className="subheading-2">
-                    {subheading}
-                </div>
-                <div style={{color:"green"}} className="subheading-2">
-                    {this.connectionStatus[status]}
-                </div>
 
                 <div className="paragraph">
                     {paragraph}
                 </div>
                 <br/>
-                <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,coachDoc.data().resume)}}>
+                <Button color="primary" onClick={(event) => {
+                    this.handleResumeClick(event, coachDoc.data().resume)
+                }}>
                     View Resume
                 </Button>
 
