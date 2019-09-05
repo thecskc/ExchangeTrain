@@ -34,13 +34,19 @@ class UserConnectionRequests extends Component {
 
     handleResumeClick(event,resume){
         event.preventDefault();
-        try {
-            console.log("resume link", resume);
-            Router.push(resume);
-        }
-        catch(e){
-            console.log("can't forward");
-        }
+        console.log(resume);
+        Router.push(resume);
+        //window.location.href=resume;
+
+        // try {
+        //     console.log("resume link", resume);
+        //     Router.push(resume).catch(function(err){
+        //         console.log(err);
+        //     });
+        // }
+        // catch(e){
+        //     console.log("can't forward");
+        // }
     }
 
     handleClick(event, status, fullDoc) {
@@ -114,6 +120,8 @@ class UserConnectionRequests extends Component {
 
     makeCard(heading, subheading, status, paragraph, coachDoc) {
 
+        console.log("Make Card function, " + coachDoc);
+
         let button =
             <button className="coach-button" onClick={(event) => this.handleClick(event, status, coachDoc)}>
                 {this.getButtonValue(status)}
@@ -141,7 +149,7 @@ class UserConnectionRequests extends Component {
                     {paragraph}
                 </div>
                 <br/>
-                <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,coachDoc.resume)}}>
+                <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,coachDoc.data().resume)}}>
                     View Resume
                 </Button>
 

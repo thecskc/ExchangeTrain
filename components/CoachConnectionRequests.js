@@ -46,12 +46,18 @@ class CoachConnectionRequests extends Component {
 
     handleResumeClick(event,resume){
         event.preventDefault();
-        try {
-            Router.push(resume);
-        }
-        catch(e){
-            console.log("couldn't process request");
-        }
+        console.log(resume);
+        Router.push(resume);
+        //window.location.href=resume;
+
+        // try {
+        //     Router.replace(resume).catch(function(err){
+        //         console.log(err);
+        //     });
+        // }
+        // catch(e){
+        //     console.log("couldn't process request");
+        // }
     }
 
     handleClick(event, status, userDoc) {
@@ -145,7 +151,7 @@ class CoachConnectionRequests extends Component {
                     {paragraph}
                 </div>
                 <br/>
-                <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,userDoc.resume)}}>
+                <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,userDoc.data().resume)}}>
                     View Resume
                 </Button>
 

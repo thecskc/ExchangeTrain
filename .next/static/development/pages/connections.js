@@ -81,12 +81,16 @@ function (_Component) {
     value: function handleResumeClick(event, resume) {
       event.preventDefault();
       console.log("resume", resume);
-
-      try {
-        next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push(resume);
-      } catch (e) {
-        console.log("couldn't process request");
-      }
+      window.location.href = resume; // try {
+      //
+      //     window.location.replace(resume);
+      //     Router.replace(resume).catch(function(err){
+      //         console.log(err);
+      //     });
+      // }
+      // catch(e){
+      //     console.log("couldn't process request");
+      // }
     }
   }, {
     key: "sendInterest",
@@ -121,25 +125,25 @@ function (_Component) {
           onClose: this.handleDialogClose,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 65
+            lineNumber: 71
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_16__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 72
           },
           __self: this
         }, "Your Request Has Been Sent "), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 73
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_15__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 74
           },
           __self: this
         }, "This coach will respond after reviewing your profile"))));
@@ -152,52 +156,52 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 86
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         className: "heading-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 88
         },
         __self: this
       }, this.props.name), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         className: "subheading-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 92
         },
         __self: this
       }, this.props.company + ", " + this.props.location), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 96
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 96
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 98
         },
         __self: this
       }, this.props.bio), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 102
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 102
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -207,13 +211,13 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 104
         },
         __self: this
       }, "View Resume"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 108
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
@@ -221,7 +225,7 @@ function (_Component) {
         onClick: this.sendInterest,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 110
         },
         __self: this
       }, "Connect")));
@@ -324,12 +328,16 @@ function (_Component) {
     key: "handleResumeClick",
     value: function handleResumeClick(event, resume) {
       event.preventDefault();
-
-      try {
-        next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push(resume);
-      } catch (e) {
-        console.log("couldn't process request");
-      }
+      console.log(resume);
+      next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push(resume); //window.location.href=resume;
+      // try {
+      //     Router.replace(resume).catch(function(err){
+      //         console.log(err);
+      //     });
+      // }
+      // catch(e){
+      //     console.log("couldn't process request");
+      // }
     }
   }, {
     key: "handleClick",
@@ -438,7 +446,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 129
         },
         __self: this
       }, this.connectionStatus[status]);
@@ -447,7 +455,7 @@ function (_Component) {
         button = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 128
+            lineNumber: 134
           },
           __self: this
         });
@@ -461,21 +469,21 @@ function (_Component) {
         key: userDoc.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 137
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "heading-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 139
         },
         __self: this
       }, heading), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "subheading-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 137
+          lineNumber: 143
         },
         __self: this
       }, subheading), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
@@ -485,30 +493,30 @@ function (_Component) {
         className: "subheading-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 146
         },
         __self: this
       }, this.getButtonValue(status)), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 150
         },
         __self: this
       }, paragraph), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147
+          lineNumber: 153
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_material_ui_core_Button_Button__WEBPACK_IMPORTED_MODULE_12___default.a, {
         color: "primary",
         onClick: function onClick(event) {
-          _this3.handleResumeClick(event, userDoc.resume);
+          _this3.handleResumeClick(event, userDoc.data().resume);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148
+          lineNumber: 154
         },
         __self: this
       }, "View Resume"), button);
@@ -522,7 +530,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 167
+            lineNumber: 173
           },
           __self: this
         });
@@ -772,13 +780,17 @@ function (_Component) {
     key: "handleResumeClick",
     value: function handleResumeClick(event, resume) {
       event.preventDefault();
-
-      try {
-        console.log("resume link", resume);
-        next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push(resume);
-      } catch (e) {
-        console.log("can't forward");
-      }
+      console.log(resume);
+      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push(resume); //window.location.href=resume;
+      // try {
+      //     console.log("resume link", resume);
+      //     Router.push(resume).catch(function(err){
+      //         console.log(err);
+      //     });
+      // }
+      // catch(e){
+      //     console.log("can't forward");
+      // }
     }
   }, {
     key: "handleClick",
@@ -884,6 +896,7 @@ function (_Component) {
     value: function makeCard(heading, subheading, status, paragraph, coachDoc) {
       var _this3 = this;
 
+      console.log("Make Card function, " + coachDoc);
       var button = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
         className: "coach-button",
         onClick: function onClick(event) {
@@ -891,7 +904,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 126
         },
         __self: this
       }, this.getButtonValue(status));
@@ -900,7 +913,7 @@ function (_Component) {
         button = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 123
+            lineNumber: 131
           },
           __self: this
         });
@@ -914,21 +927,21 @@ function (_Component) {
         key: coachDoc.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 135
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "heading-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 137
         },
         __self: this
       }, heading), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "subheading-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 141
         },
         __self: this
       }, subheading), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
@@ -938,30 +951,30 @@ function (_Component) {
         className: "subheading-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136
+          lineNumber: 144
         },
         __self: this
       }, this.connectionStatus[status]), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 148
         },
         __self: this
       }, paragraph), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143
+          lineNumber: 151
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
         color: "primary",
         onClick: function onClick(event) {
-          _this3.handleResumeClick(event, coachDoc.resume);
+          _this3.handleResumeClick(event, coachDoc.data().resume);
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144
+          lineNumber: 152
         },
         __self: this
       }, "View Resume"), button);
@@ -975,7 +988,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 164
+            lineNumber: 172
           },
           __self: this
         });

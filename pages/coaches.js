@@ -76,7 +76,6 @@ class Coaches extends Component {
                     if(doc.exists){
                         this.setState({"loaded": true, "user": user,"profile":true});
                         this.getCoaches();
-
                     }
                     else{
                         this.setState({"loaded": true, "user": user,"profile":false});

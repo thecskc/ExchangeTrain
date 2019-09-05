@@ -1,14 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato|Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Lato|Merriweather&display=swap);
-.coaches-container{
-    display:flex;
-    flex-direction:column;
-    width:100vw;
-    height:100vh;
-    padding:16px;
-}
-
-
 * {
     box-sizing: border-box;
 }

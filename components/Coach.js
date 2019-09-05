@@ -32,12 +32,18 @@ class Coach extends Component {
     handleResumeClick(event,resume){
         event.preventDefault();
         console.log("resume",resume);
-        try {
-            Router.push(resume);
-        }
-        catch(e){
-            console.log("couldn't process request");
-        }
+
+        window.location.href=resume;
+        // try {
+        //
+        //     window.location.replace(resume);
+        //     Router.replace(resume).catch(function(err){
+        //         console.log(err);
+        //     });
+        // }
+        // catch(e){
+        //     console.log("couldn't process request");
+        // }
     }
 
     sendInterest(event) {
