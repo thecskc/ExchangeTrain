@@ -61313,10 +61313,25 @@ function (_Component) {
     _this.loadedProfile = _this.loadedProfile.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     _this.editProfile = _this.editProfile.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     _this.handleAccessCode = _this.handleAccessCode.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
+    _this.cutWords = _this.cutWords.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Profile, [{
+    key: "cutWords",
+    value: function cutWords(strVal) {
+      var result = strVal;
+      var resultArray = result.split(" ");
+
+      if (resultArray.length > 100) {
+        resultArray = resultArray.slice(0, 100);
+        result = resultArray.join(" ") + "...";
+      }
+
+      console.log("invoked cutwords");
+      return result;
+    }
+  }, {
     key: "handleAccessCode",
     value: function handleAccessCode() {
       console.log("env code");
@@ -61381,8 +61396,8 @@ function (_Component) {
       if (!this.state.resume) {
         error += " Please add a link to your resume.";
       } else {
-        if (valid_url__WEBPACK_IMPORTED_MODULE_15__["is_web_uri"](this.state.resume)) {
-          console.log("checking valid url");
+        if (!Object(valid_url__WEBPACK_IMPORTED_MODULE_15__["isWebUri"])(this.state.resume)) {
+          console.log("checking valid url", this.state.resume);
           error += "Please enter a valid URL for your resume";
         }
       }
@@ -61428,6 +61443,7 @@ function (_Component) {
 
       if (this.validateForm()) {
         this.handleAccessCode();
+        this.state.bio = this.cutWords(this.state.bio);
         var dbRef = _components_firebase__WEBPACK_IMPORTED_MODULE_8__["default"].firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(function () {
           console.log("written");
           var userProfile = {
@@ -61527,7 +61543,7 @@ function (_Component) {
             user: this.state.user,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 252
+              lineNumber: 265
             },
             __self: this
           }), __jsx("div", {
@@ -61537,7 +61553,7 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 254
+              lineNumber: 267
             },
             __self: this
           }, __jsx("div", {
@@ -61547,7 +61563,7 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 257
+              lineNumber: 270
             },
             __self: this
           }, "Fill Out Your Profile"), __jsx("div", {
@@ -61557,7 +61573,7 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 259
+              lineNumber: 272
             },
             __self: this
           }, __jsx("div", {
@@ -61568,13 +61584,13 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 260
+              lineNumber: 273
             },
             __self: this
           }, __jsx("form", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 261
+              lineNumber: 274
             },
             __self: this
           }, __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -61584,19 +61600,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 264
+              lineNumber: 277
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 271
+              lineNumber: 284
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 271
+              lineNumber: 284
             },
             __self: this
           }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -61606,19 +61622,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 273
+              lineNumber: 286
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 280
+              lineNumber: 293
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 280
+              lineNumber: 293
             },
             __self: this
           }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -61628,24 +61644,24 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 282
+              lineNumber: 295
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 290
+              lineNumber: 303
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 290
+              lineNumber: 303
             },
             __self: this
           }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
             name: "bio",
-            placeholder: "Bio",
+            placeholder: "Bio (100 words limit)",
             value: this.state.bio,
             onChange: this.handleChange,
             multiline: true,
@@ -61656,19 +61672,19 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 293
+              lineNumber: 306
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 305
+              lineNumber: 318
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 305
+              lineNumber: 318
             },
             __self: this
           }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -61678,19 +61694,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 308
+              lineNumber: 321
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 318
+              lineNumber: 331
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 318
+              lineNumber: 331
             },
             __self: this
           }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -61700,19 +61716,19 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 320
+              lineNumber: 333
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 327
+              lineNumber: 340
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 327
+              lineNumber: 340
             },
             __self: this
           }), function () {
@@ -61724,7 +61740,7 @@ function (_Component) {
                 onChange: _this5.handleChange,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 334
+                  lineNumber: 347
                 },
                 __self: this
               });
@@ -61732,13 +61748,13 @@ function (_Component) {
           }(), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 347
+              lineNumber: 360
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 347
+              lineNumber: 360
             },
             __self: this
           }), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -61747,7 +61763,7 @@ function (_Component) {
             onClick: this.editProfile,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 350
+              lineNumber: 363
             },
             __self: this
           }, "Save"))))));
@@ -61755,7 +61771,7 @@ function (_Component) {
           return __jsx("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 365
+              lineNumber: 378
             },
             __self: this
           }, "Not logged in");
@@ -61764,7 +61780,7 @@ function (_Component) {
         return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 370
+            lineNumber: 383
           },
           __self: this
         });
@@ -61779,7 +61795,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 0:
 /*!****************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fprofile&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cprofile.js ***!
   \****************************************************************************************************************************************************/
@@ -61802,5 +61818,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=profile.js.map

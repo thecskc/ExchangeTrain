@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import "../styling/style.css"
 import Navbar from "../components/navbar";
 import Loader from "../components/Loader"
-import * as isurl from "valid-url"
+import {isWebUri} from "valid-url"
 
 
 class Profile extends Component {
@@ -29,7 +29,19 @@ class Profile extends Component {
         this.loadedProfile = this.loadedProfile.bind(this);
         this.editProfile = this.editProfile.bind(this);
         this.handleAccessCode = this.handleAccessCode.bind(this);
+        this.cutWords = this.cutWords.bind(this);
 
+    }
+
+    cutWords(strVal) {
+        let result = strVal;
+        let resultArray = result.split(" ");
+        if (resultArray.length > 100) {
+            resultArray = resultArray.slice(0, 100);
+            result = resultArray.join(" ") + "...";
+        }
+        console.log("invoked cutwords");
+        return result;
     }
 
 
@@ -96,10 +108,10 @@ class Profile extends Component {
         if (!this.state.resume) {
             error += " Please add a link to your resume."
         }
-        else{
+        else {
 
-            if(isurl.is_web_uri(this.state.resume)){
-                console.log("checking valid url")
+            if (!isWebUri(this.state.resume)) {
+                console.log("checking valid url", this.state.resume);
                 error += "Please enter a valid URL for your resume";
             }
         }
@@ -148,6 +160,7 @@ class Profile extends Component {
         if (this.validateForm()) {
 
             this.handleAccessCode();
+            this.state.bio = this.cutWords(this.state.bio);
 
             const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(() => {
                 console.log("written");
@@ -293,7 +306,7 @@ class Profile extends Component {
                                         <TextField
 
                                             name="bio"
-                                            placeholder="Bio"
+                                            placeholder="Bio (100 words limit)"
                                             value={this.state.bio}
                                             onChange={this.handleChange}
                                             multiline={true}
