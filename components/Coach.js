@@ -11,7 +11,6 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
-
 class Coach extends Component {
 
     constructor(props) {
@@ -29,11 +28,11 @@ class Coach extends Component {
     }
 
 
-    handleResumeClick(event,resume){
+    handleResumeClick(event, resume) {
         event.preventDefault();
-        console.log("resume",resume);
+        console.log("resume", resume);
 
-        window.location.href=resume;
+        window.location.href = resume;
         // try {
         //
         //     window.location.replace(resume);
@@ -83,14 +82,16 @@ class Coach extends Component {
         return (
             <>
                 {dialogShow}
-                <div className="card" style={{"justifyContent":"space-between"}}>
+                <div className="card" style={{"justifyContent": "space-between"}}>
 
-                    <div className="heading-2">
-                        {this.props.name}
-                    </div>
+                    <div>
+                        <div className="heading-2">
+                            {this.props.name}
+                        </div>
 
-                    <div className="subheading-2">
-                        {this.props.company +", "+this.props.location}
+                        <div className="subheading-2">
+                            {this.props.company + ", " + this.props.location}
+                        </div>
                     </div>
 
                     <br/><br/>
@@ -101,7 +102,9 @@ class Coach extends Component {
 
                     <br/><br/>
 
-                    <Button color="primary" onClick={(event)=>{this.handleResumeClick(event,this.props.resume)}}>
+                    <Button color="primary" onClick={(event) => {
+                        this.handleResumeClick(event, this.props.resume)
+                    }}>
                         View Resume
                     </Button>
 
