@@ -259,7 +259,6 @@ function (_Component) {
       _components_firebase__WEBPACK_IMPORTED_MODULE_10__["default"].auth().signOut().then(this.setState({
         "signedOut": true
       }));
-      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push("/");
     }
   }, {
     key: "render",
@@ -270,42 +269,42 @@ function (_Component) {
           id: "myTopnav",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 33
           },
           __self: this
         }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 35
           },
           __self: this
         }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/connections",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 36
           },
           __self: this
         }, "Connections"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/profile",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 37
           },
           __self: this
         }, "Profile"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/coaches",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 38
           },
           __self: this
         }, "Coaches"), __jsx("a", {
           onClick: this.handleSignOut,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 39
           },
           __self: this
         }, "Sign Out"));
@@ -315,21 +314,21 @@ function (_Component) {
           id: "myTopnav",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 47
           },
           __self: this
         }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 49
           },
           __self: this
         }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/login",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 50
           },
           __self: this
         }, "Login"));
@@ -61791,7 +61790,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!****************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fprofile&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cprofile.js ***!
   \****************************************************************************************************************************************************/
@@ -61814,5 +61813,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js","styles"]]]);
+},[[4,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=profile.js.map

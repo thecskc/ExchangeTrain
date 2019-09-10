@@ -8,6 +8,9 @@ module.exports = withCSS({
         config.plugins.push(new webpack.EnvironmentPlugin(localEnv))
 
         return config
+    },
+    env:{
+        COACH_CODE:"exchange800414b892"
     }
 
 })
