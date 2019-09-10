@@ -22,15 +22,13 @@ class Navbar extends Component {
         firebase.auth().signOut().then(
             this.setState({"signedOut":true})
         );
-        Router.push("/index");
+        Router.push("/");
 
     }
 
     render() {
 
-        if(this.state.signedOut){
-            Router.push("/index");
-        }
+
         if (this.props.user) {
             return (
                 <div className="topnav" id="myTopnav">
