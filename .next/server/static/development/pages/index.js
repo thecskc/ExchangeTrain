@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -163,6 +163,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\navbar.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
@@ -192,7 +193,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }
 
     if (this.props.user) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return __jsx("div", {
         className: "topnav",
         id: "myTopnav",
         __source: {
@@ -200,35 +201,35 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           lineNumber: 36
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 38
         },
         __self: this
-      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/connections",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 39
         },
         __self: this
-      }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Connections"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/profile",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 40
         },
         __self: this
-      }, "Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Profile"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/coaches",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 41
         },
         __self: this
-      }, "Coaches"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Coaches"), __jsx("a", {
         onClick: this.handleSignOut,
         __source: {
           fileName: _jsxFileName,
@@ -237,7 +238,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         __self: this
       }, "Sign Out"));
     } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return __jsx("div", {
         className: "topnav",
         id: "myTopnav",
         __source: {
@@ -245,14 +246,14 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           lineNumber: 50
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 52
         },
         __self: this
-      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/login",
         __source: {
           fileName: _jsxFileName,
@@ -463,7 +464,7 @@ function formatUrl(url) {
 
 let observer;
 const listeners = new _map.default();
-const IntersectionObserver =  false ? undefined : null;
+const IntersectionObserver = false ? undefined : null;
 
 function getObserver() {
   // Return shared instance of IntersectionObserver if already created
@@ -511,8 +512,9 @@ const listenToIntersections = (el, cb) => {
 };
 
 class Link extends _react.Component {
-  constructor() {
-    super(...arguments);
+  constructor(props) {
+    super(props);
+    this.p = void 0;
 
     this.cleanUpListeners = () => {};
 
@@ -541,7 +543,7 @@ class Link extends _react.Component {
       } = this.formatUrls(this.props.href, this.props.as);
 
       if (!isLocal(href)) {
-        // ignore click if it's outside our scope
+        // ignore click if it's outside our scope (e.g. https://google.com)
         return;
       }
 
@@ -572,6 +574,14 @@ class Link extends _react.Component {
         }
       });
     };
+
+    if (true) {
+      if (props.prefetch) {
+        console.warn('Next.js auto-prefetches automatically based on viewport. The prefetch attribute is no longer needed. More: https://err.sh/zeit/next.js/prefetch-true-deprecated');
+      }
+    }
+
+    this.p = props.prefetch !== false;
   }
 
   componentWillUnmount() {
@@ -579,7 +589,7 @@ class Link extends _react.Component {
   }
 
   handleRef(ref) {
-    if (this.props.prefetch && IntersectionObserver && ref && ref.tagName) {
+    if (this.p && IntersectionObserver && ref && ref.tagName) {
       this.cleanUpListeners();
       this.cleanUpListeners = listenToIntersections(ref, () => {
         this.prefetch();
@@ -590,7 +600,7 @@ class Link extends _react.Component {
 
 
   prefetch() {
-    if (!this.props.prefetch || "undefined" === 'undefined') return; // Prefetch the JSON page if asked (only in the client)
+    if (!this.p || true) return; // Prefetch the JSON page if asked (only in the client)
 
     const {
       pathname
@@ -610,7 +620,7 @@ class Link extends _react.Component {
     const {
       href,
       as
-    } = this.formatUrls(this.props.href, this.props.as); // Deprecated. Warning shown by propType check. If the childen provided is a string (<Link>example</Link>) we wrap it in an <a> tag
+    } = this.formatUrls(this.props.href, this.props.as); // Deprecated. Warning shown by propType check. If the children provided is a string (<Link>example</Link>) we wrap it in an <a> tag
 
     if (typeof children === 'string') {
       children = _react.default.createElement("a", null, children);
@@ -620,7 +630,15 @@ class Link extends _react.Component {
     const child = _react.Children.only(children);
 
     const props = {
-      ref: el => this.handleRef(el),
+      ref: el => {
+        this.handleRef(el);
+
+        if (child && typeof child === 'object' && child.ref) {
+          if (typeof child.ref === 'function') child.ref(el);else if (typeof child.ref === 'object') {
+            child.ref.current = el;
+          }
+        }
+      },
       onMouseEnter: e => {
         if (child.props && typeof child.props.onMouseEnter === 'function') {
           child.props.onMouseEnter(e);
@@ -655,9 +673,6 @@ class Link extends _react.Component {
 }
 
 Link.propTypes = void 0;
-Link.defaultProps = {
-  prefetch: true
-};
 
 if (true) {
   const warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
@@ -739,8 +754,7 @@ const singletonRouter = {
 
 }; // Create public properties and methods of the router in the singletonRouter
 
-const urlPropertyFields = ['pathname', 'route', 'query', 'asPath'];
-const propertyFields = ['components'];
+const urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components'];
 const routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
 const coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
@@ -750,7 +764,7 @@ const coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'befo
   }
 
 });
-propertyFields.concat(urlPropertyFields).forEach(field => {
+urlPropertyFields.forEach(field => {
   // Here we need to use Object.defineProperty because, we need to return
   // the property assigned to the actual router
   // The value might get changed as we change routes and this is the
@@ -846,18 +860,6 @@ function makePublicRouterInstance(router) {
 
 
   instance.events = _router2.default.events;
-  propertyFields.forEach(field => {
-    // Here we need to use Object.defineProperty because, we need to return
-    // the property assigned to the actual router
-    // The value might get changed as we change routes and this is the
-    // proper way to access it
-    (0, _defineProperty.default)(instance, field, {
-      get() {
-        return _router[field];
-      }
-
-    });
-  });
   coreMethodFields.forEach(field => {
     instance[field] = function () {
       return _router[field](...arguments);
@@ -948,7 +950,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
 /* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -961,6 +970,12 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       "loaded": false,
       "user": null
     };
+    this.handleGetStartedClick = this.handleGetStartedClick.bind(this);
+  }
+
+  handleGetStartedClick(event) {
+    event.preventDefault();
+    next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/login");
   }
 
   componentDidMount() {
@@ -982,85 +997,89 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
       user: this.state.user,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 44
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }), __jsx("div", {
       className: "container",
+      style: {
+        "padding": "0px"
+      },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 46
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, __jsx("div", {
       className: "hero",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 48
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, __jsx("div", {
       className: "section-40-column",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 50
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, __jsx("div", {
       className: "heading",
       style: {
         alignSelf: "flex-start  "
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 51
       },
       __self: this
-    }, "ExchangeTrain"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "ExchangeTrain"), __jsx("div", {
       className: "subheading",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 52
       },
       __self: this
-    }, "Personalized training for technical interviews by software engineers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+    }, "Personalized training for technical interviews by software engineers"), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 56
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+    }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 57
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }), __jsx("button", {
+      onClick: this.handleGetStartedClick,
       style: {
         alignSelf: "flex-start"
       },
       className: "landing-button",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 58
       },
       __self: this
-    }, "Browse Coaches")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "Get Started")), __jsx("div", {
       className: "section-60-images",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 63
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, __jsx("img", {
       src: "../static/undraw_code_review_l1q9%20(1).svg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 64
       },
       __self: this
     })))));
@@ -1094,7 +1113,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 6:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

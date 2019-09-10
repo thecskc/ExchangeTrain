@@ -134,6 +134,7 @@ body {
     flex-direction: row;
     padding: 32px;
     color: white;
+    margin:0px;
 
     background: #499bea; /* Old browsers */
     background: -moz-linear-gradient(

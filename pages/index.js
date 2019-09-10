@@ -2,6 +2,10 @@ import React, {Component} from "react";
 import "../styling/style.css"
 import Navbar from "../components/navbar"
 import firebase from "../components/firebase";
+import Link from 'next/link'
+import Router from "next/router";
+
+
 
 
 class Index extends Component {
@@ -11,9 +15,14 @@ class Index extends Component {
         this.state = {
             "loaded":false,
             "user":null
-        }
+        };
+        this.handleGetStartedClick = this.handleGetStartedClick.bind(this);
     }
 
+    handleGetStartedClick(event){
+        event.preventDefault();
+        Router.push("/login");
+    }
     componentDidMount() {
         firebase.auth().onAuthStateChanged((user) => {
 
@@ -34,7 +43,7 @@ class Index extends Component {
             <>
                 <Navbar user={this.state.user}/>
 
-                <div className="container">
+                <div className="container" style={{"padding":"0px"}}>
 
                     <div className="hero">
 
@@ -46,9 +55,9 @@ class Index extends Component {
                             </div>
                             <br/>
                             <br/>
-                            <div style={{alignSelf: "flex-start"}} className="landing-button">
-                                Browse Coaches
-                            </div>
+                            <button onClick={this.handleGetStartedClick} style={{alignSelf: "flex-start"}} className="landing-button">
+                                Get Started
+                            </button>
                         </div>
 
                         <div className="section-60-images">

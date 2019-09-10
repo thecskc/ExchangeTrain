@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -109,13 +109,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\Loader.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
 
 class Loader extends react__WEBPACK_IMPORTED_MODULE_2__["Component"] {
   render() {
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    return __jsx("div", {
       className: "container",
       style: {
         "justifyContent": "center"
@@ -125,7 +126,7 @@ class Loader extends react__WEBPACK_IMPORTED_MODULE_2__["Component"] {
         lineNumber: 10
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }, __jsx("div", {
       className: "lds-spinner",
       style: {
         "alignSelf": "center"
@@ -135,73 +136,73 @@ class Loader extends react__WEBPACK_IMPORTED_MODULE_2__["Component"] {
         lineNumber: 11
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }, __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 12
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 14
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 16
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 18
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 19
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 22
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 23
@@ -286,6 +287,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\navbar.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
@@ -315,7 +317,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }
 
     if (this.props.user) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return __jsx("div", {
         className: "topnav",
         id: "myTopnav",
         __source: {
@@ -323,35 +325,35 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           lineNumber: 36
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 38
         },
         __self: this
-      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/connections",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 39
         },
         __self: this
-      }, "Connections"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Connections"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/profile",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 40
         },
         __self: this
-      }, "Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Profile"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/coaches",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 41
         },
         __self: this
-      }, "Coaches"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "Coaches"), __jsx("a", {
         onClick: this.handleSignOut,
         __source: {
           fileName: _jsxFileName,
@@ -360,7 +362,7 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         __self: this
       }, "Sign Out"));
     } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return __jsx("div", {
         className: "topnav",
         id: "myTopnav",
         __source: {
@@ -368,14 +370,14 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           lineNumber: 50
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 52
         },
         __self: this
-      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/login",
         __source: {
           fileName: _jsxFileName,
@@ -586,7 +588,7 @@ function formatUrl(url) {
 
 let observer;
 const listeners = new _map.default();
-const IntersectionObserver =  false ? undefined : null;
+const IntersectionObserver = false ? undefined : null;
 
 function getObserver() {
   // Return shared instance of IntersectionObserver if already created
@@ -634,8 +636,9 @@ const listenToIntersections = (el, cb) => {
 };
 
 class Link extends _react.Component {
-  constructor() {
-    super(...arguments);
+  constructor(props) {
+    super(props);
+    this.p = void 0;
 
     this.cleanUpListeners = () => {};
 
@@ -664,7 +667,7 @@ class Link extends _react.Component {
       } = this.formatUrls(this.props.href, this.props.as);
 
       if (!isLocal(href)) {
-        // ignore click if it's outside our scope
+        // ignore click if it's outside our scope (e.g. https://google.com)
         return;
       }
 
@@ -695,6 +698,14 @@ class Link extends _react.Component {
         }
       });
     };
+
+    if (true) {
+      if (props.prefetch) {
+        console.warn('Next.js auto-prefetches automatically based on viewport. The prefetch attribute is no longer needed. More: https://err.sh/zeit/next.js/prefetch-true-deprecated');
+      }
+    }
+
+    this.p = props.prefetch !== false;
   }
 
   componentWillUnmount() {
@@ -702,7 +713,7 @@ class Link extends _react.Component {
   }
 
   handleRef(ref) {
-    if (this.props.prefetch && IntersectionObserver && ref && ref.tagName) {
+    if (this.p && IntersectionObserver && ref && ref.tagName) {
       this.cleanUpListeners();
       this.cleanUpListeners = listenToIntersections(ref, () => {
         this.prefetch();
@@ -713,7 +724,7 @@ class Link extends _react.Component {
 
 
   prefetch() {
-    if (!this.props.prefetch || "undefined" === 'undefined') return; // Prefetch the JSON page if asked (only in the client)
+    if (!this.p || true) return; // Prefetch the JSON page if asked (only in the client)
 
     const {
       pathname
@@ -733,7 +744,7 @@ class Link extends _react.Component {
     const {
       href,
       as
-    } = this.formatUrls(this.props.href, this.props.as); // Deprecated. Warning shown by propType check. If the childen provided is a string (<Link>example</Link>) we wrap it in an <a> tag
+    } = this.formatUrls(this.props.href, this.props.as); // Deprecated. Warning shown by propType check. If the children provided is a string (<Link>example</Link>) we wrap it in an <a> tag
 
     if (typeof children === 'string') {
       children = _react.default.createElement("a", null, children);
@@ -743,7 +754,15 @@ class Link extends _react.Component {
     const child = _react.Children.only(children);
 
     const props = {
-      ref: el => this.handleRef(el),
+      ref: el => {
+        this.handleRef(el);
+
+        if (child && typeof child === 'object' && child.ref) {
+          if (typeof child.ref === 'function') child.ref(el);else if (typeof child.ref === 'object') {
+            child.ref.current = el;
+          }
+        }
+      },
       onMouseEnter: e => {
         if (child.props && typeof child.props.onMouseEnter === 'function') {
           child.props.onMouseEnter(e);
@@ -778,9 +797,6 @@ class Link extends _react.Component {
 }
 
 Link.propTypes = void 0;
-Link.defaultProps = {
-  prefetch: true
-};
 
 if (true) {
   const warn = (0, _utils.execOnce)(console.error); // This module gets removed by webpack.IgnorePlugin
@@ -862,8 +878,7 @@ const singletonRouter = {
 
 }; // Create public properties and methods of the router in the singletonRouter
 
-const urlPropertyFields = ['pathname', 'route', 'query', 'asPath'];
-const propertyFields = ['components'];
+const urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components'];
 const routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
 const coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
@@ -873,7 +888,7 @@ const coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'befo
   }
 
 });
-propertyFields.concat(urlPropertyFields).forEach(field => {
+urlPropertyFields.forEach(field => {
   // Here we need to use Object.defineProperty because, we need to return
   // the property assigned to the actual router
   // The value might get changed as we change routes and this is the
@@ -969,18 +984,6 @@ function makePublicRouterInstance(router) {
 
 
   instance.events = _router2.default.events;
-  propertyFields.forEach(field => {
-    // Here we need to use Object.defineProperty because, we need to return
-    // the property assigned to the actual router
-    // The value might get changed as we change routes and this is the
-    // proper way to access it
-    (0, _defineProperty.default)(instance, field, {
-      get() {
-        return _router[field];
-      }
-
-    });
-  });
   coreMethodFields.forEach(field => {
     instance[field] = function () {
       return _router[field](...arguments);
@@ -1081,6 +1084,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var valid_url__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! valid-url */ "valid-url");
 /* harmony import */ var valid_url__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(valid_url__WEBPACK_IMPORTED_MODULE_8__);
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\profile.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
@@ -1301,14 +1305,14 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     if (this.state.loaded) {
       if (this.state.user) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_6__["default"], {
           user: this.state.user,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 252
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), __jsx("div", {
           className: "container",
           style: {
             "justify-content": "center"
@@ -1318,7 +1322,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 254
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, __jsx("div", {
           className: "page-heading",
           style: {
             "align-self": "center"
@@ -1328,7 +1332,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 257
           },
           __self: this
-        }, "Fill Out Your Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Fill Out Your Profile"), __jsx("div", {
           className: "card-section",
           style: {
             "align-self": "center"
@@ -1338,7 +1342,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 259
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, __jsx("div", {
           className: "card",
           style: {
             "width": "80vw",
@@ -1349,13 +1353,13 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 260
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        }, __jsx("form", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 261
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }, __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
           name: "displayName",
           placeholder: "Enter Name",
           value: this.state.displayName,
@@ -1365,19 +1369,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 264
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 271
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 271
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
           name: "schoolcompany",
           placeholder: "School/Company",
           value: this.state.schoolcompany,
@@ -1387,19 +1391,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 273
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 280
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 280
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
           name: "location",
           placeholder: "Location",
           value: this.state.location,
@@ -1409,19 +1413,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 282
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 290
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 290
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
           name: "bio",
           placeholder: "Bio",
           value: this.state.bio,
@@ -1437,19 +1441,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 293
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 305
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 305
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
           name: "resume",
           placeholder: "Resume URL",
           value: this.state.resume,
@@ -1459,19 +1463,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 308
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 318
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 318
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
           name: "coachcode",
           placeholder: "Coach Access Code",
           value: this.state.coachcode,
@@ -1481,13 +1485,13 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
             lineNumber: 320
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 327
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 327
@@ -1495,7 +1499,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           __self: this
         }), (() => {
           if (this.state.isCoach) {
-            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+            return __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
               name: "calendlylink",
               placeholder: "Enter your calendly link",
               value: this.state.calendlylink,
@@ -1507,19 +1511,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               __self: this
             });
           }
-        })(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        })(), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 347
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 347
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        }), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
           color: "primary",
           variant: "contained",
           onClick: this.editProfile,
@@ -1530,7 +1534,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           __self: this
         }, "Save"))))));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        return __jsx("h1", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 365
@@ -1539,7 +1543,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         }, "Not logged in");
       }
     } else {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Loader__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 370
@@ -1588,7 +1592,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 8:
+/***/ 6:
 /*!********************************!*\
   !*** multi ./pages/profile.js ***!
   \********************************/
