@@ -22,7 +22,6 @@ class Navbar extends Component {
         firebase.auth().signOut().then(
             this.setState({"signedOut":true})
         );
-        Router.push("/");
 
     }
 
