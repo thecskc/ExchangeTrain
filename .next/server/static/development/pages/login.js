@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -203,28 +203,52 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           lineNumber: 35
         },
         __self: this
-      }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/connections",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 36
         },
         __self: this
-      }, "Connections"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }, "Connections")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/profile",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 37
         },
         __self: this
-      }, "Profile"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, "Profile")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
         href: "/coaches",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 38
         },
         __self: this
-      }, "Coaches"), __jsx("a", {
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, "Coaches")), __jsx("a", {
         onClick: this.handleSignOut,
         __source: {
           fileName: _jsxFileName,
@@ -1245,7 +1269,7 @@ class Login extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/login.js ***!
   \******************************/

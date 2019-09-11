@@ -131,28 +131,52 @@ function (_Component) {
             lineNumber: 35
           },
           __self: this
-        }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        }, __jsx("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35
+          },
+          __self: this
+        }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/connections",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 36
           },
           __self: this
-        }, "Connections"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        }, __jsx("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36
+          },
+          __self: this
+        }, "Connections")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/profile",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 37
           },
           __self: this
-        }, "Profile"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        }, __jsx("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37
+          },
+          __self: this
+        }, "Profile")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
           href: "/coaches",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 38
           },
           __self: this
-        }, "Coaches"), __jsx("a", {
+        }, __jsx("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38
+          },
+          __self: this
+        }, "Coaches")), __jsx("a", {
           onClick: this.handleSignOut,
           __source: {
             fileName: _jsxFileName,

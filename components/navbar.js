@@ -32,10 +32,10 @@ class Navbar extends Component {
             return (
                 <div className="topnav" id="myTopnav">
 
-                    <Link href="/">Home</Link>
-                    <Link href="/connections">Connections</Link>
-                    <Link href="/profile">Profile</Link>
-                    <Link href="/coaches">Coaches</Link>
+                    <Link href="/"><a>Home</a></Link>
+                    <Link href="/connections"><a>Connections</a></Link>
+                    <Link href="/profile"><a>Profile</a></Link>
+                    <Link href="/coaches"><a>Coaches</a></Link>
                     <a onClick={this.handleSignOut}>Sign Out</a>
 
 

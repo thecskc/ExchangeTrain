@@ -88,10 +88,355 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Coach.js":
+/*!*****************************!*\
+  !*** ./components/Coach.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/TextField */ "@material-ui/core/TextField");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Dialog */ "@material-ui/core/Dialog");
+/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/DialogActions */ "@material-ui/core/DialogActions");
+/* harmony import */ var _material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/DialogContent */ "@material-ui/core/DialogContent");
+/* harmony import */ var _material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/DialogContentText */ "@material-ui/core/DialogContentText");
+/* harmony import */ var _material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/DialogTitle */ "@material-ui/core/DialogTitle");
+/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10__);
+var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\Coach.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+
+
+
+
+
+class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.sendInterest = this.sendInterest.bind(this);
+    this.state = {
+      "showDialog": false
+    };
+    this.handleDialogClose = this.handleDialogClose.bind(this);
+    this.handleResumeClick = this.handleResumeClick.bind(this);
+  }
+
+  handleDialogClose(event) {
+    event.preventDefault();
+    this.setState({
+      "showDialog": false
+    });
+  }
+
+  handleResumeClick(event, resume) {
+    event.preventDefault();
+    console.log("resume", resume);
+    window.location.href = resume; // try {
+    //
+    //     window.location.replace(resume);
+    //     Router.replace(resume).catch(function(err){
+    //         console.log(err);
+    //     });
+    // }
+    // catch(e){
+    //     console.log("couldn't process request");
+    // }
+  }
+
+  sendInterest(event) {
+    event.preventDefault();
+
+    if (this.props.coachid !== this.props.userid) {
+      const dbRef = _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore().collection("Connections").doc(this.props.userid + "_" + this.props.coachid).set({
+        "user": this.props.userid,
+        "coach": this.props.coachid,
+        "status": "USER_CALL_REQUEST"
+      }).then(() => {
+        this.setState({
+          "showDialog": true
+        });
+      });
+    }
+  }
+
+  render() {
+    console.log(this.props.name + "'s id is " + this.props.id);
+    let dialogShow;
+
+    if (this.state.showDialog) {
+      dialogShow = __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        open: this.state.showDialog,
+        onClose: this.handleDialogClose,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, __jsx(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_10___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        },
+        __self: this
+      }, "Your Request Has Been Sent "), __jsx(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }, __jsx(_material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_9___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, "This coach will respond after reviewing your profile"))));
+    }
+
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, dialogShow, __jsx("div", {
+      className: "card",
+      style: {
+        "justifyContent": "space-between"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 85
+      },
+      __self: this
+    }, __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "heading-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88
+      },
+      __self: this
+    }, this.props.name), __jsx("div", {
+      className: "subheading-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 92
+      },
+      __self: this
+    }, this.props.company + ", " + this.props.location)), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97
+      },
+      __self: this
+    }), __jsx("div", {
+      className: "paragraph",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 99
+      },
+      __self: this
+    }, this.props.bio), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: this
+    }), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      color: "primary",
+      onClick: event => {
+        this.handleResumeClick(event, this.props.resume);
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 105
+      },
+      __self: this
+    }, "View Resume"), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 111
+      },
+      __self: this
+    }), __jsx("button", {
+      className: "coach-button",
+      onClick: this.sendInterest,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 113
+      },
+      __self: this
+    }, "Connect")));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Coach);
+
+/***/ }),
+
+/***/ "./components/Loader.js":
+/*!******************************!*\
+  !*** ./components/Loader.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _styling_loading_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styling/loading.css */ "./styling/loading.css");
+/* harmony import */ var _styling_loading_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styling_loading_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\components\\Loader.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+
+
+
+
+class Loader extends react__WEBPACK_IMPORTED_MODULE_2__["Component"] {
+  render() {
+    return __jsx("div", {
+      className: "container",
+      style: {
+        "justifyContent": "center"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "lds-spinner",
+      style: {
+        "alignSelf": "center"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    })));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Loader);
+
+/***/ }),
 
 /***/ "./components/firebase.js":
 /*!********************************!*\
@@ -954,10 +1299,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/coaches.js":
+/*!**************************!*\
+  !*** ./pages/coaches.js ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -965,15 +1310,15 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
-/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
-/* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\index.js";
+/* harmony import */ var _components_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/firebase */ "./components/firebase.js");
+/* harmony import */ var _styling_coaches_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styling/coaches.css */ "./styling/coaches.css");
+/* harmony import */ var _styling_coaches_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styling_coaches_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Coach__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Coach */ "./components/Coach.js");
+/* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
+/* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Loader */ "./components/Loader.js");
+var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\coaches.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -982,29 +1327,70 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+
+class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
+    this.getCoaches = this.getCoaches.bind(this);
     this.state = {
+      "loadedCoaches": false,
       "loaded": false,
-      "user": null
+      "user": null,
+      "profile": false
     };
-    this.handleGetStartedClick = this.handleGetStartedClick.bind(this);
+    this.coaches = [];
+    console.log("constructor called");
   }
 
-  handleGetStartedClick(event) {
-    event.preventDefault();
-    next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/login");
+  getCoaches() {
+    const coachesRef = _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore().collection("Profiles").where("isCoach", "==", true).get().then(snapshot => {
+      let count = 1;
+      snapshot.forEach(doc => {
+        this.coaches.push(__jsx(_components_Coach__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          key: doc.id,
+          coachid: doc.id,
+          name: doc.data().displayName,
+          bio: doc.data().bio,
+          company: doc.data().schoolcompany,
+          location: doc.data().location,
+          resume: doc.data().resume,
+          userid: this.state.user.uid,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40
+          },
+          __self: this
+        }));
+      });
+      console.log("Coaches list");
+      console.log(this.coaches);
+      console.log(this.coaches.length);
+      this.setState({
+        "loadedCoaches": true
+      });
+    });
   }
 
   componentDidMount() {
-    _components_firebase__WEBPACK_IMPORTED_MODULE_3__["default"].auth().onAuthStateChanged(user => {
+    _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().onAuthStateChanged(user => {
       if (user) {
         console.log("user");
         console.log(user);
-        this.setState({
-          "loaded": true,
-          "user": user
+        _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore().collection("Profiles").doc(user.uid).get().then(doc => {
+          if (doc.exists) {
+            this.setState({
+              "loaded": true,
+              "user": user,
+              "profile": true
+            });
+            this.getCoaches();
+          } else {
+            this.setState({
+              "loaded": true,
+              "user": user,
+              "profile": false
+            });
+          }
         });
       } else {
         this.setState({
@@ -1016,97 +1402,83 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      user: this.state.user,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }), __jsx("div", {
-      className: "container",
-      style: {
-        "padding": "0px"
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 46
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "hero",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "section-40-column",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "heading",
-      style: {
-        alignSelf: "flex-start  "
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: this
-    }, "ExchangeTrain"), __jsx("div", {
-      className: "subheading",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }, "Personalized training for technical interviews by software engineers"), __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 56
-      },
-      __self: this
-    }), __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: this
-    }), __jsx("button", {
-      onClick: this.handleGetStartedClick,
-      style: {
-        alignSelf: "flex-start"
-      },
-      className: "landing-button",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }, "Get Started")), __jsx("div", {
-      className: "section-60-images",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
-    }, __jsx("img", {
-      src: "../static/undraw_code_review_l1q9%20(1).svg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      },
-      __self: this
-    })))));
+    if (this.state.loaded) {
+      if (this.state.user) {
+        if (this.state.profile) {
+          if (this.state.loadedCoaches) {
+            return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+              user: this.state.user,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 106
+              },
+              __self: this
+            }), __jsx("div", {
+              className: "coaches-container",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 107
+              },
+              __self: this
+            }, __jsx("div", {
+              className: "page-heading",
+              style: {
+                "alignSelf": "center"
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 110
+              },
+              __self: this
+            }, "Coaches"), __jsx("div", {
+              className: "card-section",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 112
+              },
+              __self: this
+            }, this.coaches)));
+          } else {
+            return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_6__["default"], {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 125
+              },
+              __self: this
+            });
+          }
+        } else {
+          return __jsx("h1", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 130
+            },
+            __self: this
+          }, "Please fill out your profile first");
+        }
+      } else {
+        return __jsx("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 134
+          },
+          __self: this
+        }, "Not Logged In");
+      }
+    } else {
+      return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139
+        },
+        __self: this
+      });
+    }
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+/* harmony default export */ __webpack_exports__["default"] = (Coaches);
 
 /***/ }),
 
@@ -1114,6 +1486,28 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 /*!****************************!*\
   !*** ./styling/Navbar.css ***!
   \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./styling/coaches.css":
+/*!*****************************!*\
+  !*** ./styling/coaches.css ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./styling/loading.css":
+/*!*****************************!*\
+  !*** ./styling/loading.css ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1132,15 +1526,92 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ 7:
+/*!********************************!*\
+  !*** multi ./pages/coaches.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\santh\WebstormProjects\ExchangeTrain\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\santh\WebstormProjects\ExchangeTrain\pages\coaches.js */"./pages/coaches.js");
 
+
+/***/ }),
+
+/***/ "@material-ui/core/Button":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/Button" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Button");
+
+/***/ }),
+
+/***/ "@material-ui/core/Dialog":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/Dialog" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Dialog");
+
+/***/ }),
+
+/***/ "@material-ui/core/DialogActions":
+/*!**************************************************!*\
+  !*** external "@material-ui/core/DialogActions" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/DialogActions");
+
+/***/ }),
+
+/***/ "@material-ui/core/DialogContent":
+/*!**************************************************!*\
+  !*** external "@material-ui/core/DialogContent" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/DialogContent");
+
+/***/ }),
+
+/***/ "@material-ui/core/DialogContentText":
+/*!******************************************************!*\
+  !*** external "@material-ui/core/DialogContentText" ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/DialogContentText");
+
+/***/ }),
+
+/***/ "@material-ui/core/DialogTitle":
+/*!************************************************!*\
+  !*** external "@material-ui/core/DialogTitle" ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/DialogTitle");
+
+/***/ }),
+
+/***/ "@material-ui/core/TextField":
+/*!**********************************************!*\
+  !*** external "@material-ui/core/TextField" ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/TextField");
 
 /***/ }),
 
@@ -1343,4 +1814,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=coaches.js.map
