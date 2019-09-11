@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -338,7 +338,7 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/profile");
       }).catch(function (e) {
         console.log(e);
-        console.log("signup failed");
+        alert(e.message);
       });
     } catch (e) {
       console.log("oops");
@@ -357,6 +357,7 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       }).catch(function (e) {
         console.log(e);
         console.log("login failed");
+        alert(e.message);
       });
     } catch (e) {
       console.log("oops");
@@ -368,7 +369,7 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onSubmit: this.handleSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 93
       },
       __self: this
     }, __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -379,19 +380,19 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 94
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 102
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 102
       },
       __self: this
     }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -402,19 +403,19 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       onChange: this.handleChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 103
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 109
+        lineNumber: 111
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 109
+        lineNumber: 111
       },
       __self: this
     }), __jsx("div", {
@@ -424,7 +425,7 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111
+        lineNumber: 113
       },
       __self: this
     }, __jsx("button", {
@@ -435,19 +436,19 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 114
       },
       __self: this
     }, "Sign In"), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116
+        lineNumber: 118
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116
+        lineNumber: 118
       },
       __self: this
     }), __jsx("button", {
@@ -458,7 +459,7 @@ class SignUp extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 118
+        lineNumber: 120
       },
       __self: this
     }, "Sign Up")));
@@ -1258,7 +1259,7 @@ class Login extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/login.js ***!
   \******************************/

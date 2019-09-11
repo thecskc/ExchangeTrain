@@ -48,7 +48,7 @@ class SignUp extends Component {
 
                 }).catch(function (e) {
                 console.log(e);
-                console.log("signup failed")
+                alert(e.message);
             });
         }
         catch (e) {
@@ -72,7 +72,9 @@ class SignUp extends Component {
             }).catch(function (e) {
                 console.log(e);
 
-                console.log("login failed")
+                console.log("login failed");
+                alert(e.message);
+
 
             });
         }

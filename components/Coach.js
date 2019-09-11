@@ -32,7 +32,8 @@ class Coach extends Component {
         event.preventDefault();
         console.log("resume", resume);
 
-        window.location.href = resume;
+        //window.location.href = resume;
+        window.open(resume);
         // try {
         //
         //     window.location.replace(resume);

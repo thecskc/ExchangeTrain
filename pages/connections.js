@@ -78,7 +78,6 @@ class Connections extends Component {
                                     <div className="page-heading" style={{alignSelf: "center"}}>Connections</div>
                                     <div className="card-section">
 
-
                                         {<CoachConnectionRequests user={this.state.user}/>}
                                     </div>
 

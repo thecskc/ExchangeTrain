@@ -321,7 +321,7 @@ function (_Component) {
                     next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push("/profile");
                   })["catch"](function (e) {
                     console.log(e);
-                    console.log("signup failed");
+                    alert(e.message);
                   });
                 } catch (e) {
                   console.log("oops");
@@ -363,6 +363,7 @@ function (_Component) {
                   })["catch"](function (e) {
                     console.log(e);
                     console.log("login failed");
+                    alert(e.message);
                   });
                 } catch (e) {
                   console.log("oops");
@@ -389,7 +390,7 @@ function (_Component) {
         onSubmit: this.handleSubmit,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 93
         },
         __self: this
       }, __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -400,19 +401,19 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 94
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 102
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 102
         },
         __self: this
       }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -423,19 +424,19 @@ function (_Component) {
         onChange: this.handleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 103
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 111
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 111
         },
         __self: this
       }), __jsx("div", {
@@ -445,7 +446,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 113
         },
         __self: this
       }, __jsx("button", {
@@ -456,19 +457,19 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 112
+          lineNumber: 114
         },
         __self: this
       }, "Sign In"), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 118
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 118
         },
         __self: this
       }), __jsx("button", {
@@ -479,7 +480,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 120
         },
         __self: this
       }, "Sign Up")));
@@ -59803,7 +59804,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Clogin.js ***!
   \************************************************************************************************************************************************/
@@ -59826,5 +59827,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js","styles"]]]);
+},[[6,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=login.js.map

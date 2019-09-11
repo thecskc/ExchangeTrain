@@ -1,22 +1,21 @@
 import React, {Component} from "react";
-import firebase from "../components/firebase";
+import firebase from "./firebase";
 import Router from 'next/router';
 import TextField from "@material-ui/core/TextField"
 import Button from '@material-ui/core/Button';
 import "../styling/style.css"
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import redirect from "nextjs-redirect"
+import DialogComp from "./DialogComp";
 
 class UserConnectionRequests extends Component {
     constructor(props) {
         super(props);
         this.state = {
             "cards": [],
-            "loaded": false
+            "loaded": false,
+            "showDialog": false,
+            "dialogTitle": "",
+            "dialogContent": "",
+            "noConnections":false
         };
 
         this.connectionStatus = {
@@ -30,13 +29,15 @@ class UserConnectionRequests extends Component {
         this.makeCard = this.makeCard.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleResumeClick = this.handleResumeClick.bind(this);
+        this.handleDialogClose = this.handleDialogClose.bind(this);
     }
 
     handleResumeClick(event, resume) {
         event.preventDefault();
         console.log(resume);
-        Router.push(resume);
+        //Router.push(resume);
         //window.location.href=resume;
+        window.open(resume);
 
         // try {
         //     console.log("resume link", resume);
@@ -47,6 +48,11 @@ class UserConnectionRequests extends Component {
         // catch(e){
         //     console.log("can't forward");
         // }
+    }
+
+
+    handleDialogClose() {
+        this.setState({"showDialog": false});
     }
 
     handleClick(event, status, fullDoc) {
@@ -75,9 +81,17 @@ class UserConnectionRequests extends Component {
                 "status": "ISA_APPROVED"
             }, {merge: true});
 
+            this.setState({
+                "showDialog": true,
+                "dialogTitle": "Approved ISA Request",
+                "dialogContent": "The Exchange Team will be in touch " +
+                    "shortly with further instructions"
+            });
+
         }
 
     }
+
 
     async getDoc(coachesList) {
         for (let i = 0; i < coachesList.length; i++) {
@@ -101,9 +115,15 @@ class UserConnectionRequests extends Component {
                     coachesList.push(obj);
                 });
 
-                this.getDoc(coachesList).then(() => {
-                    this.setState({"loaded": true});
-                })
+
+                if (coachesList.length === 0) {
+                    this.setState({"loaded":true,"noConnections": true});
+                }
+                else {
+                    this.getDoc(coachesList).then(() => {
+                        this.setState({"loaded": true});
+                    })
+                }
             })
 
 
@@ -170,10 +190,26 @@ class UserConnectionRequests extends Component {
 
     render() {
 
+        let dialog = <DialogComp dialog={this.state.showDialog} title={this.state.dialogTitle}
+                                 content={this.state.dialogContent} handleClose={this.handleDialogClose}/>
+
+
         if (this.state.loaded) {
-            return (
-                <>{this.state.cards}</>
-            );
+            if (!this.state.noConnections) {
+                return (
+                    <>{dialog}{this.state.cards}</>
+                );
+            }
+            else {
+
+                return (
+                    <>
+                        <div className="subheading-2">
+                            Browse through coaches and request calls to see connections.
+                        </div>
+                    </>
+                );
+            }
         }
         else {
             return <br/>

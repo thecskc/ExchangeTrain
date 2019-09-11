@@ -4,6 +4,7 @@ import "../styling/style.css"
 import Coach from "../components/Coach"
 import Button from "@material-ui/core/Button/Button";
 import Router from 'next/router';
+import DialogComp from "./DialogComp";
 
 
 class CoachConnectionRequests extends Component {
@@ -12,7 +13,11 @@ class CoachConnectionRequests extends Component {
         super(props);
         this.state = {
             "cards": [],
-            "loaded": false
+            "loaded": false,
+            "showDialog": false,
+            "dialogTitle": "",
+            "dialogContent": "",
+            "noConnections": false
         };
 
         this.connectionStatus = {
@@ -26,6 +31,8 @@ class CoachConnectionRequests extends Component {
         this.makeCard = this.makeCard.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleResumeClick = this.handleResumeClick.bind(this);
+        this.handleDialogClose = this.handleDialogClose.bind(this);
+
 
     }
 
@@ -44,11 +51,16 @@ class CoachConnectionRequests extends Component {
         }
     }
 
+    handleDialogClose() {
+        this.setState({"showDialog": false});
+    }
+
     handleResumeClick(event, resume) {
         event.preventDefault();
         console.log(resume);
-        Router.push(resume);
+        //Router.push(resume);
         //window.location.href=resume;
+        window.open(resume);
 
         // try {
         //     Router.replace(resume).catch(function(err){
@@ -71,6 +83,12 @@ class CoachConnectionRequests extends Component {
             const fb = firebase.firestore().collection("Connections").doc(userID + "_" + coachID).set({
                 "status": "COACH_MEETING"
             }, {merge: true});
+            this.setState({
+                "showDialog": true,
+                "dialogTitle": "Sent Calendly Link",
+                "dialogContent": "When the user schedules a call with you, " +
+                    "you will receive a notification"
+            });
 
         }
         else if (status === "COACH_MEETING") {
@@ -82,6 +100,12 @@ class CoachConnectionRequests extends Component {
                 "status": "ISA_REQUEST"
             }, {merge: true});
 
+            this.setState({
+                "showDialog": true,
+                "dialogTitle": "Sent ISA Request",
+                "dialogContent": "When the user accepts your ISA request, " +
+                    "the Exchange team will get in touch with further instructions."
+            });
 
         }
         else if (status === "ISA_APPROVED") {
@@ -114,10 +138,16 @@ class CoachConnectionRequests extends Component {
                     };
                     userList.push(obj);
                 });
+                if (userList.length === 0) {
+                    this.setState({"loaded":true,"noConnections": true});
+                }
+                else {
+                    this.getDoc(userList).then(() => {
+                        this.setState({"loaded": true});
+                    })
+                }
 
-                this.getDoc(userList).then(() => {
-                    this.setState({"loaded": true});
-                })
+
             })
 
 
@@ -170,13 +200,29 @@ class CoachConnectionRequests extends Component {
     }
 
     render() {
+
+        let dialog = <DialogComp dialog={this.state.showDialog} title={this.state.dialogTitle}
+                                 content={this.state.dialogContent} handleClose={this.handleDialogClose}/>
         if (this.state.loaded) {
-            return (
-                <>{this.state.cards}</>
-            );
+            if (!this.state.noConnections) {
+                return (
+                    <>{dialog}{this.state.cards}</>
+                );
+            }
+            else {
+                return (
+                    <>
+                        <div className="subheading-2">
+                            When users request calls with you, you will see connections.
+                        </div>
+                    </>
+                );
+            }
         }
         else {
-            return <br/>
+            return (
+                <br/>
+            );
         }
     }
 }
