@@ -1127,10 +1127,17 @@ function (_Component) {
       "signedOut": false
     };
     _this.handleSignOut = _this.handleSignOut.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.handleClick = _this.handleClick.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Navbar, [{
+    key: "handleClick",
+    value: function handleClick(event, path) {
+      event.preventDefault();
+      window.location.href = path;
+    }
+  }, {
     key: "handleSignOut",
     value: function handleSignOut(event) {
       event.preventDefault();
@@ -1141,72 +1148,67 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       if (this.props.user) {
         return __jsx("div", {
           className: "topnav",
           id: "myTopnav",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 39
           },
           __self: this
-        }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-          href: "/",
+        }, __jsx("div", {
+          onClick: function onClick(event) {
+            return _this2.handleClick(event, "/");
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 41
           },
           __self: this
-        }, __jsx("a", {
+        }, "Home"), __jsx("div", {
+          onClick: function onClick(event) {
+            return _this2.handleClick(event, "/login");
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 42
           },
           __self: this
-        }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-          href: "/connections",
+        }, "Sign In/Sign Up"), __jsx("div", {
+          onClick: function onClick(event) {
+            return _this2.handleClick(event, "/connections");
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 43
           },
           __self: this
-        }, __jsx("a", {
+        }, "Connections"), __jsx("div", {
+          onClick: function onClick(event) {
+            return _this2.handleClick(event, "/profile");
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 44
           },
           __self: this
-        }, "Connections")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-          href: "/profile",
+        }, "Profile"), __jsx("div", {
+          onClick: function onClick(event) {
+            return _this2.handleClick(event, "/coaches");
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 45
           },
           __self: this
-        }, __jsx("a", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 37
-          },
-          __self: this
-        }, "Profile")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-          href: "/coaches",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 38
-          },
-          __self: this
-        }, __jsx("a", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 38
-          },
-          __self: this
-        }, "Coaches")), __jsx("a", {
+        }, "Coaches"), __jsx("div", {
           onClick: this.handleSignOut,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 46
           },
           __self: this
         }, "Sign Out"));
@@ -1216,24 +1218,28 @@ function (_Component) {
           id: "myTopnav",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 54
           },
           __self: this
-        }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-          href: "/",
+        }, __jsx("div", {
+          onClick: function onClick(event) {
+            return _this2.handleClick(event, "/");
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 56
           },
           __self: this
-        }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
-          href: "/login",
+        }, "Home"), __jsx("div", {
+          onClick: function onClick(event) {
+            return _this2.handleClick(event, "/login");
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 57
           },
           __self: this
-        }, "Login"));
+        }, "Sign In/Sign Up"));
       }
     }
   }]);
@@ -43379,7 +43385,7 @@ var defaultTheme = Object(_createMuiTheme__WEBPACK_IMPORTED_MODULE_0__["default"
 /*!************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/styles/index.js ***!
   \************************************************************/
-/*! exports provided: createMuiTheme, createStyles, makeStyles, MuiThemeProvider, responsiveFontSizes, styled, useTheme, withStyles, withTheme, hexToRgb, rgbToHex, hslToRgb, decomposeColor, recomposeColor, getContrastRatio, getLuminance, emphasize, fade, darken, lighten, easing, duration, formatMs, isString, isNumber */
+/*! exports provided: hexToRgb, rgbToHex, hslToRgb, decomposeColor, recomposeColor, getContrastRatio, getLuminance, emphasize, fade, darken, lighten, createMuiTheme, createStyles, makeStyles, MuiThemeProvider, responsiveFontSizes, styled, easing, duration, formatMs, isString, isNumber, useTheme, withStyles, withTheme */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65619,7 +65625,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fconnections&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cconnections.js ***!
   \************************************************************************************************************************************************************/
@@ -65642,5 +65648,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js","styles"]]]);
+},[[5,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=connections.js.map

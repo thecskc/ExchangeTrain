@@ -390,6 +390,20 @@ footer {
   font-family: 'Roboto', sans-serif;
 }
 
+.topnav div{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav div:hover {
+  background-color: #ddd;
+  color: black;
+}
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
@@ -421,33 +435,6 @@ footer {
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
-}
-
-.container-login{
-    height:100vh;
-    width:100vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.logincontainer{
-    display:flex;
-    height:75%;
-    width:75%;
-    flex-direction:column;
-    justify-content:center;
-    align-items: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    background: white;
-
-}
-
-.logincontainer:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .lds-spinner {
@@ -527,6 +514,33 @@ footer {
     100% {
         opacity: 0;
     }
+}
+
+.container-login{
+    height:100vh;
+    width:100vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logincontainer{
+    display:flex;
+    height:75%;
+    width:75%;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    background: white;
+
+}
+
+.logincontainer:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 

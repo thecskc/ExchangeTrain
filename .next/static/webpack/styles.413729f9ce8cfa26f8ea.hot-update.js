@@ -29,7 +29,7 @@ webpackHotUpdate("styles",{
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568190026383");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568191199070");
           });
       }
     }
@@ -37,10 +37,10 @@ webpackHotUpdate("styles",{
 
 /***/ }),
 
-/***/ "./styling/style.css":
-/*!***************************!*\
-  !*** ./styling/style.css ***!
-  \***************************/
+/***/ "./styling/loading.css":
+/*!*****************************!*\
+  !*** ./styling/loading.css ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -66,7 +66,7 @@ webpackHotUpdate("styles",{
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568190024219");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568191200992");
           });
       }
     }
@@ -75,4 +75,4 @@ webpackHotUpdate("styles",{
 /***/ })
 
 })
-//# sourceMappingURL=styles.c3d577b866d69cf4909d.hot-update.js.map
+//# sourceMappingURL=styles.413729f9ce8cfa26f8ea.hot-update.js.map

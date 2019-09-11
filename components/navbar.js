@@ -12,10 +12,16 @@ class Navbar extends Component {
             "signedOut":false
         };
         this.handleSignOut = this.handleSignOut.bind(this);
+        this.handleClick = this.handleClick.bind(this);
 
 
     }
 
+    handleClick(event, path){
+        event.preventDefault();
+        window.location.href = path;
+
+    }
     handleSignOut(event) {
 
         event.preventDefault();
@@ -32,11 +38,12 @@ class Navbar extends Component {
             return (
                 <div className="topnav" id="myTopnav">
 
-                    <Link href="/"><a>Home</a></Link>
-                    <Link href="/connections"><a>Connections</a></Link>
-                    <Link href="/profile"><a>Profile</a></Link>
-                    <Link href="/coaches"><a>Coaches</a></Link>
-                    <a onClick={this.handleSignOut}>Sign Out</a>
+                    <div onClick={(event)=>this.handleClick(event,"/")}>Home</div>
+                    <div onClick={(event)=>this.handleClick(event,"/login")}>Sign In/Sign Up</div>
+                    <div onClick={(event)=>this.handleClick(event,"/connections")}>Connections</div>
+                    <div onClick={(event)=>this.handleClick(event,"/profile")}>Profile</div>
+                    <div onClick={(event)=>this.handleClick(event,"/coaches")}>Coaches</div>
+                    <div onClick={this.handleSignOut}>Sign Out</div>
 
 
                 </div>
@@ -46,8 +53,9 @@ class Navbar extends Component {
             return (
                 <div className="topnav" id="myTopnav">
 
-                    <Link href="/">Home</Link>
-                    <Link href="/login">Login</Link>
+                    <div onClick={(event)=>this.handleClick(event,"/")}>Home</div>
+                    <div onClick={(event)=>this.handleClick(event,"/login")}>Sign In/Sign Up</div>
+
 
                 </div>
             );

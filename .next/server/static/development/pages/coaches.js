@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -522,6 +522,12 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       "signedOut": false
     };
     this.handleSignOut = this.handleSignOut.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event, path) {
+    event.preventDefault();
+    window.location.href = path;
   }
 
   handleSignOut(event) {
@@ -538,66 +544,49 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         id: "myTopnav",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 39
         },
         __self: this
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        href: "/",
+      }, __jsx("div", {
+        onClick: event => this.handleClick(event, "/"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 41
         },
         __self: this
-      }, __jsx("a", {
+      }, "Home"), __jsx("div", {
+        onClick: event => this.handleClick(event, "/login"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 42
         },
         __self: this
-      }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        href: "/connections",
+      }, "Sign In/Sign Up"), __jsx("div", {
+        onClick: event => this.handleClick(event, "/connections"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 43
         },
         __self: this
-      }, __jsx("a", {
+      }, "Connections"), __jsx("div", {
+        onClick: event => this.handleClick(event, "/profile"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 44
         },
         __self: this
-      }, "Connections")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        href: "/profile",
+      }, "Profile"), __jsx("div", {
+        onClick: event => this.handleClick(event, "/coaches"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 45
         },
         __self: this
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, "Profile")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        href: "/coaches",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }, "Coaches")), __jsx("a", {
+      }, "Coaches"), __jsx("div", {
         onClick: this.handleSignOut,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 46
         },
         __self: this
       }, "Sign Out"));
@@ -607,24 +596,24 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         id: "myTopnav",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 54
         },
         __self: this
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        href: "/",
+      }, __jsx("div", {
+        onClick: event => this.handleClick(event, "/"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 56
         },
         __self: this
-      }, "Home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        href: "/login",
+      }, "Home"), __jsx("div", {
+        onClick: event => this.handleClick(event, "/login"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 57
         },
         __self: this
-      }, "Login"));
+      }, "Sign In/Sign Up"));
     }
   }
 
@@ -1526,7 +1515,7 @@ class Coaches extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!********************************!*\
   !*** multi ./pages/coaches.js ***!
   \********************************/

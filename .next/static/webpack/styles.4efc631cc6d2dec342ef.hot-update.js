@@ -1,8 +1,8 @@
 webpackHotUpdate("styles",{
 
-/***/ "./styling/loading.css":
+/***/ "./styling/coaches.css":
 /*!*****************************!*\
-  !*** ./styling/loading.css ***!
+  !*** ./styling/coaches.css ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -29,7 +29,7 @@ webpackHotUpdate("styles",{
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1568190038950");
+            injectCss(link, link.href.split("?")[0] + "?unix=1568191223044");
           });
       }
     }
@@ -38,4 +38,4 @@ webpackHotUpdate("styles",{
 /***/ })
 
 })
-//# sourceMappingURL=styles.be50a1fc8fe3d7f4244d.hot-update.js.map
+//# sourceMappingURL=styles.4efc631cc6d2dec342ef.hot-update.js.map

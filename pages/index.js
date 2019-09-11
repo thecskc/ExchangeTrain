@@ -21,7 +21,7 @@ class Index extends Component {
 
     handleGetStartedClick(event){
         event.preventDefault();
-        Router.push("/login");
+        window.location.href = "/login";
     }
     componentDidMount() {
         firebase.auth().onAuthStateChanged((user) => {
