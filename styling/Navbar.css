@@ -24,6 +24,7 @@
 .topnav div:hover {
   background-color: #ddd;
   color: black;
+  cursor:pointer;
 }
 /* Style the links inside the navigation bar */
 .topnav a {

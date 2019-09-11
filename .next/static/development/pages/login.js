@@ -59803,7 +59803,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 10:
+/***/ 4:
 /*!************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Clogin.js ***!
   \************************************************************************************************************************************************/
@@ -59826,5 +59826,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[10,"static/runtime/webpack.js","styles"]]]);
+},[[4,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=login.js.map

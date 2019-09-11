@@ -41338,7 +41338,6 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "handleGetStartedClick",
     value: function handleGetStartedClick(event) {
-      event.preventDefault();
       window.location.href = "/login";
     }
   }, {
@@ -41370,7 +41369,7 @@ function (_Component) {
         user: this.state.user,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 43
         },
         __self: this
       }), __jsx("div", {
@@ -41380,21 +41379,21 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 45
         },
         __self: this
       }, __jsx("div", {
         className: "hero",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 47
         },
         __self: this
       }, __jsx("div", {
         className: "section-40-column",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 49
         },
         __self: this
       }, __jsx("div", {
@@ -41404,26 +41403,26 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 50
         },
         __self: this
       }, "ExchangeTrain"), __jsx("div", {
         className: "subheading",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 51
         },
         __self: this
       }, "Personalized training for technical interviews by software engineers"), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 55
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 56
         },
         __self: this
       }), __jsx("button", {
@@ -41434,21 +41433,21 @@ function (_Component) {
         className: "landing-button",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 57
         },
         __self: this
       }, "Get Started")), __jsx("div", {
         className: "section-60-images",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 62
         },
         __self: this
       }, __jsx("img", {
         src: "../static/undraw_code_review_l1q9%20(1).svg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 63
         },
         __self: this
       })))));

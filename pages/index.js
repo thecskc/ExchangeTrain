@@ -20,7 +20,6 @@ class Index extends Component {
     }
 
     handleGetStartedClick(event){
-        event.preventDefault();
         window.location.href = "/login";
     }
     componentDidMount() {
