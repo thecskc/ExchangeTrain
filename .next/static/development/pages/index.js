@@ -144,20 +144,11 @@ function (_Component) {
           __self: this
         }, "Home"), __jsx("div", {
           onClick: function onClick(event) {
-            return _this2.handleClick(event, "/login");
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 42
-          },
-          __self: this
-        }, "Sign In/Sign Up"), __jsx("div", {
-          onClick: function onClick(event) {
             return _this2.handleClick(event, "/connections");
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 42
           },
           __self: this
         }, "Connections"), __jsx("div", {
@@ -166,7 +157,7 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
+            lineNumber: 43
           },
           __self: this
         }, "Profile"), __jsx("div", {
@@ -175,14 +166,14 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
+            lineNumber: 44
           },
           __self: this
         }, "Coaches"), __jsx("div", {
           onClick: this.handleSignOut,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 45
           },
           __self: this
         }, "Sign Out"));
@@ -192,7 +183,7 @@ function (_Component) {
           id: "myTopnav",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 53
           },
           __self: this
         }, __jsx("div", {
@@ -201,7 +192,7 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 55
           },
           __self: this
         }, "Home"), __jsx("div", {
@@ -210,7 +201,7 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 56
           },
           __self: this
         }, "Sign In/Sign Up"));
@@ -41399,7 +41390,7 @@ function (_Component) {
       }, __jsx("div", {
         className: "heading",
         style: {
-          alignSelf: "flex-start  "
+          alignSelf: "flex-start"
         },
         __source: {
           fileName: _jsxFileName,
@@ -41461,7 +41452,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 5:
 /*!*******************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cindex.js ***!
   \*******************************************************************************************************************************************/
@@ -41484,5 +41475,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[5,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

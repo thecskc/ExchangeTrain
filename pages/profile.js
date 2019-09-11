@@ -7,6 +7,7 @@ import "../styling/style.css"
 import Navbar from "../components/navbar";
 import Loader from "../components/Loader"
 import {isWebUri} from "valid-url"
+import LoggedOut from "../components/loggedout";
 
 
 class Profile extends Component {
@@ -375,7 +376,7 @@ class Profile extends Component {
                 );
             }
             else {
-                return (<h1>Not logged in</h1>)
+                return (<LoggedOut/>)
 
             }
         }

@@ -5,6 +5,7 @@ import "../styling/style.css"
 import Coach from "../components/Coach"
 import Navbar from "../components/navbar";
 import Loader from "../components/Loader"
+import LoggedOut from "../components/loggedout"
 
 class Coaches extends Component {
 
@@ -131,7 +132,7 @@ class Coaches extends Component {
                 }
             }
             else {
-                return (<h1>Not Logged In</h1>)
+                return (<LoggedOut/>)
             }
         }
         else {

@@ -14,6 +14,7 @@ import UserConnectionRequests from "../components/UserConnectionRequests"
 import CoachConnectionRequests from "../components/CoachConnectionRequests"
 import Navbar from "../components/navbar";
 import Loader from "../components/Loader"
+import LoggedOut from "../components/loggedout";
 
 class Connections extends Component {
 
@@ -116,7 +117,7 @@ class Connections extends Component {
             }
 
             else {
-                return (<h1>Not Logged In</h1>)
+                return (<LoggedOut/>)
             }
         }
         else {

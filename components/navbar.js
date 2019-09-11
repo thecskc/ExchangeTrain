@@ -39,7 +39,6 @@ class Navbar extends Component {
                 <div className="topnav" id="myTopnav">
 
                     <div onClick={(event)=>this.handleClick(event,"/")}>Home</div>
-                    <div onClick={(event)=>this.handleClick(event,"/login")}>Sign In/Sign Up</div>
                     <div onClick={(event)=>this.handleClick(event,"/connections")}>Connections</div>
                     <div onClick={(event)=>this.handleClick(event,"/profile")}>Profile</div>
                     <div onClick={(event)=>this.handleClick(event,"/coaches")}>Coaches</div>

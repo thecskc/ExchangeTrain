@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -210,38 +210,31 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         },
         __self: this
       }, "Home"), __jsx("div", {
-        onClick: event => this.handleClick(event, "/login"),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        },
-        __self: this
-      }, "Sign In/Sign Up"), __jsx("div", {
         onClick: event => this.handleClick(event, "/connections"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 42
         },
         __self: this
       }, "Connections"), __jsx("div", {
         onClick: event => this.handleClick(event, "/profile"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 43
         },
         __self: this
       }, "Profile"), __jsx("div", {
         onClick: event => this.handleClick(event, "/coaches"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 44
         },
         __self: this
       }, "Coaches"), __jsx("div", {
         onClick: this.handleSignOut,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 45
         },
         __self: this
       }, "Sign Out"));
@@ -251,21 +244,21 @@ class Navbar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         id: "myTopnav",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 53
         },
         __self: this
       }, __jsx("div", {
         onClick: event => this.handleClick(event, "/"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 55
         },
         __self: this
       }, "Home"), __jsx("div", {
         onClick: event => this.handleClick(event, "/login"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 56
         },
         __self: this
       }, "Sign In/Sign Up"));
@@ -1038,7 +1031,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }, __jsx("div", {
       className: "heading",
       style: {
-        alignSelf: "flex-start  "
+        alignSelf: "flex-start"
       },
       __source: {
         fileName: _jsxFileName,
@@ -1120,7 +1113,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

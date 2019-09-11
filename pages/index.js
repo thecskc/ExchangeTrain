@@ -47,7 +47,7 @@ class Index extends Component {
                     <div className="hero">
 
                         <div className="section-40-column">
-                            <div className="heading" style={{alignSelf:"flex-start  "}}>ExchangeTrain</div>
+                            <div className="heading" style={{alignSelf:"flex-start"}}>ExchangeTrain</div>
                             <div className="subheading">
                                 Personalized training for technical interviews by software
                                 engineers
