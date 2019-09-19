@@ -390,6 +390,9 @@ function (_Component) {
         placeholder: "Email",
         value: this.state.email,
         onChange: this.handleChange,
+        style: {
+          "width": "25vw"
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 94
@@ -398,13 +401,13 @@ function (_Component) {
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 103
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 103
         },
         __self: this
       }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -413,21 +416,24 @@ function (_Component) {
         placeholder: "Password",
         value: this.state.password,
         onChange: this.handleChange,
+        style: {
+          "width": "25vw"
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 104
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 114
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 111
+          lineNumber: 114
         },
         __self: this
       }), __jsx("div", {
@@ -437,7 +443,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 113
+          lineNumber: 116
         },
         __self: this
       }, __jsx("button", {
@@ -448,19 +454,19 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 117
         },
         __self: this
       }, "Sign In"), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 121
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 121
         },
         __self: this
       }), __jsx("button", {
@@ -471,7 +477,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 123
         },
         __self: this
       }, "Sign Up")));
@@ -59701,6 +59707,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/navbar */ "./components/navbar.js");
 /* harmony import */ var _styling_login_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../styling/login.css */ "./styling/login.css");
 /* harmony import */ var _styling_login_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_styling_login_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../styling/style.css */ "./styling/style.css");
+/* harmony import */ var _styling_style_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styling_style_css__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -59708,6 +59716,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\login.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
 
 
 
@@ -59727,13 +59736,7 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Login, [{
     key: "render",
     value: function render() {
-      return __jsx(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, __jsx(_components_navbar__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        },
-        __self: this
-      }), __jsx("div", {
+      return __jsx(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, __jsx("div", {
         className: "container-login",
         style: {
           alignSelf: "center"
@@ -59743,45 +59746,60 @@ function (_Component) {
           lineNumber: 15
         },
         __self: this
-      }, __jsx("div", {
-        className: "page-heading",
+      }, __jsx("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 16
         },
         __self: this
-      }, "Sign Up or Log In "), __jsx("br", {
+      }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 16
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
-        },
-        __self: this
-      }), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 16
         },
         __self: this
       }), __jsx("div", {
         className: "logincontainer",
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "heading",
+        style: {
+          "color": "black"
+        },
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 23
         },
         __self: this
-      }, __jsx(_components_signup__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }, "Sign Up/ Log In "), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }), __jsx("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }), __jsx(_components_signup__WEBPACK_IMPORTED_MODULE_6__["default"], {
         style: {
           alignSelf: "center"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 27
         },
         __self: this
       }))));
@@ -59795,7 +59813,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 8:
+/***/ 5:
 /*!************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Flogin&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Clogin.js ***!
   \************************************************************************************************************************************************/
@@ -59818,5 +59836,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[8,"static/runtime/webpack.js","styles"]]]);
+},[[5,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=login.js.map

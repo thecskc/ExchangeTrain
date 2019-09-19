@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import SignUp from "../components/signup";
 import Navbar from "../components/navbar"
 import "../styling/login.css"
+import "../styling/style.css"
 
 
 class Login extends Component {
@@ -10,10 +11,8 @@ class Login extends Component {
         return (
 
             <>
-                <Navbar/>
 
                 <div className="container-login" style={{alignSelf:"center"}}>
-                    <div className="page-heading">Sign Up or Log In </div>
                     <br/><br/><br/>
 
 
@@ -21,6 +20,10 @@ class Login extends Component {
 
 
                     <div className="logincontainer">
+                        <div className="heading" style={{"color":"black"}}>Sign Up/ Log In </div>
+                        <br/><br/>
+
+
                         <SignUp style={{alignSelf: "center"}}/>
                     </div>
 

@@ -63356,7 +63356,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 7:
 /*!****************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fprofile&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cprofile.js ***!
   \****************************************************************************************************************************************************/
@@ -63379,5 +63379,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[7,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=profile.js.map

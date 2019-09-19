@@ -98,6 +98,7 @@ class SignUp extends Component {
                     placeholder="Email"
                     value={this.state.email}
                     onChange={this.handleChange}
+                    style={{"width":"25vw"}}
                 />
                 <br/><br/>
                 <TextField
@@ -107,6 +108,8 @@ class SignUp extends Component {
                     placeholder="Password"
                     value={this.state.password}
                     onChange={this.handleChange}
+
+                    style={{"width":"25vw"}}
                 />
                 <br/><br/>
 
