@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import fb from "../components/firebase";
 import Router from 'next/router'
 import TextField from "@material-ui/core/TextField"
-
+import "../styling/material-components-web.min.css";
 
 
 import "../styling/style.css";
@@ -90,49 +90,57 @@ class SignUp extends Component {
 
         return (
 
-            <form onSubmit={this.handleSubmit}>
-                <TextField
+            <>
 
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                    style={{"width":"25vw"}}
-                />
-                <br/><br/>
-                <TextField
+                <form onSubmit={this.handleSubmit} style={{"width": "55%"}}>
+                    <TextField
 
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={this.state.password}
-                    onChange={this.handleChange}
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                        style={{"width": "100%"}}
+                    />
+                    <br/><br/>
+                    <TextField
 
-                    style={{"width":"25vw"}}
-                />
-                <br/><br/>
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={this.handleChange}
 
-                <div className="row" style={{justifyContent:"space-evenly"}}>
-                    <button className="coach-button" onClick={this.handleSignIn} style={{"width":"45%"}}>
-                        Sign In
+                        style={{"width": "100%"}}
+                    />
+                    <br/><br/>
+
+
+                </form>
+
+                <div className="row" style={{justifyContent: "center"}}>
+                    <button className="mdc-button mdc-button--raised"
+                            style={{"background": "#2962ff"
+                                    ,"margin-right":"5vw"}} onClick={this.handleSignIn}>
+                        <span className="mdc-button__label">Sign In</span>
+                    </button>
+                    <button className="mdc-button mdc-button--raised"
+                            style={{"background": "#2962ff"}} onClick={this.handleSignUp}>
+                        <span className="mdc-button__label">Sign Up</span>
                     </button>
 
                     <br/><br/>
 
-                    <button className="coach-button" onClick={this.handleSignUp} style={{"width":"45%"}}>
-                        Sign Up
-                    </button>
+
                 </div>
+            </>
 
-            </form>
 
-
-    );
-
-    }
-
+        );
 
     }
 
-    export default SignUp;
+
+}
+
+export default SignUp;

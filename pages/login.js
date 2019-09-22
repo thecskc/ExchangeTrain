@@ -13,13 +13,14 @@ class Login extends Component {
             <>
 
                 <div className="container-login" style={{alignSelf:"center"}}>
-                    <br/><br/><br/>
+                    <br/>
 
 
 
 
 
                     <div className="logincontainer">
+
                         <div className="heading" style={{"color":"black"}}>Sign Up/ Log In </div>
                         <br/><br/>
 
