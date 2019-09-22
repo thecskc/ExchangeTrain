@@ -8,6 +8,7 @@ import Navbar from "../components/navbar";
 import Loader from "../components/Loader"
 import {isWebUri} from "valid-url"
 import LoggedOut from "../components/loggedout";
+import "../styling/material-components-web.min.css";
 
 
 class Profile extends Component {
@@ -265,109 +266,138 @@ class Profile extends Component {
                     <>
                         <Navbar user={this.state.user}/>
 
-                        <div className="container" style={{"justify-content": "center"}}>
+                        <div className="container" style={{"justify-content": "center", "padding":"16px"}}>
 
 
                             <div className="page-heading" style={{"align-self": "center"}}>Fill Out Your Profile</div>
 
-                            <div className="card-section" style={{"align-self": "center"}}>
-                                <div className="card" style={{"width": "80vw", "height": "80vh"}}>
-                                    <form>
+                            <br/><br/>
 
 
-                                        <TextField
-
-                                            name="displayName"
-                                            placeholder="Enter Name"
-                                            value={this.state.displayName}
-                                            onChange={this.handleChange}
-                                        />
-                                        <br/><br/>
-
-                                        <TextField
-                                            name="schoolcompany"
-                                            placeholder="School/Company"
-                                            value={this.state.schoolcompany}
-                                            onChange={this.handleChange}
-                                        />
-
-                                        <br/><br/>
-
-                                        <TextField
-                                            name="location"
-                                            placeholder="Location"
-                                            value={this.state.location}
-                                            onChange={this.handleChange}
-                                        />
+                            <form style={{alignSelf:"center", width: "60%", height: "80%"}}>
 
 
-                                        <br/><br/>
+                                <TextField
+
+                                    name="displayName"
+                                    placeholder="Enter Name"
+                                    value={this.state.displayName}
+                                    onChange={this.handleChange}
+                                    style={{width: "100%"}}
+                                    variant="outlined"
+                                />
+                                <br/><br/>
+
+                                <TextField
+                                    name="schoolcompany"
+                                    placeholder="School/Company"
+                                    value={this.state.schoolcompany}
+                                    onChange={this.handleChange}
+                                    style={{width: "100%"}}
+                                    variant="outlined"
+
+                                />
+
+                                <br/><br/>
+
+                                <TextField
+                                    name="location"
+                                    placeholder="Location"
+                                    value={this.state.location}
+                                    onChange={this.handleChange}
+                                    style={{width: "100%"}}
+                                    variant="outlined"
+
+                                />
 
 
-                                        <TextField
-
-                                            name="bio"
-                                            placeholder="Bio (100 words limit)"
-                                            value={this.state.bio}
-                                            onChange={this.handleChange}
-                                            multiline={true}
-                                            rows="4"
-                                            rowsMax="7"
-                                            style={{width: "100%"}}
-                                        />
-
-                                        <br/><br/>
+                                <br/><br/>
 
 
-                                        <TextField
+                                <TextField
 
-                                            name="resume"
-                                            placeholder="Resume URL"
-                                            value={this.state.resume}
-                                            onChange={this.handleChange}
+                                    name="bio"
+                                    placeholder="Bio (100 words limit)"
+                                    value={this.state.bio}
+                                    onChange={this.handleChange}
+                                    multiline={true}
+                                    rows="4"
+                                    rowsMax="7"
+                                    style={{width: "100%"}}
+                                    variant="outlined"
 
-                                        />
+                                />
 
-
-                                        <br/><br/>
-
-                                        <TextField
-                                            name="coachcode"
-                                            placeholder="Coach Access Code"
-                                            value={this.state.coachcode}
-                                            onChange={this.handleChange}
-                                        />
-
-                                        <br/><br/>
-
-                                        {(() => {
-
-                                            if (this.state.isCoach) {
-                                                return (
-
-                                                    <TextField
-                                                        name="calendlylink"
-                                                        placeholder="Enter your calendly link"
-                                                        value={this.state.calendlylink}
-                                                        onChange={this.handleChange}
-                                                    />
-                                                )
-                                            }
+                                <br/><br/>
 
 
-                                        })()}
+                                <TextField
+
+                                    name="resume"
+                                    placeholder="Resume URL"
+                                    value={this.state.resume}
+                                    onChange={this.handleChange}
+                                    style={{width: "100%"}}
+                                    variant="outlined"
 
 
-                                        <br/><br/>
+                                />
 
 
-                                        <Button color="primary" variant="contained" onClick={this.editProfile}>
-                                            Save
-                                        </Button>
+                                <br/><br/>
 
-                                    </form>
-                                </div>
-                            </div>
+                                <TextField
+                                    name="coachcode"
+                                    placeholder="Coach Access Code"
+                                    value={this.state.coachcode}
+                                    onChange={this.handleChange}
+                                    style={{width: "100%"}}
+                                    variant="outlined"
+
+                                />
+
+                                <br/><br/>
+
+                                {(() => {
+
+
+                                    if (this.state.isCoach) {
+                                        return (
+
+                                            <TextField
+                                                name="calendlylink"
+                                                placeholder="Enter your calendly link"
+                                                value={this.state.calendlylink}
+                                                onChange={this.handleChange}
+                                                style={{width: "100%"}}
+                                                variant="outlined"
+
+                                            />
+                                        )
+                                    }
+
+
+                                })()}
+
+
+                                <br/><br/>
+
+                                <button className="mdc-button mdc-button--raised"
+                                        style={{"background": "orange", "width": "100%","margin-bottom":"10vh"}} onClick={this.editProfile}>
+                                    <span className="mdc-button__label">Button</span>
+                                </button>
+
+                                <br/><br/>
+                                <br/><br/><br/>
+
+
+
+                                {/*<Button color="primary" variant="contained" onClick={this.editProfile}>*/}
+                                {/*Save*/}
+                                {/*</Button>*/}
+
+                            </form>
+
                         </div>
 
                     </>

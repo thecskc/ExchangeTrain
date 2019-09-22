@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1223,8 +1223,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var valid_url__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! valid-url */ "valid-url");
 /* harmony import */ var valid_url__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(valid_url__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _components_loggedout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/loggedout */ "./components/loggedout.js");
+/* harmony import */ var _styling_material_components_web_min_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../styling/material-components-web.min.css */ "./styling/material-components-web.min.css");
+/* harmony import */ var _styling_material_components_web_min_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_styling_material_components_web_min_css__WEBPACK_IMPORTED_MODULE_10__);
 var _jsxFileName = "C:\\Users\\santh\\WebstormProjects\\ExchangeTrain\\pages\\profile.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1465,17 +1468,18 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           user: this.state.user,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 266
+            lineNumber: 267
           },
           __self: this
         }), __jsx("div", {
           className: "container",
           style: {
-            "justify-content": "center"
+            "justify-content": "center",
+            "padding": "16px"
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 268
+            lineNumber: 269
           },
           __self: this
         }, __jsx("div", {
@@ -1485,34 +1489,30 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 271
+            lineNumber: 272
           },
           __self: this
-        }, "Fill Out Your Profile"), __jsx("div", {
-          className: "card-section",
-          style: {
-            "align-self": "center"
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 273
-          },
-          __self: this
-        }, __jsx("div", {
-          className: "card",
-          style: {
-            "width": "80vw",
-            "height": "80vh"
-          },
+        }, "Fill Out Your Profile"), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 274
           },
           __self: this
-        }, __jsx("form", {
+        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 275
+            lineNumber: 274
+          },
+          __self: this
+        }), __jsx("form", {
+          style: {
+            alignSelf: "center",
+            width: "60%",
+            height: "80%"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 277
           },
           __self: this
         }, __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1520,21 +1520,25 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           placeholder: "Enter Name",
           value: this.state.displayName,
           onChange: this.handleChange,
+          style: {
+            width: "100%"
+          },
+          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 278
+            lineNumber: 280
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 285
+            lineNumber: 289
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 285
+            lineNumber: 289
           },
           __self: this
         }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1542,21 +1546,25 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           placeholder: "School/Company",
           value: this.state.schoolcompany,
           onChange: this.handleChange,
+          style: {
+            width: "100%"
+          },
+          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 287
+            lineNumber: 291
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 294
+            lineNumber: 301
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 294
+            lineNumber: 301
           },
           __self: this
         }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1564,21 +1572,25 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           placeholder: "Location",
           value: this.state.location,
           onChange: this.handleChange,
+          style: {
+            width: "100%"
+          },
+          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 296
+            lineNumber: 303
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 304
+            lineNumber: 314
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 304
+            lineNumber: 314
           },
           __self: this
         }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1592,21 +1604,22 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           style: {
             width: "100%"
           },
+          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 307
+            lineNumber: 317
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 319
+            lineNumber: 331
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 319
+            lineNumber: 331
           },
           __self: this
         }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1614,28 +1627,10 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           placeholder: "Resume URL",
           value: this.state.resume,
           onChange: this.handleChange,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 322
+          style: {
+            width: "100%"
           },
-          __self: this
-        }), __jsx("br", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 332
-          },
-          __self: this
-        }), __jsx("br", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 332
-          },
-          __self: this
-        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
-          name: "coachcode",
-          placeholder: "Coach Access Code",
-          value: this.state.coachcode,
-          onChange: this.handleChange,
+          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 334
@@ -1644,13 +1639,39 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 341
+            lineNumber: 347
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 341
+            lineNumber: 347
+          },
+          __self: this
+        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          name: "coachcode",
+          placeholder: "Coach Access Code",
+          value: this.state.coachcode,
+          onChange: this.handleChange,
+          style: {
+            width: "100%"
+          },
+          variant: "outlined",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 349
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 359
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 359
           },
           __self: this
         }), (() => {
@@ -1660,9 +1681,13 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               placeholder: "Enter your calendly link",
               value: this.state.calendlylink,
               onChange: this.handleChange,
+              style: {
+                width: "100%"
+              },
+              variant: "outlined",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 348
+                lineNumber: 367
               },
               __self: this
             });
@@ -1670,30 +1695,71 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         })(), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 361
+            lineNumber: 383
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 361
+            lineNumber: 383
           },
           __self: this
-        }), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
-          color: "primary",
-          variant: "contained",
+        }), __jsx("button", {
+          className: "mdc-button mdc-button--raised",
+          style: {
+            "background": "orange",
+            "width": "100%",
+            "margin-bottom": "10vh"
+          },
           onClick: this.editProfile,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 364
+            lineNumber: 385
           },
           __self: this
-        }, "Save"))))));
+        }, __jsx("span", {
+          className: "mdc-button__label",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 387
+          },
+          __self: this
+        }, "Button")), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 390
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 390
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 391
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 391
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 391
+          },
+          __self: this
+        }))));
       } else {
         return __jsx(_components_loggedout__WEBPACK_IMPORTED_MODULE_9__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 379
+            lineNumber: 409
           },
           __self: this
         });
@@ -1702,7 +1768,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 384
+          lineNumber: 414
         },
         __self: this
       });
@@ -1737,6 +1803,17 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
+/***/ "./styling/material-components-web.min.css":
+/*!*************************************************!*\
+  !*** ./styling/material-components-web.min.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./styling/style.css":
 /*!***************************!*\
   !*** ./styling/style.css ***!
@@ -1748,7 +1825,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/profile.js ***!
   \********************************/
