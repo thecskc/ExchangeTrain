@@ -266,7 +266,7 @@ class Profile extends Component {
                     <>
                         <Navbar user={this.state.user}/>
 
-                        <div className="container" style={{"justify-content": "center", "padding":"16px"}}>
+                        <div className="container" style={{"justify-content": "center", "padding":"16px",marginBottom:"32px"}}>
 
 
                             <div className="page-heading" style={{"align-self": "center"}}>Fill Out Your Profile</div>
@@ -384,7 +384,7 @@ class Profile extends Component {
 
                                 <button className="mdc-button mdc-button--raised"
                                         style={{"background": "orange", "width": "100%","margin-bottom":"10vh"}} onClick={this.editProfile}>
-                                    <span className="mdc-button__label">Button</span>
+                                    <span className="mdc-button__label">Save</span>
                                 </button>
 
                                 <br/><br/>
