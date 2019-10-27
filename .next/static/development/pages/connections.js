@@ -977,7 +977,7 @@ function (_Component) {
         //Redirect to calendly link
         var calendlyLink = fullDoc.data().calendlylink;
         console.log("calendly link, " + calendlyLink);
-        next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push(calendlyLink);
+        window.open(calendlyLink);
       } else if (status === "ISA_REQUEST") {
         //go into ISA agreement
         var userID = this.props.user.uid;
@@ -65938,7 +65938,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 10:
+/***/ 7:
 /*!************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fconnections&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cconnections.js ***!
   \************************************************************************************************************************************************************/
@@ -65961,5 +65961,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[10,"static/runtime/webpack.js","styles"]]]);
+},[[7,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=connections.js.map

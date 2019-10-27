@@ -26,7 +26,7 @@ class Profile extends Component {
             "isCoach": false,
             "calendlylink": "",
             "resume": "",
-            "area_of_training":""
+            "area_of_training":"Software Engineering"
         };
         this.handleChange = this.handleChange.bind(this);
         this.loadedProfile = this.loadedProfile.bind(this);
@@ -94,6 +94,7 @@ class Profile extends Component {
 
     validateForm() {
         let error = "";
+        console.log("Validating", this.state.area_of_training);
 
 
         if (!this.state.displayName) {
@@ -172,6 +173,7 @@ class Profile extends Component {
 
             const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(() => {
                 console.log("written");
+
                 const userProfile = {
                     "user": this.state.user,
                     "displayName": this.state.displayName,
@@ -188,6 +190,7 @@ class Profile extends Component {
                     userProfile["calendlylink"] = this.state.calendlylink;
                 }
                 this.loadedProfile(userProfile);
+                alert("Profile Saved");
             }).catch(function (error) {
                 console.log(error);
 
@@ -234,7 +237,7 @@ class Profile extends Component {
                     "schoolcompany": "",
                     "loaded": true,
                     "resume": "",
-                    "area_of_training":""
+                    "area_of_training":"Software Engineering"
                 };
                 this.loadedProfile(userProfile)
 
@@ -361,7 +364,7 @@ class Profile extends Component {
                                 <br/>
 
 
-                                <select name="area_of_training" onChange={this.handleChange} value={this.state.area_of_training}>
+                                <select value={this.state.area_of_training} name="area_of_training" onChange={this.handleChange}>
 
                                     <option value="Software Engineering">Software Engineering</option>
                                     <option value="Data Science">Data Science</option>

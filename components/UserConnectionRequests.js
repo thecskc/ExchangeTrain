@@ -68,7 +68,7 @@ class UserConnectionRequests extends Component {
             //Redirect to calendly link
             const calendlyLink = fullDoc.data().calendlylink;
             console.log("calendly link, " + calendlyLink);
-            Router.push(calendlyLink);
+            window.open(calendlyLink);
 
 
         }

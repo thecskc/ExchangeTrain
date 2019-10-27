@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -898,7 +898,7 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
       //Redirect to calendly link
       const calendlyLink = fullDoc.data().calendlylink;
       console.log("calendly link, " + calendlyLink);
-      next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push(calendlyLink);
+      window.open(calendlyLink);
     } else if (status === "ISA_REQUEST") {
       //go into ISA agreement
       const userID = this.props.user.uid;
@@ -2337,7 +2337,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!************************************!*\
   !*** multi ./pages/connections.js ***!
   \************************************/
