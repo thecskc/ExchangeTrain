@@ -46,6 +46,7 @@ class Coaches extends Component {
                                 company={doc.data().schoolcompany}
                                 location={doc.data().location}
                                 resume={doc.data().resume}
+                                area_of_training={doc.data().area_of_training}
                                 userid={this.state.user.uid}
                             />
                         );

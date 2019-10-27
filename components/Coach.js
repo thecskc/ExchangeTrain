@@ -90,9 +90,15 @@ class Coach extends Component {
                             {this.props.name}
                         </div>
 
+
                         <div className="subheading-2">
                             {this.props.company + ", " + this.props.location}
                         </div>
+
+                        <div className="subheading-2">
+                            {this.props.area_of_training}
+                        </div>
+
                     </div>
 
                     <br/><br/>
