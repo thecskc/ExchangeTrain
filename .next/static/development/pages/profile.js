@@ -186,9 +186,7 @@ if (!firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.apps.length) {
   firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(firebaseConfig);
 }
 
-;
 console.log("initializing app");
-console.log(firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
 var firestore = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.firestore();
 var auth = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.auth();
 var storage = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.storage();
@@ -62891,17 +62889,14 @@ function (_Component) {
       if (resultArray.length > 100) {
         resultArray = resultArray.slice(0, 100);
         result = resultArray.join(" ") + "...";
-      }
+      } // console.log("invoked cutwords");
 
-      console.log("invoked cutwords");
+
       return result;
     }
   }, {
     key: "handleAccessCode",
     value: function handleAccessCode() {
-      console.log("env code");
-      console.log("exchange800414b892");
-
       if (this.state.coachcode === "exchange800414b892".toString()) {
         this.setState({
           "coachcode": this.state.coachcode,
@@ -62933,15 +62928,12 @@ function (_Component) {
         }
       }
 
-      console.log("loading profile setting state");
-      console.log(stateMap);
       this.setState(stateMap);
     }
   }, {
     key: "validateForm",
     value: function validateForm() {
       var error = "";
-      console.log("Validating", this.state.area_of_training);
 
       if (!this.state.displayName) {
         error += " Please add your name.";
@@ -62967,7 +62959,6 @@ function (_Component) {
         error += " Please add a link to your resume.";
       } else {
         if (!Object(valid_url__WEBPACK_IMPORTED_MODULE_15__["isWebUri"])(this.state.resume)) {
-          console.log("checking valid url", this.state.resume);
           error += "Please enter a valid URL for your resume";
         }
       }
@@ -63016,7 +63007,6 @@ function (_Component) {
         this.handleAccessCode();
         this.state.bio = this.cutWords(this.state.bio);
         var dbRef = _components_firebase__WEBPACK_IMPORTED_MODULE_8__["default"].firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(function () {
-          console.log("written");
           var userProfile = {
             "user": _this2.state.user,
             "displayName": _this2.state.displayName,
@@ -63050,8 +63040,6 @@ function (_Component) {
       var docRef = db.collection("Profiles").doc(user.uid);
       docRef.get().then(function (doc) {
         if (doc.exists) {
-          console.log("querying doc");
-          console.log(doc.data());
           var userProfile = {
             "user": user,
             "displayName": doc.data().displayName,
@@ -63096,9 +63084,6 @@ function (_Component) {
 
       _components_firebase__WEBPACK_IMPORTED_MODULE_8__["default"].auth().onAuthStateChanged(function (user) {
         if (user) {
-          console.log("user");
-          console.log(user);
-
           _this4.getUserProfile(user);
         } else {
           _this4.setState({
@@ -63119,7 +63104,7 @@ function (_Component) {
             user: this.state.user,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 279
+              lineNumber: 272
             },
             __self: this
           }), __jsx("div", {
@@ -63131,7 +63116,7 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 281
+              lineNumber: 274
             },
             __self: this
           }, __jsx("div", {
@@ -63141,19 +63126,19 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 284
+              lineNumber: 277
             },
             __self: this
           }, "Fill Out Your Profile"), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 286
+              lineNumber: 279
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 286
+              lineNumber: 279
             },
             __self: this
           }), __jsx("form", {
@@ -63164,7 +63149,7 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 289
+              lineNumber: 282
             },
             __self: this
           }, __jsx("input", {
@@ -63177,31 +63162,31 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 292
+              lineNumber: 285
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 300
+              lineNumber: 293
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 300
+              lineNumber: 293
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 300
+              lineNumber: 293
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 300
+              lineNumber: 293
             },
             __self: this
           }), __jsx("input", {
@@ -63214,31 +63199,31 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 302
+              lineNumber: 295
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 311
+              lineNumber: 304
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 311
+              lineNumber: 304
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 311
+              lineNumber: 304
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 311
+              lineNumber: 304
             },
             __self: this
           }), __jsx("input", {
@@ -63251,31 +63236,31 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 313
+              lineNumber: 306
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 323
+              lineNumber: 316
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 323
+              lineNumber: 316
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 323
+              lineNumber: 316
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 323
+              lineNumber: 316
             },
             __self: this
           }), __jsx("textarea", {
@@ -63289,31 +63274,31 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 326
+              lineNumber: 319
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 339
+              lineNumber: 332
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 339
+              lineNumber: 332
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 339
+              lineNumber: 332
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 339
+              lineNumber: 332
             },
             __self: this
           }), __jsx("input", {
@@ -63326,31 +63311,31 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 342
+              lineNumber: 335
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 353
+              lineNumber: 346
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 353
+              lineNumber: 346
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 358
+              lineNumber: 351
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 358
+              lineNumber: 351
             },
             __self: this
           }), __jsx("div", {
@@ -63360,13 +63345,13 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 360
+              lineNumber: 353
             },
             __self: this
           }, "Choose your area of training -"), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 364
+              lineNumber: 357
             },
             __self: this
           }), __jsx("select", {
@@ -63375,45 +63360,45 @@ function (_Component) {
             onChange: this.handleChange,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 367
+              lineNumber: 360
             },
             __self: this
           }, __jsx("option", {
             value: "Software Engineering",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 369
+              lineNumber: 362
             },
             __self: this
           }, "Software Engineering"), __jsx("option", {
             value: "Data Science",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 370
+              lineNumber: 363
             },
             __self: this
           }, "Data Science")), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 374
+              lineNumber: 367
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 374
+              lineNumber: 367
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 374
+              lineNumber: 367
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 374
+              lineNumber: 367
             },
             __self: this
           }), __jsx("input", {
@@ -63426,31 +63411,31 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 377
+              lineNumber: 370
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 385
+              lineNumber: 378
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 385
+              lineNumber: 378
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 385
+              lineNumber: 378
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 385
+              lineNumber: 378
             },
             __self: this
           }), function () {
@@ -63465,7 +63450,7 @@ function (_Component) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 397
+                  lineNumber: 390
                 },
                 __self: this
               });
@@ -63473,25 +63458,25 @@ function (_Component) {
           }(), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 412
+              lineNumber: 405
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 412
+              lineNumber: 405
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 412
+              lineNumber: 405
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 412
+              lineNumber: 405
             },
             __self: this
           }), __jsx("button", {
@@ -63504,44 +63489,44 @@ function (_Component) {
             onClick: this.editProfile,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 414
+              lineNumber: 407
             },
             __self: this
           }, __jsx("span", {
             className: "mdc-button__label",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 416
+              lineNumber: 409
             },
             __self: this
           }, "Save")), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 419
+              lineNumber: 412
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 419
+              lineNumber: 412
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 420
+              lineNumber: 413
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 420
+              lineNumber: 413
             },
             __self: this
           }), __jsx("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 420
+              lineNumber: 413
             },
             __self: this
           }))));
@@ -63549,7 +63534,7 @@ function (_Component) {
           return __jsx(_components_loggedout__WEBPACK_IMPORTED_MODULE_16__["default"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 438
+              lineNumber: 431
             },
             __self: this
           });
@@ -63558,7 +63543,7 @@ function (_Component) {
         return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_14__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 443
+            lineNumber: 436
           },
           __self: this
         });
@@ -63573,7 +63558,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 5:
 /*!****************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fprofile&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cprofile.js ***!
   \****************************************************************************************************************************************************/
@@ -63596,5 +63581,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[5,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=profile.js.map

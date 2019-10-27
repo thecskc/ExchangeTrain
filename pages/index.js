@@ -26,8 +26,7 @@ class Index extends Component {
         firebase.auth().onAuthStateChanged((user) => {
 
             if (user) {
-                console.log("user");
-                console.log(user);
+
                 this.setState({"loaded": true, "user": user});
             }
             else {

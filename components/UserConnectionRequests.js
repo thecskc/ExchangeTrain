@@ -34,7 +34,7 @@ class UserConnectionRequests extends Component {
 
     handleResumeClick(event, resume) {
         event.preventDefault();
-        console.log(resume);
+        // console.log(resume);
         //Router.push(resume);
         //window.location.href=resume;
         window.open(resume);
@@ -67,7 +67,7 @@ class UserConnectionRequests extends Component {
 
             //Redirect to calendly link
             const calendlyLink = fullDoc.data().calendlylink;
-            console.log("calendly link, " + calendlyLink);
+            // console.log("calendly link, " + calendlyLink);
             window.open(calendlyLink);
 
 
@@ -140,7 +140,7 @@ class UserConnectionRequests extends Component {
 
     makeCard(heading, subheading, status, paragraph, coachDoc) {
 
-        console.log("Make Card function, " + coachDoc);
+        // console.log("Make Card function, " + coachDoc);
 
         let button =
             <button className="coach-button" onClick={(event) => this.handleClick(event, status, coachDoc)}>

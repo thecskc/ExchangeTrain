@@ -57,7 +57,7 @@ class CoachConnectionRequests extends Component {
 
     handleResumeClick(event, resume) {
         event.preventDefault();
-        console.log(resume);
+        // console.log(resume);
         //Router.push(resume);
         //window.location.href=resume;
         window.open(resume);

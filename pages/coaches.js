@@ -23,7 +23,6 @@ class Coaches extends Component {
         };
         this.coaches = [];
 
-        console.log("constructor called");
 
 
     }
@@ -53,9 +52,9 @@ class Coaches extends Component {
 
                     });
 
-                console.log("Coaches list");
-                console.log(this.coaches);
-                console.log(this.coaches.length);
+                // console.log("Coaches list");
+                // console.log(this.coaches);
+                // console.log(this.coaches.length);
 
                 this.setState({"loadedCoaches": true});
 
@@ -71,8 +70,8 @@ class Coaches extends Component {
         firebase.auth().onAuthStateChanged((user) => {
 
             if (user) {
-                console.log("user");
-                console.log(user);
+                // console.log("user");
+                // console.log(user);
 
                 firebase.firestore().collection("Profiles").doc(user.uid).get().then((doc)=>{
                     if(doc.exists){

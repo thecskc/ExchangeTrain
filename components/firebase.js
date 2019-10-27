@@ -17,13 +17,12 @@ const firebaseConfig = {
 
 
 if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig)
+    firebase.initializeApp(firebaseConfig);
 }
-;
+
 
 
 console.log("initializing app");
-console.log(firebase);
 
 export const firestore = firebase.firestore();
 export const auth = firebase.auth();

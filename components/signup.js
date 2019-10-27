@@ -36,7 +36,6 @@ class SignUp extends Component {
 
     async handleSignUp(event) {
         event.preventDefault();
-        console.log(this.state.email, this.state.password);
 
         try {
             const email = this.state.email;
@@ -47,7 +46,7 @@ class SignUp extends Component {
                     Router.push("/profile");
 
                 }).catch(function (e) {
-                console.log(e);
+                // console.log(e);
                 alert(e.message);
             });
         }
@@ -60,7 +59,6 @@ class SignUp extends Component {
 
     async handleSignIn(event) {
         event.preventDefault();
-        console.log(this.state.email, this.state.password);
 
         try {
             const email = this.state.email;

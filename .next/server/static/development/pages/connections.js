@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -156,8 +156,8 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   handleResumeClick(event, resume) {
-    event.preventDefault();
-    console.log("resume", resume); //window.location.href = resume;
+    event.preventDefault(); // console.log("resume", resume);
+    //window.location.href = resume;
 
     window.open(resume); // try {
     //
@@ -188,7 +188,7 @@ class Coach extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    console.log(this.props.name + "'s id is " + this.props.id);
+    // console.log(this.props.name + "'s id is " + this.props.id);
     let dialogShow;
 
     if (this.state.showDialog) {
@@ -395,8 +395,8 @@ class CoachConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compon
   }
 
   handleResumeClick(event, resume) {
-    event.preventDefault();
-    console.log(resume); //Router.push(resume);
+    event.preventDefault(); // console.log(resume);
+    //Router.push(resume);
     //window.location.href=resume;
 
     window.open(resume); // try {
@@ -869,8 +869,8 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
   }
 
   handleResumeClick(event, resume) {
-    event.preventDefault();
-    console.log(resume); //Router.push(resume);
+    event.preventDefault(); // console.log(resume);
+    //Router.push(resume);
     //window.location.href=resume;
 
     window.open(resume); // try {
@@ -896,8 +896,8 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
     if (status === "USER_CALL_REQUEST") {//do Nothing
     } else if (status === "COACH_MEETING") {
       //Redirect to calendly link
-      const calendlyLink = fullDoc.data().calendlylink;
-      console.log("calendly link, " + calendlyLink);
+      const calendlyLink = fullDoc.data().calendlylink; // console.log("calendly link, " + calendlyLink);
+
       window.open(calendlyLink);
     } else if (status === "ISA_REQUEST") {
       //go into ISA agreement
@@ -959,8 +959,7 @@ class UserConnectionRequests extends react__WEBPACK_IMPORTED_MODULE_0__["Compone
   }
 
   makeCard(heading, subheading, status, paragraph, coachDoc) {
-    console.log("Make Card function, " + coachDoc);
-
+    // console.log("Make Card function, " + coachDoc);
     let button = __jsx("button", {
       className: "coach-button",
       onClick: event => this.handleClick(event, status, coachDoc),
@@ -1132,9 +1131,7 @@ if (!firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.apps.length) {
   firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(firebaseConfig);
 }
 
-;
 console.log("initializing app");
-console.log(firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
 const firestore = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.firestore();
 const auth = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.auth();
 const storage = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.storage();
@@ -2140,12 +2137,8 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   componentDidMount() {
     _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].auth().onAuthStateChanged(user => {
       if (user) {
-        console.log("user");
-        console.log(user);
         _components_firebase__WEBPACK_IMPORTED_MODULE_1__["default"].firestore().collection("Profiles").doc(user.uid).get().then(doc => {
           if (doc.exists) {
-            console.log(doc.data());
-
             if (doc.data().isCoach) {
               this.setState({
                 "loaded": true,
@@ -2187,14 +2180,14 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               user: this.state.user,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 75
+                lineNumber: 74
               },
               __self: this
             }), __jsx("div", {
               className: "container",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 78
+                lineNumber: 77
               },
               __self: this
             }, __jsx("div", {
@@ -2204,21 +2197,21 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 79
+                lineNumber: 78
               },
               __self: this
             }, "Connections"), __jsx("div", {
               className: "card-section",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 80
+                lineNumber: 79
               },
               __self: this
             }, __jsx(_components_CoachConnectionRequests__WEBPACK_IMPORTED_MODULE_12__["default"], {
               user: this.state.user,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 82
+                lineNumber: 81
               },
               __self: this
             }))));
@@ -2227,14 +2220,14 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               user: this.state.user,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 94
+                lineNumber: 93
               },
               __self: this
             }), __jsx("div", {
               className: "container",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 96
+                lineNumber: 95
               },
               __self: this
             }, __jsx("div", {
@@ -2244,27 +2237,27 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 97
+                lineNumber: 96
               },
               __self: this
             }, "Connections"), __jsx("div", {
               className: "card-section",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 99
+                lineNumber: 98
               },
               __self: this
             }, __jsx(_components_UserConnectionRequests__WEBPACK_IMPORTED_MODULE_11__["default"], {
               user: this.state.user,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 101
+                lineNumber: 100
               },
               __self: this
             }))), __jsx("br", {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 105
+                lineNumber: 104
               },
               __self: this
             }));
@@ -2273,7 +2266,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           return __jsx("h1", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 114
+              lineNumber: 113
             },
             __self: this
           }, "Please fill out your profile first");
@@ -2282,7 +2275,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         return __jsx(_components_loggedout__WEBPACK_IMPORTED_MODULE_15__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 119
           },
           __self: this
         });
@@ -2291,7 +2284,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_14__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 123
         },
         __self: this
       });
@@ -2337,7 +2330,7 @@ class Connections extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!************************************!*\
   !*** multi ./pages/connections.js ***!
   \************************************/

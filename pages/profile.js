@@ -43,7 +43,7 @@ class Profile extends Component {
             resultArray = resultArray.slice(0, 100);
             result = resultArray.join(" ") + "...";
         }
-        console.log("invoked cutwords");
+        // console.log("invoked cutwords");
         return result;
     }
 
@@ -51,8 +51,7 @@ class Profile extends Component {
     handleAccessCode() {
 
 
-        console.log("env code");
-        console.log(process.env.COACH_CODE);
+
 
         if (this.state.coachcode === process.env.COACH_CODE.toString()) {
             this.setState({"coachcode": this.state.coachcode, "isCoach": true})
@@ -83,9 +82,8 @@ class Profile extends Component {
             }
         }
 
-        console.log("loading profile setting state");
 
-        console.log(stateMap);
+
         this.setState(
             stateMap
         );
@@ -94,7 +92,6 @@ class Profile extends Component {
 
     validateForm() {
         let error = "";
-        console.log("Validating", this.state.area_of_training);
 
 
         if (!this.state.displayName) {
@@ -118,7 +115,6 @@ class Profile extends Component {
         else {
 
             if (!isWebUri(this.state.resume)) {
-                console.log("checking valid url", this.state.resume);
                 error += "Please enter a valid URL for your resume";
             }
         }
@@ -172,7 +168,6 @@ class Profile extends Component {
             this.state.bio = this.cutWords(this.state.bio);
 
             const dbRef = firebase.firestore().collection("Profiles").doc(this.state.user.uid).set(this.settingData()).then(() => {
-                console.log("written");
 
                 const userProfile = {
                     "user": this.state.user,
@@ -205,8 +200,7 @@ class Profile extends Component {
         const docRef = db.collection("Profiles").doc(user.uid);
         docRef.get().then((doc) => {
             if (doc.exists) {
-                console.log("querying doc");
-                console.log(doc.data());
+
 
                 const userProfile = {
                     "user": user,
@@ -255,8 +249,7 @@ class Profile extends Component {
         firebase.auth().onAuthStateChanged((user) => {
 
             if (user) {
-                console.log("user");
-                console.log(user);
+
                 this.getUserProfile(user);
 
             }

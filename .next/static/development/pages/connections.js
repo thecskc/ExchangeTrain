@@ -80,8 +80,8 @@ function (_Component) {
   }, {
     key: "handleResumeClick",
     value: function handleResumeClick(event, resume) {
-      event.preventDefault();
-      console.log("resume", resume); //window.location.href = resume;
+      event.preventDefault(); // console.log("resume", resume);
+      //window.location.href = resume;
 
       window.open(resume); // try {
       //
@@ -118,7 +118,7 @@ function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      console.log(this.props.name + "'s id is " + this.props.id);
+      // console.log(this.props.name + "'s id is " + this.props.id);
       var dialogShow;
 
       if (this.state.showDialog) {
@@ -357,8 +357,8 @@ function (_Component) {
   }, {
     key: "handleResumeClick",
     value: function handleResumeClick(event, resume) {
-      event.preventDefault();
-      console.log(resume); //Router.push(resume);
+      event.preventDefault(); // console.log(resume);
+      //Router.push(resume);
       //window.location.href=resume;
 
       window.open(resume); // try {
@@ -946,8 +946,8 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(UserConnectionRequests, [{
     key: "handleResumeClick",
     value: function handleResumeClick(event, resume) {
-      event.preventDefault();
-      console.log(resume); //Router.push(resume);
+      event.preventDefault(); // console.log(resume);
+      //Router.push(resume);
       //window.location.href=resume;
 
       window.open(resume); // try {
@@ -975,8 +975,8 @@ function (_Component) {
       if (status === "USER_CALL_REQUEST") {//do Nothing
       } else if (status === "COACH_MEETING") {
         //Redirect to calendly link
-        var calendlyLink = fullDoc.data().calendlylink;
-        console.log("calendly link, " + calendlyLink);
+        var calendlyLink = fullDoc.data().calendlylink; // console.log("calendly link, " + calendlyLink);
+
         window.open(calendlyLink);
       } else if (status === "ISA_REQUEST") {
         //go into ISA agreement
@@ -1083,8 +1083,7 @@ function (_Component) {
     value: function makeCard(heading, subheading, status, paragraph, coachDoc) {
       var _this3 = this;
 
-      console.log("Make Card function, " + coachDoc);
-
+      // console.log("Make Card function, " + coachDoc);
       var button = __jsx("button", {
         className: "coach-button",
         onClick: function onClick(event) {
@@ -1258,9 +1257,7 @@ if (!firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.apps.length) {
   firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(firebaseConfig);
 }
 
-;
 console.log("initializing app");
-console.log(firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a);
 var firestore = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.firestore();
 var auth = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.auth();
 var storage = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.storage();
@@ -65771,12 +65768,8 @@ function (_Component) {
 
       _components_firebase__WEBPACK_IMPORTED_MODULE_6__["default"].auth().onAuthStateChanged(function (user) {
         if (user) {
-          console.log("user");
-          console.log(user);
           _components_firebase__WEBPACK_IMPORTED_MODULE_6__["default"].firestore().collection("Profiles").doc(user.uid).get().then(function (doc) {
             if (doc.exists) {
-              console.log(doc.data());
-
               if (doc.data().isCoach) {
                 _this2.setState({
                   "loaded": true,
@@ -65819,14 +65812,14 @@ function (_Component) {
                 user: this.state.user,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 75
+                  lineNumber: 74
                 },
                 __self: this
               }), __jsx("div", {
                 className: "container",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 78
+                  lineNumber: 77
                 },
                 __self: this
               }, __jsx("div", {
@@ -65836,21 +65829,21 @@ function (_Component) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 79
+                  lineNumber: 78
                 },
                 __self: this
               }, "Connections"), __jsx("div", {
                 className: "card-section",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 80
+                  lineNumber: 79
                 },
                 __self: this
               }, __jsx(_components_CoachConnectionRequests__WEBPACK_IMPORTED_MODULE_17__["default"], {
                 user: this.state.user,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 82
+                  lineNumber: 81
                 },
                 __self: this
               }))));
@@ -65859,14 +65852,14 @@ function (_Component) {
                 user: this.state.user,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 94
+                  lineNumber: 93
                 },
                 __self: this
               }), __jsx("div", {
                 className: "container",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 96
+                  lineNumber: 95
                 },
                 __self: this
               }, __jsx("div", {
@@ -65876,27 +65869,27 @@ function (_Component) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 97
+                  lineNumber: 96
                 },
                 __self: this
               }, "Connections"), __jsx("div", {
                 className: "card-section",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 99
+                  lineNumber: 98
                 },
                 __self: this
               }, __jsx(_components_UserConnectionRequests__WEBPACK_IMPORTED_MODULE_16__["default"], {
                 user: this.state.user,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 101
+                  lineNumber: 100
                 },
                 __self: this
               }))), __jsx("br", {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 105
+                  lineNumber: 104
                 },
                 __self: this
               }));
@@ -65905,7 +65898,7 @@ function (_Component) {
             return __jsx("h1", {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 114
+                lineNumber: 113
               },
               __self: this
             }, "Please fill out your profile first");
@@ -65914,7 +65907,7 @@ function (_Component) {
           return __jsx(_components_loggedout__WEBPACK_IMPORTED_MODULE_20__["default"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 120
+              lineNumber: 119
             },
             __self: this
           });
@@ -65923,7 +65916,7 @@ function (_Component) {
         return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_19__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 123
           },
           __self: this
         });
@@ -65938,7 +65931,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 0:
 /*!************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fconnections&absolutePagePath=C%3A%5CUsers%5Csanth%5CWebstormProjects%5CExchangeTrain%5Cpages%5Cconnections.js ***!
   \************************************************************************************************************************************************************/
@@ -65961,5 +65954,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js","styles"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=connections.js.map

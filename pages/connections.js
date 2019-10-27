@@ -32,14 +32,13 @@ class Connections extends Component {
         firebase.auth().onAuthStateChanged((user) => {
 
             if (user) {
-                console.log("user");
-                console.log(user);
+
 
                 firebase.firestore().collection("Profiles").doc(user.uid).get().then((doc) => {
 
                     if (doc.exists) {
 
-                        console.log(doc.data());
+
                         if (doc.data().isCoach) {
                             this.setState({"loaded": true, "user": user, "isCoach": true, "profile": true});
                         }

@@ -30,7 +30,7 @@ class Coach extends Component {
 
     handleResumeClick(event, resume) {
         event.preventDefault();
-        console.log("resume", resume);
+        // console.log("resume", resume);
 
         //window.location.href = resume;
         window.open(resume);
@@ -64,7 +64,7 @@ class Coach extends Component {
 
     render() {
 
-        console.log(this.props.name + "'s id is " + this.props.id);
+        // console.log(this.props.name + "'s id is " + this.props.id);
         let dialogShow;
         if (this.state.showDialog) {
             dialogShow = <>
