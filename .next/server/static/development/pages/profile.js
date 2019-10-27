@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1252,7 +1252,8 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       "location": "",
       "isCoach": false,
       "calendlylink": "",
-      "resume": ""
+      "resume": "",
+      "area_of_training": ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.loadedProfile = this.loadedProfile.bind(this);
@@ -1333,6 +1334,10 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       error += " Please enter your location.";
     }
 
+    if (!this.state.area_of_training) {
+      error += " Please choose your area of training (data science, software engineering, etc)";
+    }
+
     if (!this.state.resume) {
       error += " Please add a link to your resume.";
     } else {
@@ -1362,7 +1367,8 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       "bio": this.state.bio,
       "location": this.state.location,
       "schoolcompany": this.state.schoolcompany,
-      "resume": this.state.resume
+      "resume": this.state.resume,
+      "area_of_training": this.state.area_of_training
     };
 
     if (this.state.isCoach) {
@@ -1388,7 +1394,8 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           "bio": this.state.bio,
           "location": this.state.location,
           "schoolcompany": this.state.schoolcompany,
-          "resume": this.state.resume
+          "resume": this.state.resume,
+          "area_of_training": this.state.area_of_training
         };
 
         if (this.state.isCoach) {
@@ -1418,7 +1425,8 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           "location": doc.data().location,
           "schoolcompany": doc.data().schoolcompany,
           "loaded": true,
-          "resume": doc.data().resume
+          "resume": doc.data().resume,
+          "area_of_training": doc.data().area_of_training
         };
 
         if (doc.data().isCoach) {
@@ -1437,7 +1445,8 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           "location": "",
           "schoolcompany": "",
           "loaded": true,
-          "resume": ""
+          "resume": "",
+          "area_of_training": ""
         };
         this.loadedProfile(userProfile);
       }
@@ -1468,7 +1477,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           user: this.state.user,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 267
+            lineNumber: 276
           },
           __self: this
         }), __jsx("div", {
@@ -1480,7 +1489,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 269
+            lineNumber: 278
           },
           __self: this
         }, __jsx("div", {
@@ -1490,19 +1499,19 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 272
+            lineNumber: 281
           },
           __self: this
         }, "Fill Out Your Profile"), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 274
+            lineNumber: 283
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 274
+            lineNumber: 283
           },
           __self: this
         }), __jsx("form", {
@@ -1513,10 +1522,10 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 277
+            lineNumber: 286
           },
           __self: this
-        }, __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }, __jsx("input", {
           name: "displayName",
           placeholder: "Enter Name",
           value: this.state.displayName,
@@ -1524,13 +1533,6 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           style: {
             width: "100%"
           },
-          variant: "outlined",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 280
-          },
-          __self: this
-        }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 289
@@ -1539,10 +1541,28 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 289
+            lineNumber: 297
           },
           __self: this
-        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 297
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 297
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 297
+          },
+          __self: this
+        }), __jsx("input", {
           name: "schoolcompany",
           placeholder: "School/Company",
           value: this.state.schoolcompany,
@@ -1550,25 +1570,36 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           style: {
             width: "100%"
           },
-          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 291
+            lineNumber: 299
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 301
+            lineNumber: 308
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 301
+            lineNumber: 308
           },
           __self: this
-        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 308
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 308
+          },
+          __self: this
+        }), __jsx("input", {
           name: "location",
           placeholder: "Location",
           value: this.state.location,
@@ -1576,54 +1607,74 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           style: {
             width: "100%"
           },
-          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 303
+            lineNumber: 310
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 314
+            lineNumber: 320
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 314
+            lineNumber: 320
           },
           __self: this
-        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 320
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 320
+          },
+          __self: this
+        }), __jsx("textarea", {
           name: "bio",
           placeholder: "Bio (100 words limit)",
           value: this.state.bio,
           onChange: this.handleChange,
-          multiline: true,
           rows: "4",
-          rowsMax: "7",
           style: {
             width: "100%"
           },
-          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 317
+            lineNumber: 323
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 331
+            lineNumber: 336
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 331
+            lineNumber: 336
           },
           __self: this
-        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 336
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 336
+          },
+          __self: this
+        }), __jsx("input", {
           name: "resume",
           placeholder: "Resume URL",
           value: this.state.resume,
@@ -1631,25 +1682,99 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           style: {
             width: "100%"
           },
-          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 334
+            lineNumber: 339
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 347
+            lineNumber: 350
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 347
+            lineNumber: 350
           },
           __self: this
-        }), __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 355
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 355
+          },
+          __self: this
+        }), __jsx("div", {
+          style: {
+            fontFamily: "Open Sans, sans-serif",
+            fontSize: "1.4rem"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 357
+          },
+          __self: this
+        }, "Choose your area of training -"), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 361
+          },
+          __self: this
+        }), __jsx("select", {
+          name: "area_of_training",
+          onChange: this.handleChange,
+          value: this.state.area_of_training,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 364
+          },
+          __self: this
+        }, __jsx("option", {
+          value: "Software Engineering",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 366
+          },
+          __self: this
+        }, "Software Engineering"), __jsx("option", {
+          value: "Data Science",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 367
+          },
+          __self: this
+        }, "Data Science")), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 371
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 371
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 371
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 371
+          },
+          __self: this
+        }), __jsx("input", {
           name: "coachcode",
           placeholder: "Coach Access Code",
           value: this.state.coachcode,
@@ -1657,27 +1782,38 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           style: {
             width: "100%"
           },
-          variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 349
+            lineNumber: 374
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 359
+            lineNumber: 382
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 359
+            lineNumber: 382
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 382
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 382
           },
           __self: this
         }), (() => {
           if (this.state.isCoach) {
-            return __jsx(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3___default.a, {
+            return __jsx("input", {
               name: "calendlylink",
               placeholder: "Enter your calendly link",
               value: this.state.calendlylink,
@@ -1685,10 +1821,9 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
               style: {
                 width: "100%"
               },
-              variant: "outlined",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 367
+                lineNumber: 394
               },
               __self: this
             });
@@ -1696,13 +1831,25 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         })(), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 383
+            lineNumber: 409
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 383
+            lineNumber: 409
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 409
+          },
+          __self: this
+        }), __jsx("br", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 409
           },
           __self: this
         }), __jsx("button", {
@@ -1715,44 +1862,44 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
           onClick: this.editProfile,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 385
+            lineNumber: 411
           },
           __self: this
         }, __jsx("span", {
           className: "mdc-button__label",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 387
+            lineNumber: 413
           },
           __self: this
         }, "Save")), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 390
+            lineNumber: 416
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 390
+            lineNumber: 416
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 391
+            lineNumber: 417
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 391
+            lineNumber: 417
           },
           __self: this
         }), __jsx("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 391
+            lineNumber: 417
           },
           __self: this
         }))));
@@ -1760,7 +1907,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         return __jsx(_components_loggedout__WEBPACK_IMPORTED_MODULE_9__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 409
+            lineNumber: 435
           },
           __self: this
         });
@@ -1769,7 +1916,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       return __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 414
+          lineNumber: 440
         },
         __self: this
       });
@@ -1826,7 +1973,7 @@ class Profile extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/profile.js ***!
   \********************************/

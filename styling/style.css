@@ -20,6 +20,36 @@ body {
 
 }
 
+
+select{
+    font-family: "Open Sans", sans-serif;
+    font-size:1.4rem;
+    border:0 none;
+    border-bottom: 1px solid black;
+}
+textarea{
+    font-family: "Open Sans", sans-serif;
+    font-size:1.4rem;
+    border:0 none;
+    border-bottom: 1px solid black;
+}
+
+input:not([type=submit]):not([type=file]) {
+    /* omg so much cleaner */
+    font-family: "Open Sans", sans-serif;
+    font-size:1.4rem;
+    border:0 none;
+    border-bottom: 1px solid black;
+}
+
+input[type="text"], input[type="password"], textarea, select {
+    outline: none;
+}
+input:focus {
+    outline:none;
+}
+
+
 .checked {
     color: orange;
 }

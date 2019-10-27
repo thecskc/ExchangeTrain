@@ -25,7 +25,8 @@ class Profile extends Component {
             "location": "",
             "isCoach": false,
             "calendlylink": "",
-            "resume": ""
+            "resume": "",
+            "area_of_training":""
         };
         this.handleChange = this.handleChange.bind(this);
         this.loadedProfile = this.loadedProfile.bind(this);
@@ -107,6 +108,9 @@ class Profile extends Component {
         if (!this.state.location) {
             error += " Please enter your location."
         }
+        if(!this.state.area_of_training){
+            error += " Please choose your area of training (data science, software engineering, etc)"
+        }
         if (!this.state.resume) {
             error += " Please add a link to your resume."
         }
@@ -144,7 +148,9 @@ class Profile extends Component {
             "bio": this.state.bio,
             "location": this.state.location,
             "schoolcompany": this.state.schoolcompany,
-            "resume": this.state.resume
+            "resume": this.state.resume,
+            "area_of_training":this.state.area_of_training
+
         };
 
         if (this.state.isCoach) {
@@ -172,7 +178,8 @@ class Profile extends Component {
                     "bio": this.state.bio,
                     "location": this.state.location,
                     "schoolcompany": this.state.schoolcompany,
-                    "resume": this.state.resume
+                    "resume": this.state.resume,
+                    "area_of_training":this.state.area_of_training
 
                 };
                 if (this.state.isCoach) {
@@ -205,7 +212,8 @@ class Profile extends Component {
                     "location": doc.data().location,
                     "schoolcompany": doc.data().schoolcompany,
                     "loaded": true,
-                    "resume": doc.data().resume
+                    "resume": doc.data().resume,
+                    "area_of_training":doc.data().area_of_training
                 };
 
                 if (doc.data().isCoach) {
@@ -225,7 +233,8 @@ class Profile extends Component {
                     "location": "",
                     "schoolcompany": "",
                     "loaded": true,
-                    "resume": ""
+                    "resume": "",
+                    "area_of_training":""
                 };
                 this.loadedProfile(userProfile)
 
@@ -277,86 +286,104 @@ class Profile extends Component {
                             <form style={{alignSelf:"center", width: "60%", height: "80%"}}>
 
 
-                                <TextField
+                                <input
 
                                     name="displayName"
                                     placeholder="Enter Name"
                                     value={this.state.displayName}
                                     onChange={this.handleChange}
                                     style={{width: "100%"}}
-                                    variant="outlined"
                                 />
-                                <br/><br/>
+                                <br/><br/><br/><br/>
 
-                                <TextField
+                                <input
                                     name="schoolcompany"
                                     placeholder="School/Company"
                                     value={this.state.schoolcompany}
                                     onChange={this.handleChange}
                                     style={{width: "100%"}}
-                                    variant="outlined"
 
                                 />
 
-                                <br/><br/>
+                                <br/><br/><br/><br/>
 
-                                <TextField
+                                <input
                                     name="location"
                                     placeholder="Location"
                                     value={this.state.location}
                                     onChange={this.handleChange}
                                     style={{width: "100%"}}
-                                    variant="outlined"
 
                                 />
 
 
-                                <br/><br/>
+                                <br/><br/><br/><br/>
 
 
-                                <TextField
+                                <textarea
 
                                     name="bio"
                                     placeholder="Bio (100 words limit)"
                                     value={this.state.bio}
                                     onChange={this.handleChange}
-                                    multiline={true}
+
                                     rows="4"
-                                    rowsMax="7"
+
                                     style={{width: "100%"}}
-                                    variant="outlined"
 
                                 />
 
-                                <br/><br/>
+                                <br/><br/><br/><br/>
 
 
-                                <TextField
+                                <input
 
                                     name="resume"
                                     placeholder="Resume URL"
                                     value={this.state.resume}
                                     onChange={this.handleChange}
                                     style={{width: "100%"}}
-                                    variant="outlined"
 
 
                                 />
 
+                                <br/><br/>
+
+
+
 
                                 <br/><br/>
 
-                                <TextField
+                                <div style={{ fontFamily: "Open Sans, sans-serif",
+                                    fontSize:"1.4rem"}}>
+                                    Choose your area of training -
+                                </div>
+                                <br/>
+
+
+                                <select name="area_of_training" onChange={this.handleChange} value={this.state.area_of_training}>
+
+                                    <option value="Software Engineering">Software Engineering</option>
+                                    <option value="Data Science">Data Science</option>
+
+                                </select>
+
+                                <br/><br/><br/><br/>
+
+
+                                <input
                                     name="coachcode"
                                     placeholder="Coach Access Code"
                                     value={this.state.coachcode}
                                     onChange={this.handleChange}
                                     style={{width: "100%"}}
-                                    variant="outlined"
 
                                 />
+                                <br/><br/><br/><br/>
 
-                                <br/><br/>
+
+
+
 
                                 {(() => {
 
@@ -364,13 +391,12 @@ class Profile extends Component {
                                     if (this.state.isCoach) {
                                         return (
 
-                                            <TextField
+                                            <input
                                                 name="calendlylink"
                                                 placeholder="Enter your calendly link"
                                                 value={this.state.calendlylink}
                                                 onChange={this.handleChange}
                                                 style={{width: "100%"}}
-                                                variant="outlined"
 
                                             />
                                         )
@@ -380,7 +406,7 @@ class Profile extends Component {
                                 })()}
 
 
-                                <br/><br/>
+                                <br/><br/><br/><br/>
 
                                 <button className="mdc-button mdc-button--raised"
                                         style={{"background": "orange", "width": "100%","margin-bottom":"10vh"}} onClick={this.editProfile}>

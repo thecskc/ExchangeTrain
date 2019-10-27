@@ -46,11 +46,10 @@ class Index extends Component {
 
                     <div className="hero">
 
-                        <div className="section-40-column">
-                            <div className="heading" style={{alignSelf:"flex-start"}}>ExchangeTrain</div>
+                        <div className="section-50-column">
+                            <div className="heading" style={{alignSelf:"flex-start"}}>Connect And Train</div>
                             <div className="subheading">
-                                Personalized training for technical interviews by software
-                                engineers
+                                Sign Up/Login to browse through coaches, connect with them, and get trained.
                             </div>
                             <br/>
                             <br/>
@@ -59,8 +58,8 @@ class Index extends Component {
                             </button>
                         </div>
 
-                        <div className="section-60-images">
-                            <img src="../static/undraw_code_review_l1q9%20(1).svg"/>
+                        <div className="section-50-images">
+                            <img src="../static/undraw_personal_goals_edgd.svg"/>
                         </div>
 
                     </div>

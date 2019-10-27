@@ -41381,7 +41381,7 @@ function (_Component) {
         },
         __self: this
       }, __jsx("div", {
-        className: "section-40-column",
+        className: "section-50-column",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 49
@@ -41397,23 +41397,23 @@ function (_Component) {
           lineNumber: 50
         },
         __self: this
-      }, "ExchangeTrain"), __jsx("div", {
+      }, "Connect And Train"), __jsx("div", {
         className: "subheading",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 51
         },
         __self: this
-      }, "Personalized training for technical interviews by software engineers"), __jsx("br", {
+      }, "Sign Up/Login to browse through coaches, connect with them, and get trained."), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 54
         },
         __self: this
       }), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 55
         },
         __self: this
       }), __jsx("button", {
@@ -41424,21 +41424,21 @@ function (_Component) {
         className: "landing-button",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 56
         },
         __self: this
       }, "Get Started")), __jsx("div", {
-        className: "section-60-images",
+        className: "section-50-images",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 61
         },
         __self: this
       }, __jsx("img", {
-        src: "../static/undraw_code_review_l1q9%20(1).svg",
+        src: "../static/undraw_personal_goals_edgd.svg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 62
         },
         __self: this
       })))));
