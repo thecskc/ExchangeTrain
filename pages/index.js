@@ -53,7 +53,7 @@ class Index extends Component {
                             <br/>
                             <br/>
                             <button onClick={this.handleGetStartedClick} style={{alignSelf: "flex-start"}} className="landing-button">
-                                Get Started
+                                Start Training
                             </button>
                         </div>
 
