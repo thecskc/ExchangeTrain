@@ -294,7 +294,7 @@ class Profile extends Component {
 
                                 <input
                                     name="schoolcompany"
-                                    placeholder="School/Company"
+                                    placeholder="Role and School/Company [Ex: Engineer at Google, CS Major at CMU]"
                                     value={this.state.schoolcompany}
                                     onChange={this.handleChange}
                                     style={{width: "100%"}}
