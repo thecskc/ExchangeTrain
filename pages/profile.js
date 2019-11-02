@@ -335,7 +335,7 @@ class Profile extends Component {
                                 <input
 
                                     name="resume"
-                                    placeholder="Resume URL"
+                                    placeholder="Link to your resume or LinkedIn Profile"
                                     value={this.state.resume}
                                     onChange={this.handleChange}
                                     style={{width: "100%"}}
