@@ -118,7 +118,7 @@ class Coach extends Component {
                     <br/>
 
                     <button className="coach-button" onClick={this.sendInterest}>
-                        Connect
+                        Request an intro call
                     </button>
 
 
